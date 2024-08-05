@@ -1,0 +1,48 @@
+{
+  "name": "dotori-context",
+  "private": false,
+  "version": "0.0.1",
+  "description": "dotori context",
+  "author": "LEE DONG GYU <tenenger7125@gmail.com>",
+  "engines": {
+    "node": ">= 20.15.0"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "homepage": "https://github.com/dotori-react/dotori-context",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dotori-react/dotori-context.git"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "javascript",
+    "typescript",
+    "react",
+    "dotori",
+    "dotori-context"
+  ],
+  "main": "./lib/index.cjs.js",
+  "module": "./lib/index.es.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "rm -rf lib && vite build"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "tslib": "^2.6.3",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-tsconfig-paths": "^4.3.2"
+  }
+}
