@@ -1,0 +1,56 @@
+{
+  "name": "dotori-icons",
+  "private": false,
+  "version": "0.0.7-0",
+  "description": "dotori icons",
+  "author": "LEE DONG GYU <tenenger7125@gmail.com>",
+  "engines": {
+    "node": ">= 20.15.0"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "homepage": "https://github.com/dotori-react/dotori-icons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dotori-react/dotori-icons.git"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "javascript",
+    "typescript",
+    "react",
+    "dotori",
+    "dotori-utils",
+    "dotori-icons"
+  ],
+  "main": "./lib/index.cjs.js",
+  "module": "./lib/index.es.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "rm -rf lib && vite build"
+  },
+  "peerDependencies": {
+    "dotori-utils": ">=0.0.18 <2.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "dotori-utils": "workspace:*",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.6",
+    "tslib": "^2.6.3",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10",
+    "vite-plugin-css-injected-by-js": "^3.5.1",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-plugin-svgr": "^4.2.0",
+    "vite-tsconfig-paths": "^4.3.2"
+  }
+}

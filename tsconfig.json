@@ -26,9 +26,11 @@
     "paths": {
       "@/*": ["./packages/*"],
       "@dotori-contexts/*": ["./packages/dotori-contexts/packages/*"],
-      "@dotori-utils/*": ["./packages/dotori-utils/packages/*"]
+      "@dotori-utils/*": ["./packages/dotori-utils/packages/*"],
+      "@dotori-hooks/*": ["./packages/dotori-hooks/packages/*"],
+      "@dotori-icons/*": ["./packages/dotori-icons/packages/*"]
     }
   },
-  "include": ["src", "packages", ".eslintrc.js", "jest.config.ts", "jest.setup.ts"],
+  "include": ["src", "packages", ".eslintrc.js", "jest.config.ts", "jest.setup.ts", "**/types"],
   "exclude": ["./node_modules/**/*", "./packages/**/lib"]
 }

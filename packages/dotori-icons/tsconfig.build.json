@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+
+    /* Publish */
+    "noEmit": false,
+    "declaration": true,
+    "declarationDir": "lib",
+    "emitDeclarationOnly": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "importHelpers": true
+  },
+  "include": ["packages"],
+  "exclude": ["node_modules", "**/__tests__/**", "**/test/**"]
+}
