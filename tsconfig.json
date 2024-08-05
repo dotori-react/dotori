@@ -31,6 +31,6 @@
       "@dotori-icons/*": ["./packages/dotori-icons/packages/*"]
     }
   },
-  "include": ["src", "packages", ".eslintrc.js", "jest.config.ts", "jest.setup.ts", "**/types"],
+  "include": ["./packages", ".eslintrc.js", "jest.config.ts", "jest.setup.ts", "**/types"],
   "exclude": ["./node_modules/**/*", "./packages/**/lib"]
 }
