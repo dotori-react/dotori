@@ -1,0 +1,58 @@
+{
+  "name": "dotori-hooks",
+  "private": false,
+  "version": "0.0.2-0",
+  "description": "dotori hooks",
+  "author": "LEE DONG GYU <tenenger7125@gmail.com>",
+  "engines": {
+    "node": ">= 20.15.0"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "homepage": "https://github.com/dotori-react/dotori-hooks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dotori-react/dotori-hooks.git"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "javascript",
+    "typescript",
+    "react",
+    "dotori",
+    "dotori-utils",
+    "dotori-hooks"
+  ],
+  "main": "./lib/hooks.cjs.js",
+  "module": "./lib/hooks.es.js",
+  "types": "./lib/hooks.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "rm -rf lib && vite build"
+  },
+  "peerDependencies": {
+    "dotori-utils": ">=0.0.18 <2.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.32.1",
+    "exceljs": "^4.4.0",
+    "file-saver": "^2.0.5",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/file-saver": "^2.0.7",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "dotori-utils": "workspace:*",
+    "tslib": "^2.6.3",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-tsconfig-paths": "^4.3.2"
+  }
+}
