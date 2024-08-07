@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { useDisClosure } from 'dotori-hooks';
 import { cn } from 'dotori-utils';
 
-import { Dropdown, Input } from '@/components';
+import { Dropdown, Input } from '@dotori-components/components';
 
 const Select = <T extends { value: string; label: string; [index: string]: string }>({
   data,

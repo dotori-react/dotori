@@ -1,7 +1,7 @@
 import { useCreateElement, useDisClosure, useOutSideClick, useTimeout } from 'dotori-hooks';
 import { cn, VariantProps } from 'dotori-utils';
 
-import { CloseButton, Portal } from '@/components';
+import { CloseButton, Portal } from '@dotori-components/components';
 
 const Snackbar = ({ title, description, position, delay = 500000, className }: SnackbarProps) => {
   const { isOpen, close } = useDisClosure(true);

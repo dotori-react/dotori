@@ -1,27 +1,10 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "baseUrl": ".",
+    "paths": {
+      "@dotori-icons/*": ["./packages/*"]
+    }
   },
-  "include": ["src", "packages", "tailwind.config.js", "postcss.config.js"],
-  "extends": "./tsconfig.paths.json",
-  "exclude": ["./node_modules/**/*"],
-  "references": [{ "path": "../../tsconfig.vite.json" }]
+  "include": ["./packages", "./vite.config.ts", "../../.eslintrc.js", "./postcss.config.ts", "./tailwind.config.ts"]
 }

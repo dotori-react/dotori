@@ -1,6 +1,6 @@
 import { cn, VariantProps } from 'dotori-utils';
 
-import { Tooltip } from '@/components';
+import { Tooltip } from '@dotori-components/components';
 
 const MiniSideBarLink = ({ icon: Icon, label, active, className, ...props }: MiniSideBarLinkProps) => (
   <Tooltip color="gray" label={label} position="right">

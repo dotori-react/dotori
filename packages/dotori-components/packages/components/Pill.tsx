@@ -1,6 +1,6 @@
 import { cn, VariantProps } from 'dotori-utils';
 
-import { CloseButton } from '@/components';
+import { CloseButton } from '@dotori-components/components';
 
 const Pill = ({ children, size, color, withCloseButton, onClose }: PillProps) => (
   <span className={pillStyle({ size, color, withCloseButton })}>

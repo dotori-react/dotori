@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDisClosure, useMediaQuery } from 'dotori-hooks';
 import { Link } from 'react-router-dom';
 
-import { ActionIcon, Button, Drawer } from '@/components';
+import { ActionIcon, Button, Drawer } from '@dotori-components/components';
 
 const NavigationBar = ({ data }: NavigationBarProps) => {
   const { isOpen: isDrawerOpen, open: drawerOpen, close: drawerClose } = useDisClosure();

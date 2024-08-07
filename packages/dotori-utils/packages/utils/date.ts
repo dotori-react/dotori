@@ -1,4 +1,4 @@
-import { DAY_OF_WEEKEND } from '@/constants';
+import { DAY_OF_WEEKEND } from '@dotori-utils/constants';
 
 export const getNowMonthDate = (now: Date = new Date()) => {
   const year = now.getFullYear();

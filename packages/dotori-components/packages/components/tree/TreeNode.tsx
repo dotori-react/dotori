@@ -15,9 +15,9 @@ const TreeNode = ({ node, renderTreeNode, depth }: TreeNodeProps) => {
 
   return (
     <div>
-      <span className="inline-block cursor-pointer" onClick={handleTreeNodeToggle}>
+      <button className="inline-block cursor-pointer" onClick={handleTreeNodeToggle}>
         {renderTreeNode({ node, isChildren: node.children.length > 0, isExpanded, depth })}
-      </span>
+      </button>
       <div className={isExpanded ? 'block' : 'hidden'}>{nodes}</div>
     </div>
   );

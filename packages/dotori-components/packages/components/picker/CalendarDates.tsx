@@ -1,6 +1,6 @@
 import { cn, getCalendarDate, getNowMonthDate, VariantProps } from 'dotori-utils';
 
-import { Button } from '@/components';
+import { Button } from '@dotori-components/components';
 
 import { useDatePickerContext } from './DatePicker.context';
 

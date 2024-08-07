@@ -1,7 +1,7 @@
 import { useCreateElement, useOutSideClick } from 'dotori-hooks';
 import { cn, VariantProps } from 'dotori-utils';
 
-import { CloseButton, Portal } from '@/components';
+import { CloseButton, Portal } from '@dotori-components/components';
 
 const Drawer = ({ isOpen, close, fullWidth, children }: DrawerProps) => {
   const ref = useOutSideClick<HTMLDivElement>(close);

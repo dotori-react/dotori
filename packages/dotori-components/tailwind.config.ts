@@ -1,5 +1,8 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+import plugin from 'tailwindcss/plugin';
+
+import type { PluginAPI, Config } from 'tailwindcss/types/config';
+
+const config: Config = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', './packages/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -34,10 +37,10 @@ export default {
         '4xl': '2rem',
       },
       fontWeight: {
-        bold: 700,
-        semiBold: 600,
-        regular: 400,
-        light: 300,
+        bold: '700',
+        semiBold: '600',
+        regular: '400',
+        light: '300',
       },
       fontFamily: {
         sans: ['GmarketSans', 'sans-serif'],
@@ -225,9 +228,7 @@ export default {
     },
   },
   plugins: [
-    /** @type {import('tailwindcss/types/config').PluginCreator} */
-    // eslint-disable-next-line @typescript-eslint/unbound-method
-    ({ addUtilities }) =>
+    plugin(({ addUtilities }: { addUtilities: PluginAPI['addUtilities'] }) =>
       addUtilities({
         '.typo-3xs400': {
           '@apply text-3xs font-regular': {},
@@ -362,7 +363,10 @@ export default {
           },
         },
       }),
+    ),
   ],
   darkMode: 'selector',
   important: 'body',
 };
+
+export default config;

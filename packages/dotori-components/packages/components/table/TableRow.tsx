@@ -1,6 +1,6 @@
 import { cn, validateEven } from 'dotori-utils';
 
-import { Checkbox } from '@/components';
+import { Checkbox } from '@dotori-components/components';
 
 import { type TableColumn } from './Table';
 import { useTableContext } from './Table.context';

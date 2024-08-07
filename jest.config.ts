@@ -13,7 +13,11 @@ const jestConfig: JestConfigWithTsJest = {
   coverageDirectory: 'coverage',
   coverageReporters: ['html', 'text', 'text-summary', 'lcov'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/packages/$1',
+    '^@dotori-components/(.*)$': '<rootDir>/packages/dotori-components/packages/$1',
+    '^@dotori-context/(.*)$': '<rootDir>/packages/dotori-context/packages/$1',
+    '^@dotori-utils/(.*)$': '<rootDir>/packages/dotori-utils/packages/$1',
+    '^@dotori-icons/(.*)$': '<rootDir>/packages/dotori-icons/packages/$1',
+    '^@dotori-hooks/(.*)$': '<rootDir>/packages/dotori-dotori-hooks/packages/$1',
   },
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
   setupFilesAfterEnv: ['./jest.setup.js'],

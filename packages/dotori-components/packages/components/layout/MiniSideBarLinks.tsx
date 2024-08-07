@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { Icon } from 'dotori-icons';
 
-import { Button } from '@/components';
+import { Button } from '@dotori-components/components';
 
 import MiniSideBarLink from './MiniSideBarLink';
 

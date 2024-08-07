@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useDebounceCallback, useDisClosure } from 'dotori-hooks';
 
-import { ActionIcon } from '@/components';
+import { ActionIcon } from '@dotori-components/components';
 
 const ScrollToTop = ({ showedMinHeight = 0 }: ScrollToTopProps) => {
   const { isOpen, open, close } = useDisClosure();

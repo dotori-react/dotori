@@ -1,7 +1,7 @@
-import { createJSONStorage, persist } from 'zustand/middleware';
 import { create } from 'zustand';
+import { createJSONStorage, persist } from 'zustand/middleware';
 
-import { STORAGE_KEYS } from '@/constants';
+import { STORAGE_KEYS } from '@dotori-hooks/constants';
 
 const useDarkModeStore = create<DarkModeStore>()(
   persist(

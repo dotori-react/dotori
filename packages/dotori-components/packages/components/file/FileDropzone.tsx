@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { cn, getFileItemsInfo } from 'dotori-utils';
 
-import { Paper, PaperProps, Polymorphic } from '@/components';
+import { Paper, PaperProps, Polymorphic } from '@dotori-components/components';
 
 import { FileDropzoneProvider } from './FileDropzone.context';
 import { FileDropzoneAllow, FileDropzoneDeny, FileDropzoneIdle } from './FileDropzoneStatus';

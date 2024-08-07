@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { getNowMonthDate } from 'dotori-utils';
 
-import { Button } from '@/components';
+import { Button } from '@dotori-components/components';
 
 const ScrollableDate = ({ data: { years, months, dates }, defaultValue, onChange }: ScrollDatePickerProps) => {
   const [selectedDate, setSelectedDate] = useState(defaultValue || initialDate);

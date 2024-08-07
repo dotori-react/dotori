@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useDarkModeStore } from '@/store';
+import { useDarkModeStore } from '@dotori-hooks/store';
 
 const useDarkMode = () => {
   const { isDark, on, off, toggle } = useDarkModeStore();

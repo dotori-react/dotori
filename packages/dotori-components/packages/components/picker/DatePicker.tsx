@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Calendar } from '@/components';
+import { Calendar } from '@dotori-components/components';
 
 import { DatePickerProvider } from './DatePicker.context';
 

@@ -1,7 +1,7 @@
 import { useCreateElement, useElementRect, useHover } from 'dotori-hooks';
 import { cn, VariantProps } from 'dotori-utils';
 
-import { Portal, ClonedChildren } from '@/components';
+import { Portal, ClonedChildren } from '@dotori-components/components';
 
 const Tooltip = ({ children, label, position = 'top', gap = 10, color, className }: TooltipProps) => {
   const { hovered, ref: hoveredRef } = useHover();

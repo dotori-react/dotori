@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useCreateElement, useElementRect, useOutSideClick } from 'dotori-hooks';
 import { cn, VariantProps } from 'dotori-utils';
 
-import { Portal } from '@/components';
+import { Portal } from '@dotori-components/components';
 
 const Dropdown = ({
   children,

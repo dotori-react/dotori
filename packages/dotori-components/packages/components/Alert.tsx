@@ -1,6 +1,6 @@
 import { cn, VariantProps } from 'dotori-utils';
 
-import { CloseButton } from '@/components';
+import { CloseButton } from '@dotori-components/components';
 
 const Alert = ({ icon, title, children, color, className, isOpen, close, ...props }: AlertProps) => (
   <>

@@ -1,12 +1,13 @@
-import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
-import dfs from 'vite-plugin-dts';
 import path from 'path';
-import svgr from 'vite-plugin-svgr';
-import tailwindcss from 'tailwindcss';
+
+import react from '@vitejs/plugin-react';
 import autoprefixer from 'autoprefixer';
+import tailwindcss from 'tailwindcss';
+import { defineConfig } from 'vite';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
+import dfs from 'vite-plugin-dts';
+import svgr from 'vite-plugin-svgr';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,8 +15,8 @@ export default defineConfig({
     react(),
     cssInjectedByJsPlugin(),
     svgr(),
-    tsconfigPaths(),
-    dfs({ tsconfigPath: './tsconfig.build.json', outDir: 'lib', rollupTypes: true }),
+    tsconfigPaths({ projects: ['./tsconfig.json'] }),
+    dfs({ tsconfigPath: './tsconfig.build.json', include: './packages', outDir: 'lib', rollupTypes: true }),
   ],
   css: {
     postcss: {

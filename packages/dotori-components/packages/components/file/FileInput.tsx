@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { cn, getFileItemsInfo } from 'dotori-utils';
 
-import { Input } from '@/components';
+import { Input } from '@dotori-components/components';
 
 const FileInput = ({ className, placeholder: defaultPlaceholder, multiple, accept, onChange }: FileInputProps) => {
   const [placeholder, setPlaceholder] = useState(defaultPlaceholder);

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useElementRect, useHover } from 'dotori-hooks';
 import { cn } from 'dotori-utils';
 
-import { ActionIcon } from '@/components';
+import { ActionIcon } from '@dotori-components/components';
 
 import { type TableColumn } from './Table';
 import { useTableContext } from './Table.context';

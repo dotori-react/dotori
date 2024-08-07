@@ -1,6 +1,6 @@
 import { useCreateElement, useOutSideClick } from 'dotori-hooks';
 
-import { CloseButton, Paper, Portal, type PaperProps } from '@/components';
+import { CloseButton, Paper, Portal, type PaperProps } from '@dotori-components/components';
 
 const Modal = ({ isOpen, close, children, ...paperProps }: ModalProps) => {
   const ref = useOutSideClick<HTMLDivElement>(close);

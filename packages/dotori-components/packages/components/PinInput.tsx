@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 
 import { cn, VariantProps } from 'dotori-utils';
 
-import { REGEX } from '@/constants';
+import { REGEX } from '@dotori-components/constants';
 
 const PinInput = ({ total, size }: PinInputProps) => {
   const [pinInputValue, setPinInputValue] = useState<string[]>(Array(total).fill(''));

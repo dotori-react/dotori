@@ -4,7 +4,7 @@ import { useCount } from 'dotori-hooks';
 import { Icon } from 'dotori-icons';
 import { cn } from 'dotori-utils';
 
-import { Button } from '@/components';
+import { Button } from '@dotori-components/components';
 
 const Pagination = ({ pageTotal, page, onChange }: PaginationProps) => {
   const { count, increment, decrement, set } = useCount(page, 1, pageTotal, onChange);

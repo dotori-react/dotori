@@ -1,6 +1,6 @@
 import { cn } from 'dotori-utils';
 
-import { Polymorphic } from '@/components';
+import { Polymorphic } from '@dotori-components/components';
 
 const Mark = ({ className, ...props }: MarkProps) => (
   <Polymorphic as="mark" className={markStyle({ className })} {...props} />

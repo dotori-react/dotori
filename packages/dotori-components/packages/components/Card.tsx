@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 
 import { cn, VariantProps } from 'dotori-utils';
 
-import { Paper, type PaperProps } from '@/components';
+import { Paper, type PaperProps } from '@dotori-components/components';
 
 const Card = forwardRef<HTMLDivElement, CardProps>(({ children, className, ...props }, ref) => (
   <Paper ref={ref} className={cardStyle({ className })} {...props}>

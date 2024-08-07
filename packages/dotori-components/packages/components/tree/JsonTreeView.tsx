@@ -1,4 +1,4 @@
-import { Entity } from '@/components';
+import { Entity } from '@dotori-components/components';
 
 const JsonTreeView = ({ data, depth = 0 }: JsonTreeViewProps) => (
   <div>

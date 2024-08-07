@@ -1,4 +1,4 @@
-import { hasElement } from '@/utils';
+import { hasElement } from '@dotori-utils/utils';
 
 describe('element util test', () => {
   beforeAll(() => {

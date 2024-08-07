@@ -1,6 +1,6 @@
 import { cn, VariantProps } from 'dotori-utils';
 
-import { ICON_MAP } from '@/constants';
+import { ICON_MAP } from '@dotori-icons/constants';
 
 const Icon = ({ fullSize, size, icon, className, ...props }: IconProps) => {
   const IconComponent = ICON_MAP[icon];

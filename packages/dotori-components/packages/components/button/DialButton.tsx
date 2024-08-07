@@ -1,9 +1,9 @@
-import { Fragment } from 'react/jsx-runtime';
 import { useCreateElement, useHover } from 'dotori-hooks';
 import { Icon } from 'dotori-icons';
 import { cn, VariantProps } from 'dotori-utils';
+import { Fragment } from 'react/jsx-runtime';
 
-import { Button, Portal, Tooltip } from '@/components';
+import { Button, Portal, Tooltip } from '@dotori-components/components';
 
 const DialButton = ({ size, actions, withoutTooltip }: DialButtonProps) => {
   const { hovered: buttonHovered, ref: buttonRef } = useHover<HTMLButtonElement>();

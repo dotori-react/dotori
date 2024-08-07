@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useCreateElement, useElementRect, useOutSideClick } from 'dotori-hooks';
 import { cn, VariantProps } from 'dotori-utils';
 
-import { Portal, ClonedChildren } from '@/components';
+import { Portal, ClonedChildren } from '@dotori-components/components';
 
 const Popover = ({ children, label, position = 'top', gap = 10, color, className }: PopoverProps) => {
   const [clicked, setClicked] = useState(false);

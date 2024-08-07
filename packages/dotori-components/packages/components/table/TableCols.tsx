@@ -1,7 +1,7 @@
 import { useScrollbarWidth } from 'dotori-hooks';
 import { cn } from 'dotori-utils';
 
-import { Checkbox } from '@/components';
+import { Checkbox } from '@dotori-components/components';
 
 import { type TableProps } from './Table';
 import { useTableContext } from './Table.context';

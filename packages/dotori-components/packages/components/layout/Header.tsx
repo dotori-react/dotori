@@ -2,8 +2,8 @@ import { useScroll } from 'dotori-hooks';
 import { cn, VariantProps } from 'dotori-utils';
 import { Link } from 'react-router-dom';
 
-import { Image } from '@/components';
-import { PATH } from '@/constants';
+import { Image } from '@dotori-components/components';
+import { PATH } from '@dotori-components/constants';
 
 const Header = ({ fixedHeader, title, imgSrc, className }: HeaderProps) => {
   const scroll = useScroll();

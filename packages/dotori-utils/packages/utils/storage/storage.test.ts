@@ -1,6 +1,6 @@
 import { Response } from 'node-fetch';
 
-import { cacheStorages, localStorages, sessionStorages } from '@/utils';
+import { cacheStorages, localStorages, sessionStorages } from '@dotori-utils/utils';
 
 describe('localStorage util test', () => {
   it('should return null when no value is set in localStorage', () => {

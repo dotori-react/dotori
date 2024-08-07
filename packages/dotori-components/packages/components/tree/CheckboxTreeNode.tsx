@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useDisClosure } from 'dotori-hooks';
 
-import { Button } from '@/components';
+import { Button } from '@dotori-components/components';
 
 import { type CheckboxTreeData } from './CheckboxTree';
 

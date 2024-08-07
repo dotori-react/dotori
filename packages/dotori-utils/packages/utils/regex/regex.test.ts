@@ -1,4 +1,4 @@
-import { escapeRegex } from '@/utils';
+import { escapeRegex } from '@dotori-utils/utils';
 
 describe('regex util test', () => {
   it('should return processed escape(bracket)', () => {

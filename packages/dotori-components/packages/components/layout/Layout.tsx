@@ -1,4 +1,4 @@
-import { MiniSideBar } from '@/components';
+import { MiniSideBar } from '@dotori-components/components';
 
 import Footer from './Footer';
 import Header from './Header';

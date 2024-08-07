@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Input, Pill } from '@/components';
+import { Input, Pill } from '@dotori-components/components';
 
 import { InputProps } from './Input';
 

@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import { ScreenReaderOnly } from '@/components';
+import { ScreenReaderOnly } from '@dotori-components/components';
 
 const Image = forwardRef<HTMLImageElement, ImageProps>(({ title, alt, ...rest }, ref) => (
   <>

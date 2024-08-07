@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { cn, VariantProps } from 'dotori-utils';
 
-import { ActionIcon } from '@/components';
-import { DAY_OF_WEEKEND } from '@/constants';
+import { ActionIcon } from '@dotori-components/components';
+import { DAY_OF_WEEKEND } from '@dotori-components/constants';
 
 import CalendarDates from './CalendarDates';
 

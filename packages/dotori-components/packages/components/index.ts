@@ -1,5 +1,5 @@
 /** Layout Components */
-import '@/styles/index.css';
+import '@dotori-components/styles/index.css';
 
 export { default as Layout } from './layout/Layout';
 

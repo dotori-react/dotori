@@ -1,6 +1,6 @@
 import { cn, getNowMonthDate } from 'dotori-utils';
 
-import { Entity } from '@/components';
+import { Entity } from '@dotori-components/components';
 
 const Footer = ({ className }: FooterProps) => {
   const { year } = getNowMonthDate();
