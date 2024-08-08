@@ -39,9 +39,7 @@ const Tooltip = ({ children, label, position = 'top', gap = 10, color, className
         </Portal>
       )}
       <div>
-        <ClonedChildren ref={combinedRef}>
-          <span>{children}</span>
-        </ClonedChildren>
+        <ClonedChildren ref={combinedRef}>{children}</ClonedChildren>
       </div>
     </>
   );
