@@ -21,6 +21,7 @@ module.exports = {
       path.resolve(__dirname, './packages/dotori-hooks/tsconfig.json'), // 추가된 경로
       path.resolve(__dirname, './packages/dotori-icons/tsconfig.json'), // 추가된 경로
       path.resolve(__dirname, './packages/dotori-components/tsconfig.json'), // 추가된 경로
+      path.resolve(__dirname, './docs/tsconfig.json'), // 추가된 경로
     ],
     tsconfigRootDir: __dirname,
   },
@@ -38,6 +39,7 @@ module.exports = {
           path.resolve(__dirname, './packages/dotori-hooks/tsconfig.json'), // 추가된 경로
           path.resolve(__dirname, './packages/dotori-icons/tsconfig.json'), // 추가된 경로
           path.resolve(__dirname, './packages/dotori-components/tsconfig.json'), // 추가된 경로
+          path.resolve(__dirname, './docs/tsconfig.json'), // 추가된 경로
         ],
       },
     },

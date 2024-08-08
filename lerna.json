@@ -1,7 +1,5 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*", "docs"],
   "version": "independent",
   "npmClient": "pnpm"
 }
