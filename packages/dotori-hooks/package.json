@@ -1,7 +1,7 @@
 {
   "name": "dotori-hooks",
   "private": false,
-  "version": "0.0.3-alpha.0",
+  "version": "0.0.3-alpha.1",
   "description": "dotori hooks",
   "author": "LEE DONG GYU <tenenger7125@gmail.com>",
   "engines": {
