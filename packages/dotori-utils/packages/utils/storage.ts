@@ -47,24 +47,3 @@ export const sessionStorages = <T = unknown>(key: string) => ({
     return true;
   },
 });
-
-export const cacheStorages = <T = unknown>(url: string, key: string, expireTime: number) => ({
-  async get() {
-    const cacheStorage = await window.caches.open(key);
-    const cacheResponse = (await cacheStorage.match(url)) ?? null;
-
-    return cacheResponse;
-  },
-  async set(value: T) {
-    const cacheStorage = await window.caches.open(key);
-    const response = new Response(JSON.stringify({ value, expirationTime: Date.now() + expireTime }));
-
-    await cacheStorage.put(url, response);
-
-    return true;
-  },
-  async remove() {
-    await window.caches.delete(key);
-    return true;
-  },
-});
