@@ -91,7 +91,7 @@ const tooltipArrowStyle = cn('absolute z-[2] h-2 w-2 rotate-45 rounded-none', {
     },
   },
   defaultVariants: {
-    color: 'yellow',
+    color: 'black',
   },
 });
 
