@@ -8,18 +8,18 @@ importers:
 
   .:
     devDependencies:
-      '@types/jest':
-        specifier: ^29.5.12
-        version: 29.5.12
+      '@jest/globals':
+        specifier: ^29.7.0
+        version: 29.7.0
       '@types/node':
         specifier: ^22.1.0
         version: 22.1.0
-      '@types/node-fetch':
-        specifier: ^2.6.11
-        version: 2.6.11
       '@typescript-eslint/parser':
         specifier: ^8.0.1
         version: 8.0.1(eslint@8.57.0)(typescript@5.5.4)
+      dotori-utils:
+        specifier: workspace:*
+        version: link:packages/dotori-utils
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -53,9 +53,6 @@ importers:
       lint-staged:
         specifier: ^15.2.2
         version: 15.2.8
-      node-fetch:
-        specifier: '2'
-        version: 2.7.0(encoding@0.1.13)
       pnpm:
         specifier: ^9.6.0
         version: 9.6.0
@@ -63,7 +60,7 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
       ts-jest:
-        specifier: ^29.2.3
+        specifier: ^29.2.4
         version: 29.2.4(@babel/core@7.25.2)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.25.2))(jest@29.7.0(@types/node@22.1.0)(ts-node@10.9.2(@types/node@22.1.0)(typescript@5.5.4)))(typescript@5.5.4)
       typescript:
         specifier: ^5.4.5
@@ -1309,9 +1306,6 @@ packages:
   '@types/istanbul-reports@3.0.4':
     resolution: {integrity: sha512-pk2B1NWalF9toCRu6gjBzR69syFjP4Od8WRAX+0mmf9lAjCRicLOWc+ZrxZHx/0XRjotgkF9t6iaMJ+aXcOdZQ==}
 
-  '@types/jest@29.5.12':
-    resolution: {integrity: sha512-eDC8bTvT/QhYdxJAulQikueigY5AsdBRH2yDKW3yveW7svY3+DzN84/2NUgkw10RTiJbWqZrTtoGVdYlvFJdLw==}
-
   '@types/jsdom@20.0.1':
     resolution: {integrity: sha512-d0r18sZPmMQr1eG35u12FZfhIXNrnsPU/g5wvRKCUf/tOGilKKwYMYGqh33BNR6ba+2gkHw1EUiHoN3mn7E5IQ==}
 
@@ -1326,9 +1320,6 @@ packages:
 
   '@types/navermaps@3.7.5':
     resolution: {integrity: sha512-RzqYi0K5xhs45+KLkeoWjz2niDjVwKMYS1/LKns2LH9L7LEMVabdmyhP7n/6fzdJnbHc1wD1Dz+lFKOgq4yzJQ==}
-
-  '@types/node-fetch@2.6.11':
-    resolution: {integrity: sha512-24xFj9R5+rfQJLRyM56qh+wnVSYhyXC2tkoBndtY0U+vubqNsYXGjufB2nn8Q6gt0LrARwL6UBtMCSVCwl4B1g==}
 
   '@types/node@14.18.63':
     resolution: {integrity: sha512-fAtCfv4jJg+ExtXhvCkCqUKZ+4ok/JQk01qDKhL5BDDoS3AxKXhV5/MAVUZyQnSEd2GT92fkgZl0pz0Q0AzcIQ==}
@@ -1360,8 +1351,8 @@ packages:
   '@types/yargs-parser@21.0.3':
     resolution: {integrity: sha512-I4q9QU9MQv4oEOz4tAHJtNz1cwuLxn2F3xcc2iV5WdqLPpUnj30aUuxt1mAxYTG+oe8CZMV/+6rU4S4gRDzqtQ==}
 
-  '@types/yargs@17.0.32':
-    resolution: {integrity: sha512-xQ67Yc/laOG5uMfX/093MRlGGCIBzZMarVa+gfNKJxWAIgykYpVGkBdbqEzGDDfCrVUj6Hiff4mTZ5BA6TmAog==}
+  '@types/yargs@17.0.33':
+    resolution: {integrity: sha512-WpxBCKWPLr4xSsHgz511rFJAM+wS28w2zEO1QDNY5zM/S8ok70NNfztH0xwhqKyaK0OHCbN98LDAZuy1ctxDkA==}
 
   '@typescript-eslint/eslint-plugin@7.18.0':
     resolution: {integrity: sha512-94EQTWZ40mzBc42ATNIBimBEDltSJ9RQHCC8vc/PDbxi4k8dVwUAv4o98dk50M1zB+JGFxp43FP7f8+FP8R6Sw==}
@@ -2543,10 +2534,6 @@ packages:
     resolution: {integrity: sha512-ov6w/2LCiuyO4RLYGdpFGjkcs0wMTgGE8PrkTHikeUy5iJekXyPIKUjifk5CsE0pt7sMCrMZ3YNqoCj6idQOnQ==}
     engines: {node: '>=10'}
 
-  execa@5.1.1:
-    resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
-    engines: {node: '>=10'}
-
   execa@8.0.1:
     resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==}
     engines: {node: '>=16.17'}
@@ -2729,10 +2716,6 @@ packages:
 
   get-stream@6.0.0:
     resolution: {integrity: sha512-A1B3Bh1UmL0bidM/YX2NsCOTnGJePL9rO/M+Mw3m9f2gUpfokS0hi5Eah0WSUEWZdZhIZtMjkIYS7mDfOqNHbg==}
-    engines: {node: '>=10'}
-
-  get-stream@6.0.1:
-    resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
     engines: {node: '>=10'}
 
   get-stream@8.0.1:
@@ -2948,11 +2931,6 @@ packages:
     engines: {node: '>=8'}
     hasBin: true
 
-  import-local@3.2.0:
-    resolution: {integrity: sha512-2SPlun1JUPWoM6t3F0dw0FkCF/jWY8kttcY4f599GLTSjh2OCuuhdTkJQsEcZzBqbXZGKMK2OqW1oZsjtf/gQA==}
-    engines: {node: '>=8'}
-    hasBin: true
-
   imurmurhash@0.1.4:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
     engines: {node: '>=0.8.19'}
@@ -3136,10 +3114,6 @@ packages:
 
   is-stream@2.0.0:
     resolution: {integrity: sha512-XCoy+WlUr7d1+Z8GgSuXmpuUFC9fOhRXglJMx+dwLKTkL44Cjd4W1Z5P+BQZpr+cR93aGP4S/s7Ftw6Nd/kiEw==}
-    engines: {node: '>=8'}
-
-  is-stream@2.0.1:
-    resolution: {integrity: sha512-hFoiJiTl63nn+kstHGBtewWSKnQLpyb155KHheA1l39uvtO9nWIop1p3udqPcUd/xbF1VLMO4n7OI6p7RbngDg==}
     engines: {node: '>=8'}
 
   is-stream@3.0.0:
@@ -5868,7 +5842,7 @@ snapshots:
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
       '@types/node': 22.1.0
-      '@types/yargs': 17.0.32
+      '@types/yargs': 17.0.33
       chalk: 4.1.2
 
   '@jridgewell/gen-mapping@0.3.5':
@@ -6580,11 +6554,6 @@ snapshots:
     dependencies:
       '@types/istanbul-lib-report': 3.0.3
 
-  '@types/jest@29.5.12':
-    dependencies:
-      expect: 29.7.0
-      pretty-format: 29.7.0
-
   '@types/jsdom@20.0.1':
     dependencies:
       '@types/node': 22.1.0
@@ -6600,11 +6569,6 @@ snapshots:
   '@types/navermaps@3.7.5':
     dependencies:
       '@types/geojson': 7946.0.14
-
-  '@types/node-fetch@2.6.11':
-    dependencies:
-      '@types/node': 22.1.0
-      form-data: 4.0.0
 
   '@types/node@14.18.63': {}
 
@@ -6633,7 +6597,7 @@ snapshots:
 
   '@types/yargs-parser@21.0.3': {}
 
-  '@types/yargs@17.0.32':
+  '@types/yargs@17.0.33':
     dependencies:
       '@types/yargs-parser': 21.0.3
 
@@ -8177,18 +8141,6 @@ snapshots:
       signal-exit: 3.0.7
       strip-final-newline: 2.0.0
 
-  execa@5.1.1:
-    dependencies:
-      cross-spawn: 7.0.3
-      get-stream: 6.0.1
-      human-signals: 2.1.0
-      is-stream: 2.0.1
-      merge-stream: 2.0.0
-      npm-run-path: 4.0.1
-      onetime: 5.1.2
-      signal-exit: 3.0.7
-      strip-final-newline: 2.0.0
-
   execa@8.0.1:
     dependencies:
       cross-spawn: 7.0.3
@@ -8382,8 +8334,6 @@ snapshots:
   get-port@5.1.1: {}
 
   get-stream@6.0.0: {}
-
-  get-stream@6.0.1: {}
 
   get-stream@8.0.1: {}
 
@@ -8609,11 +8559,6 @@ snapshots:
       pkg-dir: 4.2.0
       resolve-cwd: 3.0.0
 
-  import-local@3.2.0:
-    dependencies:
-      pkg-dir: 4.2.0
-      resolve-cwd: 3.0.0
-
   imurmurhash@0.1.4: {}
 
   indent-string@4.0.0: {}
@@ -8788,8 +8733,6 @@ snapshots:
 
   is-stream@2.0.0: {}
 
-  is-stream@2.0.1: {}
-
   is-stream@3.0.0: {}
 
   is-string@1.0.7:
@@ -8899,7 +8842,7 @@ snapshots:
 
   jest-changed-files@29.7.0:
     dependencies:
-      execa: 5.1.1
+      execa: 5.0.0
       jest-util: 29.7.0
       p-limit: 3.1.0
 
@@ -8937,7 +8880,7 @@ snapshots:
       chalk: 4.1.2
       create-jest: 29.7.0(@types/node@22.1.0)(ts-node@10.9.2(@types/node@22.1.0)(typescript@5.5.4))
       exit: 0.1.2
-      import-local: 3.2.0
+      import-local: 3.1.0
       jest-config: 29.7.0(@types/node@22.1.0)(ts-node@10.9.2(@types/node@22.1.0)(typescript@5.5.4))
       jest-util: 29.7.0
       jest-validate: 29.7.0
@@ -9213,7 +9156,7 @@ snapshots:
     dependencies:
       '@jest/core': 29.7.0(ts-node@10.9.2(@types/node@22.1.0)(typescript@5.5.4))
       '@jest/types': 29.6.3
-      import-local: 3.2.0
+      import-local: 3.1.0
       jest-cli: 29.7.0(@types/node@22.1.0)(ts-node@10.9.2(@types/node@22.1.0)(typescript@5.5.4))
     transitivePeerDependencies:
       - '@types/node'

@@ -1,4 +1,6 @@
-import { escapeRegex } from '@dotori-utils/utils';
+import { describe, expect, it } from '@jest/globals';
+
+import { escapeRegex } from 'dotori-utils';
 
 describe('regex util test', () => {
   it('should return processed escape(bracket)', () => {

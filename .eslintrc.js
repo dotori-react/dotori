@@ -43,7 +43,4 @@ module.exports = {
     },
   },
   ignorePatterns: ['**/*.html', '**/lib'],
-  globals: {
-    jest: true,
-  },
 };

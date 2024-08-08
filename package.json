@@ -2,13 +2,14 @@
   "name": "dotori-ui",
   "private": true,
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "jest"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.12",
+    "@jest/globals": "^29.7.0",
     "@types/node": "^22.1.0",
-    "@types/node-fetch": "^2.6.11",
     "@typescript-eslint/parser": "^8.0.1",
+    "dotori-utils": "workspace:*",
     "eslint": "^8.57.0",
     "eslint-config-dotori-base": "^0.0.9",
     "eslint-config-dotori-import-sort": "^0.0.6",
@@ -20,10 +21,9 @@
     "jest-environment-jsdom": "^29.7.0",
     "lerna": "^8.1.7",
     "lint-staged": "^15.2.2",
-    "node-fetch": "2",
     "pnpm": "^9.6.0",
     "prettier": "^3.3.3",
-    "ts-jest": "^29.2.3",
+    "ts-jest": "^29.2.4",
     "typescript": "^5.4.5"
   },
   "lint-staged": {
