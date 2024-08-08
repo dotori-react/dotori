@@ -34,7 +34,7 @@ const Tooltip = ({ children, label, position = 'top', gap = 10, color, className
         <Portal target={document.getElementById('tooltip') as HTMLElement}>
           <div ref={tooltipRectRef} className={tooltipStyle({ color, className })} style={tooltipPositionMap[position]}>
             <span>{label}</span>
-            <span className={tooltipArrowStyle({ color, position })} />
+            <span className={tooltipArrowStyle({ position })} />
           </div>
         </Portal>
       )}
@@ -68,17 +68,8 @@ const tooltipStyle = cn('absolute z-[2] text-pretty rounded-md px-4 py-2', {
   },
 });
 
-const tooltipArrowStyle = cn('absolute z-[2] h-2 w-2 rotate-45 rounded-none', {
+const tooltipArrowStyle = cn('absolute z-[2] h-2 w-2 rotate-45 rounded-none bg-inherit', {
   variants: {
-    color: {
-      black: 'bg-gray-900',
-      white: 'bg-gray-100',
-      blue: 'bg-blue-600',
-      gray: 'bg-gray-600',
-      green: 'bg-green-600',
-      red: 'bg-red-600',
-      yellow: 'bg-yellow-600',
-    },
     visible: {
       true: 'visible',
       false: 'invisible',
@@ -89,9 +80,6 @@ const tooltipArrowStyle = cn('absolute z-[2] h-2 w-2 rotate-45 rounded-none', {
       top: 'bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2',
       bottom: 'left-1/2 top-0 -translate-x-1/2 -translate-y-1/2',
     },
-  },
-  defaultVariants: {
-    color: 'black',
   },
 });
 
