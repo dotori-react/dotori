@@ -12,6 +12,7 @@ module.exports = {
   rules: {
     'no-void': 'off',
   },
+  ignorePatterns: ['**/*.html', '**/lib', '**/node_modules', '**/build'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: [
@@ -44,5 +45,13 @@ module.exports = {
       },
     },
   },
-  ignorePatterns: ['**/*.html', '**/lib'],
+  overrides: [
+    {
+      files: ['./docs/scripts', './docs/*.ts', './docs/src'],
+      rules: {
+        'import/no-unresolved': 0,
+        'import/no-extraneous-dependencies': 0,
+      },
+    },
+  ],
 };

@@ -6,6 +6,7 @@
 
 # transpiles
 packages/**/lib
+.docusaurus
 
 # misc
 .DS_Store
@@ -36,6 +37,4 @@ lerna-debug.log*
 
 # cache
 .eslintcache
-
-# draft
-docs/
+.nx/

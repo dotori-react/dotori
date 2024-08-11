@@ -1,9 +1,13 @@
 {
-  "name": "dotori-ui",
+  "name": "dotori",
   "private": true,
   "scripts": {
     "prepare": "husky",
-    "test": "jest"
+    "test": "jest",
+    "docs:copy": "pnpm -C ./docs run docs",
+    "docs:build": "pnpm -C ./docs run build",
+    "docs:dev": "pnpm -C ./docs run start",
+    "docs:prod": "pnpm -C ./docs run serve"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",

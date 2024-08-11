@@ -1,0 +1,11 @@
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container .subtitle {
+  font-size: 2rem;
+  font-weight: bold;
+}

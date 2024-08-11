@@ -1,5 +1,15 @@
 {
-  "packages": ["packages/*", "docs"],
+  "packages": ["packages/*", "./docs"],
+  "command": {
+    "version": {
+      "ignoreChanges": ["**/package.json"],
+      "private": false
+    },
+    "publish": {
+      "ignoreChanges": ["**/package.json"],
+      "private": false
+    }
+  },
   "version": "independent",
   "npmClient": "pnpm"
 }
