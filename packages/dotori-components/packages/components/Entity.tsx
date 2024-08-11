@@ -35,6 +35,6 @@ const entityMap = {
   '}': '&#125;',
 } as const;
 
-const entityStyle = cn('inline-block');
+const entityStyle = cn('inline p-0 bg-inherit');
 
 export default Entity;
