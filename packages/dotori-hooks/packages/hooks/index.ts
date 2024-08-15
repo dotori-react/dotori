@@ -2,7 +2,7 @@ export { default as useOutSideClick } from './useOutSideClick';
 export { default as useScrollObserver } from './useScrollObserver';
 export { default as useMediaQuery } from './useMediaQuery';
 export { default as useDisClosure } from './useDisClosure';
-export { default as useClipboard } from './useClipboard';
+export { default as useClipboard } from './useClipboard/useClipboard';
 export { default as useFullscreen } from './useFullscreen';
 export { default as useMouse } from './useMouse';
 export { default as useHover } from './useHover';
