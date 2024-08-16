@@ -18,7 +18,7 @@ export { default as useResize } from './useResize';
 export { default as useExcelReader } from './useExcelReader';
 export { default as useExcelWriter } from './useExcelWriter';
 export { default as useScrollbarWidth } from './useScrollbarWidth';
-export { default as usePrevious } from './usePrevious';
+export { default as usePrevious } from './usePrevious/usePrevious';
 export { default as useNotification } from './useNotification';
 
 /** Data Structure hooks */
