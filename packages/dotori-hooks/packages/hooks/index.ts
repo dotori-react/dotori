@@ -30,7 +30,7 @@ export { default as useTimer } from './useTimer';
 export { default as useTimeout } from './useTimeout';
 export { default as useInterval } from './useInterval';
 export { default as useDebounceValue } from './useDebounceValue';
-export { default as useDebounceCallback } from './useDebounceCallback';
+export { default as useDebounceCallback } from './useDebounceCallback/useDebounceCallback';
 export { default as useThrottleCallback } from './useThrottleCallback';
 
 export { default as useOptimisticMutation } from './useOptimisticMutation';

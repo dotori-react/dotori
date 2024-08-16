@@ -20,12 +20,9 @@ const useDebounceCallback = ({ callback, ...options }: UseDebounceCallbackParams
     [callback, delay],
   );
 
-  useEffect(
-    () => () => {
-      if (timerIdRef.current !== null) clearTimeout(timerIdRef.current);
-    },
-    [],
-  );
+  useEffect(() => {
+    if (timerIdRef.current !== null) clearTimeout(timerIdRef.current);
+  }, []);
 
   return debouncedCallback;
 };
