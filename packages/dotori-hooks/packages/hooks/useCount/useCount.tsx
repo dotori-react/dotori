@@ -2,12 +2,7 @@ import { useCallback, useState } from 'react';
 
 import { range } from 'dotori-utils';
 
-const useCount = (
-  initialCount: number = 0,
-  min: number = -Infinity,
-  max: number = Infinity,
-  callback?: (count: number) => void,
-) => {
+const useCount = ({ initialCount = 0, min = -Infinity, max = Infinity, callback }: UseCountParams) => {
   const [count, setCount] = useState(initialCount);
 
   const increment = useCallback(() => {
@@ -18,6 +13,7 @@ const useCount = (
       return increasedCount;
     });
   }, [callback, max]);
+
   const decrement = useCallback(() => {
     setCount(prev => {
       const decreasedCount = prev > min ? prev - 1 : prev;
@@ -26,6 +22,7 @@ const useCount = (
       return decreasedCount;
     });
   }, [callback, min]);
+
   const set = useCallback(
     (_count: number) => {
       const updatedCount = range(_count, min, max);
@@ -35,6 +32,7 @@ const useCount = (
     },
     [callback, max, min],
   );
+
   const reset = useCallback(() => {
     if (callback) callback(initialCount);
     setCount(initialCount);
@@ -48,5 +46,12 @@ const useCount = (
     reset,
   };
 };
+
+interface UseCountParams {
+  initialCount?: number;
+  min?: number;
+  max?: number;
+  callback?: (count: number) => void;
+}
 
 export default useCount;
