@@ -14,13 +14,12 @@ const NaverMap = ({
   onDragEnd,
   ...mapOptions
 }: NaverMapProps) => {
-  const {
-    geolocation: { latitude, longitude },
-  } = useGeolocation();
+  const { geolocation } = useGeolocation();
   const [map, setMap] = useState<naver.maps.Map | null>(null);
   const [markerCoord, setMarkerCoord] = useState<naver.maps.Coord | null>(null);
   const ref = useRef<HTMLDivElement | null>(null);
 
+  const { latitude, longitude } = geolocation || { latitude: 0, longitude: 0 };
   const [y, x] = [markerCoord?.y ?? latitude, markerCoord?.x ?? longitude];
 
   useEffect(() => {
