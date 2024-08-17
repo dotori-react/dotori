@@ -32,7 +32,7 @@ const useNotification = ({
       try {
         await Notification.requestPermission();
       } catch (err) {
-        console.error(`Notification is not exist`);
+        console.error(`Notification is not supported`);
       }
     })();
   }, []);
