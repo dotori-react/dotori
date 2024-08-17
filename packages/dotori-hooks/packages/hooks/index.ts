@@ -3,7 +3,7 @@ export { default as useScrollObserver } from './useScrollObserver';
 export { default as useMediaQuery } from './useMediaQuery/useMediaQuery';
 export { default as useDisClosure } from './useDisClosure/useDisClosure';
 export { default as useClipboard } from './useClipboard/useClipboard';
-export { default as useFullscreen } from './useFullscreen';
+export { default as useFullscreen } from './useFullscreen/useFullscreen';
 export { default as useMouse } from './useMouse';
 export { default as useHover } from './useHover';
 export { default as useElementRect } from './useElementRect';
