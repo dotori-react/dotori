@@ -14,7 +14,9 @@ const NaverMap = ({
   onDragEnd,
   ...mapOptions
 }: NaverMapProps) => {
-  const { latitude, longitude } = useGeolocation();
+  const {
+    geolocation: { latitude, longitude },
+  } = useGeolocation();
   const [map, setMap] = useState<naver.maps.Map | null>(null);
   const [markerCoord, setMarkerCoord] = useState<naver.maps.Coord | null>(null);
   const ref = useRef<HTMLDivElement | null>(null);
