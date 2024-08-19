@@ -1,11 +1,17 @@
-import { useRef, useEffect } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 const useOutSideClick = <T extends HTMLElement>(callback: () => void) => {
-  const ref = useRef<T | null>(null);
+  const [element, setElement] = useState<T | null>(null);
+
+  const ref = useCallback((node: T | null) => {
+    setElement(node);
+  }, []);
 
   useEffect(() => {
+    if (element === null) return undefined;
+
     const listener = (e: MouseEvent) => {
-      if (!ref.current || ref.current.contains(e.target as Node)) return;
+      if (element.contains(e.target as HTMLElement)) return;
 
       callback();
     };
@@ -15,7 +21,7 @@ const useOutSideClick = <T extends HTMLElement>(callback: () => void) => {
     return () => {
       document.removeEventListener('click', listener);
     };
-  }, [callback]);
+  }, [callback, element]);
 
   return ref;
 };
