@@ -1,13 +1,15 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 const useHover = <T extends HTMLElement>() => {
   const [hovered, setHovered] = useState(false);
-  const ref = useRef<T | null>(null);
+  const [element, setElement] = useState<T | null>(null);
+
+  const ref = useCallback((node: T | null) => {
+    setElement(node);
+  }, []);
 
   useEffect(() => {
-    if (!ref.current) return () => {};
-
-    const element = ref.current;
+    if (element === null) return undefined;
 
     const handleMouseEnter = () => setHovered(true);
     const handleMouseLeave = (e: MouseEvent) => {
@@ -23,8 +25,7 @@ const useHover = <T extends HTMLElement>() => {
       element.removeEventListener('mouseenter', handleMouseEnter);
       element.removeEventListener('mouseleave', handleMouseLeave);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ref.current]);
+  }, [element]);
 
   return { hovered, ref };
 };
