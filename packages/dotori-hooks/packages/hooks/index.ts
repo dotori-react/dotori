@@ -5,7 +5,7 @@ export { default as useDisClosure } from './useDisClosure/useDisClosure';
 export { default as useClipboard } from './useClipboard/useClipboard';
 export { default as useFullscreen } from './useFullscreen/useFullscreen';
 export { default as useMouse } from './useMouse';
-export { default as useHover } from './useHover';
+export { default as useHover } from './useHover/useHover';
 export { default as useElementRect } from './useElementRect';
 export { default as useCreateElement } from './useCreateElement/useCreateElement';
 export { default as useGeolocation } from './useGeolocation/useGeolocation';
