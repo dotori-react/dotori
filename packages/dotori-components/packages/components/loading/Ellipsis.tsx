@@ -16,11 +16,14 @@ const Ellipsis = ({
 
   const circleTotalArray = Array.from({ length: circleTotal });
 
-  useInterval(() => {
-    const maxDelay = circleTotal + showedCircleTotal + lastDelay;
+  useInterval({
+    callback: () => {
+      const maxDelay = circleTotal + showedCircleTotal + lastDelay;
 
-    setCount(prev => (prev === maxDelay ? -firstDelay : prev + 1));
-  }, slow);
+      setCount(prev => (prev === maxDelay ? -firstDelay : prev + 1));
+    },
+    milliseconds: slow,
+  });
 
   return (
     <div className="flex h-10 items-center justify-center">
