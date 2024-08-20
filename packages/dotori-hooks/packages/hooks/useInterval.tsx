@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const useInterval = (callback: () => void, milliseconds: number) => {
+const useInterval = ({ callback, milliseconds }: UseIntervalParams) => {
   useEffect(() => {
     const timer = setInterval(() => callback(), milliseconds);
 
@@ -9,5 +9,10 @@ const useInterval = (callback: () => void, milliseconds: number) => {
     };
   }, [callback, milliseconds]);
 };
+
+interface UseIntervalParams {
+  callback: () => void;
+  milliseconds: number;
+}
 
 export default useInterval;
