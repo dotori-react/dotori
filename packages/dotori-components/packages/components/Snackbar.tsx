@@ -7,7 +7,7 @@ const Snackbar = ({ title, description, position, delay = 500000, className }: S
   const { isOpen, close } = useDisClosure(true);
   const ref = useOutSideClick(close);
   useCreateElement([{ tagName: 'div', attributes: { id: 'snackbar' } }]);
-  useTimeout(close, delay);
+  useTimeout({ callback: close, milliseconds: delay });
 
   return (
     <>
