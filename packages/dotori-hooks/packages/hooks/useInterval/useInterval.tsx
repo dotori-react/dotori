@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const useInterval = ({ callback, milliseconds }: UseIntervalParams) => {
   useEffect(() => {
-    const timer = setInterval(() => callback(), milliseconds);
+    const timer = setInterval(callback, milliseconds);
 
     return () => {
       clearInterval(timer);
