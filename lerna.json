@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/*", "./docs"],
+  "packages": ["packages/*", "./docs", "./dev"],
   "command": {
     "version": {
       "ignoreChanges": ["**/package.json"],
