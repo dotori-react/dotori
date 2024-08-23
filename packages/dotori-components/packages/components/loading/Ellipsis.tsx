@@ -22,7 +22,8 @@ const Ellipsis = ({
 
       setCount(prev => (prev === maxDelay ? -firstDelay : prev + 1));
     },
-    milliseconds: slow,
+    ms: slow,
+    immediate: true,
   });
 
   return (
