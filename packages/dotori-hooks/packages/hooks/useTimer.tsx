@@ -1,73 +1,72 @@
 import { useRef, useState } from 'react';
 
-const Timer = () => {
-  const [timer, setTimer] = useState(0);
-  const [displayedTimer, setDisPlayedTimer] = useState('00:00:000');
+import { getDisplayTime, getTime } from 'dotori-utils';
+
+import { useInterval } from '@dotori-hooks/hooks';
+
+const useTimer = () => {
+  const [time, setTime] = useState(defaultTime);
   const [laps, setLaps] = useState<string[]>([]);
   const timerIdRef = useRef<NodeJS.Timeout | null>(null);
-  const ellipseTimeRef = useRef(0);
+  const elapsedTimeRef = useRef(0);
+
+  const { interval, clear } = useInterval();
 
   const start = () => {
-    if (timerIdRef.current) return;
-
     const now = new Date();
 
-    const timerId = setInterval(() => {
-      const next = new Date();
-      const { time, displayTime } = getTimer(ellipseTimeRef.current + (next.getTime() - now.getTime()) / 1000);
+    timerIdRef.current = interval({
+      callback: () => {
+        const next = new Date();
 
-      setTimer(time);
-      setDisPlayedTimer(displayTime);
-    }, 10);
-
-    timerIdRef.current = timerId;
+        setTime(getTime(elapsedTimeRef.current + (next.getTime() - now.getTime())));
+      },
+      ms: 1,
+      options: {
+        exitOnExist: true,
+      },
+    });
   };
 
   const stop = () => {
-    if (!timerIdRef.current) return;
-
-    clearInterval(timerIdRef.current);
-    ellipseTimeRef.current = timer;
-    timerIdRef.current = null;
+    clear();
+    elapsedTimeRef.current = time.raw;
   };
 
   const reset = () => {
-    if (timerIdRef.current) clearInterval(timerIdRef.current);
+    clear();
+    elapsedTimeRef.current = 0;
 
-    timerIdRef.current = null;
-    ellipseTimeRef.current = 0;
-
-    setTimer(0);
-    setDisPlayedTimer('00:00:000');
-    setLaps([]);
+    setTime(defaultTime);
+    lapsReset();
   };
 
   const split = () => {
-    setLaps([...laps, displayedTimer]);
+    setLaps(prev => [...prev, getDisplayTime(time.raw)]);
+  };
+
+  const lapsReset = () => {
+    setLaps([]);
   };
 
   return {
-    timer,
-    displayedTimer,
+    time,
+    displayTime: getDisplayTime(time.raw),
     laps,
     start,
     stop,
     reset,
     split,
+    lapsReset,
   };
 };
 
-const getTimer = (time: number) => {
-  const [integer, decimal] = time.toFixed(3).split('.').map(Number);
-
-  const minutes = `${Math.floor(integer / 60)}`.padStart(2, '0');
-  const seconds = `${Math.floor(integer % 60)}`.padStart(2, '0');
-  const milliseconds = `${decimal}`.padEnd(3, '0');
-
-  return {
-    time,
-    displayTime: `${minutes}:${seconds}:${milliseconds}`,
-  };
+const defaultTime = {
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+  milliseconds: 0,
+  raw: 0,
 };
 
-export default Timer;
+export default useTimer;
