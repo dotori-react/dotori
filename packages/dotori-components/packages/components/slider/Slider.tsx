@@ -31,7 +31,7 @@ const Slider = ({
   const filledWidthPercentage = convertPercentage(controlledValue - min < 0 ? 0 : controlledValue - min, max - min);
 
   const combineSliderContainerRef = (element: HTMLDivElement) => {
-    hoverRef.current = element;
+    hoverRef(element);
     rectRef.current = element;
   };
 

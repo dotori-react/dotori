@@ -7,7 +7,12 @@ import { cn } from 'dotori-utils';
 import { Button } from '@dotori-components/components';
 
 const Pagination = ({ pageTotal, page, onChange }: PaginationProps) => {
-  const { count, increment, decrement, set } = useCount(page, 1, pageTotal, onChange);
+  const { count, increment, decrement, set } = useCount({
+    initialCount: page,
+    min: 1,
+    max: pageTotal,
+    callback: onChange,
+  });
   const pagingNavigationTotal = Array.from({ length: pageTotal }, (_, i) => i + 1);
 
   // ^ currenPage가 중간에 붙는 로직

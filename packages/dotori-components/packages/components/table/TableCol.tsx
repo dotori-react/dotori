@@ -18,7 +18,7 @@ const TableCol = <T extends { id: string | number }>({ col }: TableColProps<T>) 
   const orderBy = ctx.selectedColumn?.field !== col.field || ctx.orderBy === 'default' ? 'default' : ctx.orderBy;
 
   const combineRef = (element: HTMLTableCellElement) => {
-    hoverArrowRef.current = element;
+    hoverArrowRef(element);
     rectRef.current = element;
   };
 

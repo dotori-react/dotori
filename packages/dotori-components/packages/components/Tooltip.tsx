@@ -17,7 +17,7 @@ const Tooltip = ({ children, label, position = 'top', gap = 10, color, className
   useCreateElement([{ tagName: 'div', attributes: { id: 'tooltip' } }]);
 
   const combinedRef = (node: HTMLDivElement) => {
-    hoveredRef.current = node;
+    hoveredRef(node);
     elementRectRef.current = node;
   };
 

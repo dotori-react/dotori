@@ -21,7 +21,7 @@ const Popover = ({ children, label, position = 'top', gap = 10, color, className
 
   const combinedPopoverRef = (node: HTMLDivElement) => {
     popoverRectRef.current = node;
-    targetRef.current = node;
+    targetRef(node);
   };
 
   const popoverPositionMap = {
