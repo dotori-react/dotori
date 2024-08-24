@@ -26,7 +26,7 @@ export { default as useMap } from './useMap';
 export { default as useQueue } from './useQueue';
 
 /** Timer hooks */
-export { default as useTimer } from './useTimer';
+export { default as useTimer } from './useTimer/useTimer';
 export { default as useTimeout } from './useTimeout/useTimeout';
 export { default as useInterval } from './useInterval/useInterval';
 export { default as useDebounceValue } from './useDebounceValue';
