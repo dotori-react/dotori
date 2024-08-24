@@ -3,11 +3,11 @@ import { cn, VariantProps } from 'dotori-utils';
 
 import { CloseButton, Portal } from '@dotori-components/components';
 
-const Snackbar = ({ title, description, position, delay = 500000, className }: SnackbarProps) => {
+const Snackbar = ({ title, description, position, delay = 5000, className }: SnackbarProps) => {
   const { isOpen, close } = useDisClosure(true);
   const ref = useOutSideClick(close);
   useCreateElement([{ tagName: 'div', attributes: { id: 'snackbar' } }]);
-  useTimeout({ callback: close, milliseconds: delay });
+  useTimeout({ callback: close, ms: delay, immediate: true });
 
   return (
     <>
