@@ -17,7 +17,7 @@ export { default as useDrag } from './useDrag';
 export { default as useResize } from './useResize';
 export { default as useExcelReader } from './useExcelReader';
 export { default as useExcelWriter } from './useExcelWriter';
-export { default as useScrollbarWidth } from './useScrollbarWidth';
+export { default as useScrollbarWidth } from './useScrollbarWidth/useScrollbarWidth';
 export { default as usePrevious } from './usePrevious/usePrevious';
 export { default as useNotification } from './useNotification/useNotification';
 

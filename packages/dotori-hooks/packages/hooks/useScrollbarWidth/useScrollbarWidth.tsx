@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 const useScrollbarWidth = () => {
-  const [scrollbarWidth, setScrollbarWidth] = useState(0);
+  const scrollbarWidth = useRef(0);
 
   useEffect(() => {
     const outer = document.createElement('div');
@@ -15,10 +15,10 @@ const useScrollbarWidth = () => {
     const width = outer.offsetWidth - inner.offsetWidth;
     outer.remove();
 
-    setScrollbarWidth(width);
+    scrollbarWidth.current = width;
   }, []);
 
-  return scrollbarWidth;
+  return scrollbarWidth.current;
 };
 
 export default useScrollbarWidth;
