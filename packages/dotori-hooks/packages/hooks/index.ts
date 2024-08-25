@@ -22,7 +22,7 @@ export { default as usePrevious } from './usePrevious/usePrevious';
 export { default as useNotification } from './useNotification/useNotification';
 
 /** Data Structure hooks */
-export { default as useMap } from './useMap';
+export { default as useMap } from './useMap/useMap';
 export { default as useQueue } from './useQueue';
 
 /** Timer hooks */
