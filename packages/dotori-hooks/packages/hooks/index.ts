@@ -35,4 +35,4 @@ export { default as useThrottleCallback } from './useThrottleCallback';
 
 /** mutation hooks */
 export { default as useOptimisticMutation } from './mutations/useOptimisticMutation/useOptimisticMutation';
-export { default as usePessimisticMutation } from './usePessimisticMutation';
+export { default as usePessimisticMutation } from './mutations/usePessimisticMutation/usePessimisticMutation';
