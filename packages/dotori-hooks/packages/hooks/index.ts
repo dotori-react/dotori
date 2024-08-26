@@ -33,5 +33,6 @@ export { default as useDebounceValue } from './useDebounceValue';
 export { default as useDebounceCallback } from './useDebounceCallback/useDebounceCallback';
 export { default as useThrottleCallback } from './useThrottleCallback';
 
-export { default as useOptimisticMutation } from './useOptimisticMutation';
+/** mutation hooks */
+export { default as useOptimisticMutation } from './mutations/useOptimisticMutation/useOptimisticMutation';
 export { default as usePessimisticMutation } from './usePessimisticMutation';
