@@ -6,5 +6,12 @@
       "@dotori-components/*": ["./packages/*"]
     }
   },
-  "include": ["./packages", "./vite.config.ts", "../../.eslintrc.js", "./postcss.config.mts", "./tailwind.config.ts"]
+  "include": [
+    "./packages",
+    "./vite.config.ts",
+    "../../.eslintrc.js",
+    "./postcss.config.mts",
+    "./tailwind.config.ts",
+    "./config"
+  ]
 }
