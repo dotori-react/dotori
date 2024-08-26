@@ -1,5 +1,5 @@
 export { default as useOutSideClick } from './useOutSideClick/useOutSideClick';
-export { default as useScrollObserver } from './useScrollObserver';
+export { default as useScrollObserver } from './useScrollObserver/useScrollObserver';
 export { default as useMediaQuery } from './useMediaQuery/useMediaQuery';
 export { default as useDisClosure } from './useDisClosure/useDisClosure';
 export { default as useClipboard } from './useClipboard/useClipboard';
