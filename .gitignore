@@ -10,7 +10,6 @@ packages/**/lib
 
 # misc
 .DS_Store
-.husky
 .env
 *.local
 public
