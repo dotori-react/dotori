@@ -13,6 +13,11 @@
     "@jest/globals": "^29.7.0",
     "@types/node": "^22.1.0",
     "@typescript-eslint/parser": "^8.0.1",
+    "dotori-components": "workspace:*",
+    "dotori-context": "workspace:*",
+    "dotori-hooks": "workspace:*",
+    "dotori-icons": "workspace:*",
+    "dotori-utils": "workspace:*",
     "eslint": "^8.57.0",
     "eslint-config-dotori-base": "^0.0.9",
     "eslint-config-dotori-import-sort": "^0.0.6",
@@ -30,7 +35,7 @@
     "typescript": "^5.4.5"
   },
   "lint-staged": {
-    "*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}": "eslint --cache --fix",
-    "*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,css,md}": "prettier --write"
+    "**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}": "eslint --cache --fix",
+    "**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,css,md}": "prettier --write"
   }
 }
