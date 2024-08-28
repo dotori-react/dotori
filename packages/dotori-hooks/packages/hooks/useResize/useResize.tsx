@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { range } from 'dotori-utils';
 
-import { useElementRect } from './index';
+import { useElementRect } from '@dotori-hooks/hooks';
 
 const useResize = <BoundaryElement extends HTMLElement, ResizeElement extends HTMLElement>(
   options?: UseResizeOptions,
@@ -73,11 +73,11 @@ const useResize = <BoundaryElement extends HTMLElement, ResizeElement extends HT
   return { boundaryRef, resizeRef };
 };
 
-type UseResizeOptions = {
+interface UseResizeOptions {
   minWidth?: number;
   minHeight?: number;
   maxWidth?: number;
   maxHeight?: number;
-};
+}
 
 export default useResize;
