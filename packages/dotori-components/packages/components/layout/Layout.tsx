@@ -18,8 +18,8 @@ const Layout = ({ children }: LayoutProps) => (
   </>
 );
 
-type LayoutProps = {
+interface LayoutProps {
   children: React.ReactNode;
-};
+}
 
 export default Layout;

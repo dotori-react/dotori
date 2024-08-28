@@ -4,10 +4,10 @@ import { Navigate } from 'react-router-dom';
 const PrivateRoute = ({ token, element, redirectTo }: PrivateRouteProps) =>
   token ? element : <Navigate to={redirectTo} />;
 
-type PrivateRouteProps = {
+interface PrivateRouteProps {
   token?: string | undefined;
   element: React.ReactNode;
   redirectTo: string;
-};
+}
 
 export default PrivateRoute;

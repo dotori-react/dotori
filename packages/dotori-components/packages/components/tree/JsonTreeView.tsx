@@ -37,9 +37,9 @@ const JsonTreeView = ({ data, depth = 0 }: JsonTreeViewProps) => (
   </div>
 );
 
-type JsonData = {
+interface JsonData {
   [depth: string]: string | number | boolean | object | null | undefined | JsonData[];
-};
+}
 
 interface JsonTreeViewProps {
   data: JsonData[];
