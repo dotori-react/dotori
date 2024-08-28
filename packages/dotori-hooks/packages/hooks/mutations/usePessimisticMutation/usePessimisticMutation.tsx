@@ -15,9 +15,9 @@ const usePessimisticMutation = <TData, TVariables>({
   });
 };
 
-type PessimisticMutationOptions<TData = unknown, TVariables = void> = {
+interface PessimisticMutationOptions<TData = unknown, TVariables = void> {
   mutationKey: MutationKey;
   mutationFn: MutationFunction<TData, TVariables>;
-};
+}
 
 export default usePessimisticMutation;
