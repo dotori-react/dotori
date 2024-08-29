@@ -13,7 +13,7 @@ export { default as useDarkMode } from './useDarkMode/useDarkMode';
 export { default as useScroll } from './useScroll';
 export { default as useCount } from './useCount/useCount';
 export { default as useDoubleClick } from './useDoubleClick/useDoubleClick';
-export { default as useDrag } from './useDrag';
+export { default as useDrag } from './useDrag/useDrag';
 export { default as useResize } from './useResize/useResize';
 export { default as useExcelReader } from './useExcelReader';
 export { default as useExcelWriter } from './useExcelWriter';

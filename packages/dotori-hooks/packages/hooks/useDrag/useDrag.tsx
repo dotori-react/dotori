@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { range } from 'dotori-utils';
 
-import { useElementRect } from './index';
+import { useElementRect } from '@dotori-hooks/hooks';
 
 const useDrag = <BoundaryElement extends HTMLElement, DragElement extends HTMLElement>() => {
   const [isMouseDown, setIsMouseDown] = useState(false);
