@@ -2,7 +2,13 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import type { TimeOptions } from '@dotori-hooks/types';
 
-const useTime = ({ callback = () => {}, ms = 1000, immediate = false, setTimeHandler, clearTime }: UseTimeParams) => {
+const useTime = ({
+  callback = () => {},
+  ms = 1000,
+  immediate = false,
+  setTimeHandler,
+  clearTimeHandler,
+}: UseTimeParams) => {
   const timeId = useRef<NodeJS.Timeout | null>(null);
 
   const time = useCallback(
@@ -15,7 +21,7 @@ const useTime = ({ callback = () => {}, ms = 1000, immediate = false, setTimeHan
       };
 
       if (timeId.current) {
-        if (timeParams.options.clearOnExist) clearTime(timeId.current);
+        if (timeParams.options.clearOnExist) clearTimeHandler(timeId.current);
 
         if (timeParams.options.exitOnExist) return null;
       }
@@ -27,13 +33,13 @@ const useTime = ({ callback = () => {}, ms = 1000, immediate = false, setTimeHan
 
       return timeId.current;
     },
-    [callback, clearTime, ms, setTimeHandler],
+    [callback, clearTimeHandler, ms, setTimeHandler],
   );
 
   const clear = () => {
     if (!timeId.current) return;
 
-    clearTime(timeId.current);
+    clearTimeHandler(timeId.current);
     timeId.current = null;
   };
 
@@ -42,9 +48,9 @@ const useTime = ({ callback = () => {}, ms = 1000, immediate = false, setTimeHan
     timeId.current = setInterval(callback, ms);
 
     return () => {
-      if (timeId.current) clearTime(timeId.current);
+      if (timeId.current) clearTimeHandler(timeId.current);
     };
-  }, [callback, clearTime, immediate, ms]);
+  }, [callback, clearTimeHandler, immediate, ms]);
 
   return {
     time,
@@ -57,7 +63,7 @@ export interface UseTimeParams {
   ms?: number;
   immediate?: boolean;
   setTimeHandler: typeof setInterval | typeof setTimeout;
-  clearTime: typeof clearInterval | typeof clearTimeout;
+  clearTimeHandler: typeof clearInterval | typeof clearTimeout;
 }
 
 export interface TimeCallbackParams extends Pick<Partial<UseTimeParams>, 'callback' | 'ms'> {
