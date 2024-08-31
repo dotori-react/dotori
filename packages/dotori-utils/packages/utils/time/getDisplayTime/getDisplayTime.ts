@@ -1,4 +1,4 @@
-import { getTime } from './time/getTime/getTime';
+import { getTime } from '@dotori-utils/utils';
 
 export const getDisplayTime = (_milliseconds: number) => {
   const { hours, minutes, seconds, milliseconds } = getTime(_milliseconds);
