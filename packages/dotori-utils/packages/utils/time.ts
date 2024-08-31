@@ -1,14 +1,3 @@
-export const measureTime = async (callback: () => void | Promise<void>) => {
-  const startTime = performance.now();
-
-  const result = callback();
-  if (result instanceof Promise) await result;
-
-  const endTime = performance.now();
-
-  return endTime - startTime;
-};
-
 export const getTime = (_milliseconds: number) => ({
   hours: Math.floor(_milliseconds / 1000 / 60 / 60) % 60,
   minutes: Math.floor(_milliseconds / 1000 / 60) % 60,
