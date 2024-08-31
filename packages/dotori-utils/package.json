@@ -1,7 +1,7 @@
 {
   "name": "dotori-utils",
   "private": false,
-  "version": "0.0.20-alpha.1",
+  "version": "0.0.20-alpha.2",
   "description": "dotori utils",
   "type": "module",
   "author": "LEE DONG GYU <tenenger7125@gmail.com>",
