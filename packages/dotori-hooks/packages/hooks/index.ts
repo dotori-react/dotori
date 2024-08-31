@@ -10,7 +10,7 @@ export { default as useElementRect } from './useElementRect';
 export { default as useCreateElement } from './useCreateElement/useCreateElement';
 export { default as useGeolocation } from './useGeolocation/useGeolocation';
 export { default as useDarkMode } from './useDarkMode/useDarkMode';
-export { default as useScroll } from './useScroll';
+export { default as useScroll } from './useScroll/useScroll';
 export { default as useCount } from './useCount/useCount';
 export { default as useDoubleClick } from './useDoubleClick/useDoubleClick';
 export { default as useDrag } from './useDrag/useDrag';
