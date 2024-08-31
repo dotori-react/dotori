@@ -24,6 +24,6 @@ export const sortFromObjectArray = <T extends object>({ array, key, order }: Sor
 
 interface SortFromObjectArrayParams<T extends object> {
   array: T[];
-  key: keyof T;
+  key: keyof T | undefined | null;
   order: 'asc' | 'desc';
 }
