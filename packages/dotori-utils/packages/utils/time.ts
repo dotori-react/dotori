@@ -1,10 +1,3 @@
-export const sleep = (timer: number) =>
-  new Promise(resolve => {
-    setTimeout(() => {
-      resolve('wake!');
-    }, timer);
-  });
-
 export const measureTime = async (callback: () => void | Promise<void>) => {
   const startTime = performance.now();
 

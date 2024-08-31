@@ -1,6 +1,4 @@
-/** helper */
-export * from './helper/cn/cn';
-
+export * from './helper';
 export * from './date';
 export * from './element';
 export * from './format';
@@ -10,5 +8,4 @@ export * from './time';
 export * from './number';
 export * from './file';
 export * from './regex';
-
 export * from './storage';
