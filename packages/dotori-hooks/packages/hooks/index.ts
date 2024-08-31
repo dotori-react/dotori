@@ -30,8 +30,7 @@ export { default as useTimeout } from './time/useTimeout/useTimeout';
 export { default as useInterval } from './time/useInterval/useInterval';
 export { default as useTimer } from './time/useTimer/useTimer';
 export { default as useDebounce } from './eventControl/useDebounce/useDebounce';
-
-export { default as useThrottleCallback } from './useThrottleCallback';
+export { default as useThrottle } from './eventControl/useThrottle/useThrottle';
 
 /** mutation hooks */
 export { default as useOptimisticMutation } from './mutations/useOptimisticMutation/useOptimisticMutation';
