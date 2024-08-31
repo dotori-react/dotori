@@ -1,6 +1,6 @@
-import useTime from '@dotori-hooks/hooks/useTime/useTime';
+import useTime from '@dotori-hooks/hooks/time/useTime';
 
-import type { UseTimeParams } from '@dotori-hooks/hooks/useTime/useTime';
+import type { UseTimeParams } from '@dotori-hooks/hooks/time/useTime';
 
 const useTimeout = (params: UseTimeoutParams = {}) => {
   const { time: timeout, clear } = useTime({ ...params, setTimeHandler: setTimeout, clearTimeHandler: clearTimeout });

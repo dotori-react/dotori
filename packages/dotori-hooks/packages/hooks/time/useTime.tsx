@@ -6,6 +6,7 @@ const useTime = ({
   callback = () => {},
   ms = 1000,
   immediate = false,
+  options = { clearOnExist: true, exitOnExist: true },
   setTimeHandler,
   clearTimeHandler,
 }: UseTimeParams) => {
@@ -16,7 +17,7 @@ const useTime = ({
       const timeParams = {
         callback,
         ms,
-        options: { clearOnExist: true, exitOnExist: true },
+        options,
         ...params,
       };
 
@@ -33,7 +34,7 @@ const useTime = ({
 
       return timeId.current;
     },
-    [callback, clearTimeHandler, ms, setTimeHandler],
+    [callback, clearTimeHandler, ms, options, setTimeHandler],
   );
 
   const clear = () => {
@@ -64,6 +65,7 @@ export interface UseTimeParams {
   immediate?: boolean;
   setTimeHandler: typeof setInterval | typeof setTimeout;
   clearTimeHandler: typeof clearInterval | typeof clearTimeout;
+  options?: TimeOptions;
 }
 
 export interface TimeCallbackParams extends Pick<Partial<UseTimeParams>, 'callback' | 'ms'> {

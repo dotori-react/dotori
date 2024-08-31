@@ -1,6 +1,6 @@
-import useTime from '@dotori-hooks/hooks/useTime/useTime';
+import useTime from '@dotori-hooks/hooks/time/useTime';
 
-import type { UseTimeParams } from '@dotori-hooks/hooks/useTime/useTime';
+import type { UseTimeParams } from '@dotori-hooks/hooks/time/useTime';
 
 const useInterval = (params: UseIntervalParams = {}) => {
   const { time: interval, clear } = useTime({

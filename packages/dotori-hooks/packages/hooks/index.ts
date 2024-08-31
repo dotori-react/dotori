@@ -25,10 +25,10 @@ export { default as useNotification } from './useNotification/useNotification';
 export { default as useMap } from './useMap/useMap';
 export { default as useQueue } from './useDataStructure/useQueue/useQueue';
 
-/** Timer hooks */
-export { default as useTimer } from './useTimer/useTimer';
-export { default as useTimeout } from './useTime/useTimeout/useTimeout';
-export { default as useInterval } from './useTime/useInterval/useInterval';
+/** Time hooks */
+export { default as useTimeout } from './time/useTimeout/useTimeout';
+export { default as useInterval } from './time/useInterval/useInterval';
+export { default as useTimer } from './time/useTimer/useTimer';
 export { default as useDebounceValue } from './useDebounceValue';
 export { default as useDebounceCallback } from './useDebounceCallback/useDebounceCallback';
 export { default as useThrottleCallback } from './useThrottleCallback';
