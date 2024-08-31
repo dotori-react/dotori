@@ -1,10 +1,4 @@
-export const getTime = (_milliseconds: number) => ({
-  hours: Math.floor(_milliseconds / 1000 / 60 / 60) % 60,
-  minutes: Math.floor(_milliseconds / 1000 / 60) % 60,
-  seconds: Math.floor(_milliseconds / 1000) % 60,
-  milliseconds: _milliseconds % 1000,
-  raw: _milliseconds,
-});
+import { getTime } from './time/getTime/getTime';
 
 export const getDisplayTime = (_milliseconds: number) => {
   const { hours, minutes, seconds, milliseconds } = getTime(_milliseconds);
