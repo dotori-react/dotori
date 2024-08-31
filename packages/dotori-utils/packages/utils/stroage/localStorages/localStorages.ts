@@ -1,6 +1,6 @@
-export const sessionStorages = <T = unknown>(key: string) => ({
+export const localStorages = <T = unknown>(key: string) => ({
   get() {
-    const storedValue = sessionStorage.getItem(key);
+    const storedValue = localStorage.getItem(key);
 
     if (storedValue === null) return null;
 
@@ -12,12 +12,12 @@ export const sessionStorages = <T = unknown>(key: string) => ({
     }
   },
   set(newValue: T) {
-    sessionStorage.setItem(key, JSON.stringify(newValue));
+    localStorage.setItem(key, JSON.stringify(newValue));
 
     return true;
   },
   remove() {
-    sessionStorage.removeItem(key);
+    localStorage.removeItem(key);
 
     return true;
   },
