@@ -15,8 +15,7 @@ export { default as useCount } from './useCount/useCount';
 export { default as useDoubleClick } from './useDoubleClick/useDoubleClick';
 export { default as useDrag } from './useDrag/useDrag';
 export { default as useResize } from './useResize/useResize';
-export { default as useExcelReader } from './useExcelReader';
-export { default as useExcelWriter } from './useExcelWriter';
+
 export { default as useScrollbarWidth } from './useScrollbarWidth/useScrollbarWidth';
 export { default as usePrevious } from './usePrevious/usePrevious';
 export { default as useNotification } from './useNotification/useNotification';
@@ -35,3 +34,7 @@ export { default as useThrottle } from './eventControl/useThrottle/useThrottle';
 /** mutation hooks */
 export { default as useOptimisticMutation } from './mutations/useOptimisticMutation/useOptimisticMutation';
 export { default as usePessimisticMutation } from './mutations/usePessimisticMutation/usePessimisticMutation';
+
+/** excel hooks */
+export { default as useExcelReader } from './excel/useExcelReader/useExcelReader';
+export { default as useExcelWriter } from './excel/useExcelWriter/useExcelWriter';
