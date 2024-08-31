@@ -29,8 +29,8 @@ export { default as useQueue } from './useDataStructure/useQueue/useQueue';
 export { default as useTimeout } from './time/useTimeout/useTimeout';
 export { default as useInterval } from './time/useInterval/useInterval';
 export { default as useTimer } from './time/useTimer/useTimer';
-export { default as useDebounceValue } from './useDebounceValue';
-export { default as useDebounceCallback } from './useDebounceCallback/useDebounceCallback';
+export { default as useDebounce } from './eventControl/useDebounce/useDebounce';
+
 export { default as useThrottleCallback } from './useThrottleCallback';
 
 /** mutation hooks */
