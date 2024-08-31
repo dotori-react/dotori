@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 
-import { useDebounceCallback, useDisClosure } from 'dotori-hooks';
+import { useDebounce, useDisClosure } from 'dotori-hooks';
 
 import { ActionIcon } from '@dotori-components/components';
 
 const ScrollToTop = ({ showedMinHeight = 0 }: ScrollToTopProps) => {
   const { isOpen, open, close } = useDisClosure();
-  const debounced = useDebounceCallback({
+  const { debounce } = useDebounce({
     callback: () => {
       (showedMinHeight >= window.scrollY ? close : open)();
     },
@@ -17,12 +17,13 @@ const ScrollToTop = ({ showedMinHeight = 0 }: ScrollToTopProps) => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', debounced);
+    const scrollListener = () => debounce();
+    window.addEventListener('scroll', scrollListener);
 
     return () => {
-      window.removeEventListener('scroll', debounced);
+      window.removeEventListener('scroll', scrollListener);
     };
-  }, [debounced]);
+  }, [debounce]);
 
   return (
     <>
