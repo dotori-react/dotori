@@ -24,7 +24,13 @@ const Table = <T extends { id: string | number }>({ rows, cols, onSelect, ...pro
   const tableColumnCheckboxIndeterminate = selectedRows.length > 0 && selectedRows.length < rows.length;
 
   const sortedRows =
-    orderBy === 'default' ? tableData.rows : sortFromObjectArray(tableData.rows, selectedColumn?.field, orderBy);
+    orderBy === 'default'
+      ? tableData.rows
+      : sortFromObjectArray({
+          array: tableData.rows,
+          key: selectedColumn?.field,
+          order: orderBy,
+        });
 
   const tableColumnCheckboxChange = () => {
     const newTableColumnChecked = !tableColumnChecked;

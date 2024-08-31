@@ -1,8 +1,4 @@
-export const sortFromObjectArray = <T extends object>(
-  array: T[],
-  key: keyof T | undefined | null,
-  order: 'asc' | 'desc',
-) => {
+export const sortFromObjectArray = <T extends object>({ array, key, order }: SortFromObjectArrayParams<T>) => {
   const copiedArray = Array.from(array);
   const isASC = order === 'asc';
 
@@ -25,3 +21,9 @@ export const sortFromObjectArray = <T extends object>(
     return 0;
   });
 };
+
+interface SortFromObjectArrayParams<T extends object> {
+  array: T[];
+  key: keyof T;
+  order: 'asc' | 'desc';
+}
