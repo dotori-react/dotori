@@ -6,7 +6,7 @@ export { default as useClipboard } from './useClipboard/useClipboard';
 export { default as useFullscreen } from './useFullscreen/useFullscreen';
 export { default as useMouse } from './useMouse/useMouse';
 export { default as useHover } from './useHover/useHover';
-export { default as useElementRect } from './useElementRect';
+export { default as useElementRect } from './useElementRect/useElementRect';
 export { default as useCreateElement } from './useCreateElement/useCreateElement';
 export { default as useGeolocation } from './useGeolocation/useGeolocation';
 export { default as useDarkMode } from './useDarkMode/useDarkMode';
