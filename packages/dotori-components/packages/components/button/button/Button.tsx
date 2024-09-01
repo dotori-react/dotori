@@ -3,10 +3,10 @@ import { forwardRef } from 'react';
 import { cn, VariantProps } from 'dotori-utils';
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ circle, size, variant, color, disabled, fullWidth, children, className, ...rest }, ref) => (
+  ({ size, variant, color, disabled, fullWidth, children, className, ...rest }, ref) => (
     <button
       ref={ref}
-      className={buttonStyle({ circle, variant, color, fullWidth, disabled, className, size })}
+      className={buttonStyle({ variant, color, fullWidth, disabled, className, size })}
       disabled={disabled}
       {...rest}>
       {children}
@@ -18,7 +18,7 @@ interface ButtonProps
   extends Omit<React.ComponentPropsWithoutRef<'button'>, 'color'>,
     Omit<VariantProps<typeof buttonStyle>, 'disabled'> {}
 
-const buttonStyle = cn('typo-sm500 box-border border-none px-4', {
+const buttonStyle = cn('typo-sm500 box-border border-none px-4 outline-none', {
   variants: {
     color: {
       black: 'border-gray-900 bg-gray-900 text-gray-900 hover:bg-gray-900',
@@ -49,17 +49,12 @@ const buttonStyle = cn('typo-sm500 box-border border-none px-4', {
       true: 'cursor-not-allowed bg-gray-200 text-gray-500 hover:bg-gray-300 hover:bg-opacity-100',
       false: '',
     },
-    circle: {
-      true: 'rounded-full',
-      false: 'rounded-md',
-    },
   },
   defaultVariants: {
     variant: 'filled',
     color: 'black',
     size: 'xs',
     fullWidth: false,
-    circle: false,
   },
 });
 
