@@ -35,11 +35,11 @@ const buttonStyle = cn('typo-sm500 box-border border-none px-4', {
       unstyle: 'bg-transparent hover:bg-opacity-0',
     },
     size: {
-      xs: 'h-8 text-xs leading-[theme(fontSize.xs)]',
-      sm: 'h-9 text-sm leading-[theme(fontSize.sm)]',
-      md: 'h-10 text-md leading-[theme(fontSize.md)]',
-      lg: 'h-11 text-lg leading-[theme(fontSize.lg)]',
-      xl: 'h-12 text-xl leading-[theme(fontSize.xl)]',
+      xs: 'h-8 text-xs',
+      sm: 'h-9 text-sm',
+      md: 'h-10 text-md',
+      lg: 'h-11 text-lg',
+      xl: 'h-12 text-xl',
     },
     fullWidth: {
       true: 'w-full',

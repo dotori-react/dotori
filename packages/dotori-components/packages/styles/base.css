@@ -1,4 +1,8 @@
 @layer base {
+  * {
+    line-height: 1;
+  }
+
   input,
   textarea {
     font-size: inherit;
@@ -40,11 +44,11 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: theme(colors.gray.400);
-    border-radius: theme(borderRadius.sm);
+    background-color: theme('colors.gray.400');
+    border-radius: theme('borderRadius.sm');
   }
 
   ::-webkit-scrollbar-track {
-    border-radius: theme(borderRadius.sm);
+    border-radius: theme('borderRadius.sm');
   }
 }
