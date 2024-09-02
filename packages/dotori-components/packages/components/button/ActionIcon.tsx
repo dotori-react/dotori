@@ -1,19 +1,20 @@
 import { Icon } from 'dotori-icons';
 import { cn, VariantProps } from 'dotori-utils';
 
-const ActionIcon = ({ icon, color, size, className, ...rest }: ActionIconProps) => (
-  <button className={actionIconStyle({ size, color, className })} {...rest}>
-    <Icon icon={icon} />
+const ActionIcon = ({ withoutHoverColor, icon, color, size, className, ...rest }: ActionIconProps) => (
+  <button className={actionIconStyle({ color, withoutHoverColor, className })} {...rest}>
+    <Icon className={iconStyle({ size })} icon={icon} />
   </button>
 );
 
-interface ActionIconProps
+export interface ActionIconProps
   extends Omit<React.ComponentPropsWithoutRef<'button'>, 'color'>,
-    VariantProps<typeof actionIconStyle> {
+    VariantProps<typeof actionIconStyle>,
+    VariantProps<typeof iconStyle> {
   icon: React.ComponentProps<typeof Icon>['icon'];
 }
 
-const actionIconStyle = cn('border-spacing-1 rounded-sm p-1', {
+const actionIconStyle = cn('rounded-sm bg-transparent p-0 border-none outline-none', {
   variants: {
     color: {
       black: 'fill-gray-900 hover:bg-gray-100',
@@ -23,17 +24,29 @@ const actionIconStyle = cn('border-spacing-1 rounded-sm p-1', {
       red: 'fill-red-600 hover:bg-red-100',
       yellow: 'fill-yellow-600 hover:bg-yellow-100',
     },
-    size: {
-      xs: 'h-4 w-4',
-      sm: 'h-5 w-5',
-      md: 'h-6 w-6',
-      lg: 'h-7 w-7',
-      xl: 'h-8 w-8',
+    withoutHoverColor: {
+      true: 'hover:bg-transparent',
+      false: 'hover:bg-gray-200',
     },
   },
   defaultVariants: {
     color: 'gray',
-    size: 'xl',
+    withoutHoverColor: false,
+  },
+});
+
+const iconStyle = cn('box-content active:translate-y-[1px]', {
+  variants: {
+    size: {
+      xs: 'h-2 w-2 p-2',
+      sm: 'h-3 w-3 p-2',
+      md: 'h-4 w-4 p-2',
+      lg: 'h-5 w-5 p-2',
+      xl: 'h-6 w-6 p-3',
+    },
+  },
+  defaultVariants: {
+    size: 'sm',
   },
 });
 
