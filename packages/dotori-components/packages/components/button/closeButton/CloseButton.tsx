@@ -11,7 +11,7 @@ interface CloseButtonProps extends React.ComponentPropsWithoutRef<'button'>, Var
   withoutHoverColor?: boolean;
 }
 
-const closeButtonStyle = cn('rounded-sm', {
+const closeButtonStyle = cn('rounded-sm bg-transparent p-0 border-none outline-none', {
   variants: {
     withoutHoverColor: {
       true: 'hover:bg-transparent',

@@ -12,7 +12,7 @@ export { default as PublicRoute } from './guard/PublicRoute';
 
 /** Button Components */
 export { default as Button } from './button/button/Button';
-export { default as CloseButton } from './button/CloseButton';
+export { default as CloseButton } from './button/closeButton/CloseButton';
 export { default as DialButton } from './button/DialButton';
 export { default as ActionIcon } from './button/ActionIcon';
 
