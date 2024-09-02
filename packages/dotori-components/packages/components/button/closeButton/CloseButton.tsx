@@ -1,41 +1,9 @@
-import { Icon } from 'dotori-icons';
-import { cn, VariantProps } from 'dotori-utils';
+import { ActionIcon } from '@dotori-components/components';
 
-const CloseButton = ({ withoutHoverColor, size, className, ...rest }: CloseButtonProps) => (
-  <button {...rest} className={closeButtonStyle({ withoutHoverColor })}>
-    <Icon className={closeIconStyle({ size, className })} icon="close" />
-  </button>
-);
+import type { ActionIconProps } from '../actionIcon/ActionIcon';
 
-interface CloseButtonProps extends React.ComponentPropsWithoutRef<'button'>, VariantProps<typeof closeIconStyle> {
-  withoutHoverColor?: boolean;
-}
+const CloseButton = (props: CloseButtonProps) => <ActionIcon color="black" icon="close" {...props} />;
 
-const closeButtonStyle = cn('rounded-sm bg-transparent p-0 border-none outline-none', {
-  variants: {
-    withoutHoverColor: {
-      true: 'hover:bg-transparent',
-      false: 'hover:bg-gray-200',
-    },
-  },
-  defaultVariants: {
-    withoutHoverColor: false,
-  },
-});
-
-const closeIconStyle = cn('box-content active:translate-y-[1px]', {
-  variants: {
-    size: {
-      xs: 'h-2 w-2 p-2',
-      sm: 'h-3 w-3 p-2',
-      md: 'h-4 w-4 p-2',
-      lg: 'h-5 w-5 p-2',
-      xl: 'h-6 w-6 p-3',
-    },
-  },
-  defaultVariants: {
-    size: 'sm',
-  },
-});
+interface CloseButtonProps extends Omit<ActionIconProps, 'icon'> {}
 
 export default CloseButton;

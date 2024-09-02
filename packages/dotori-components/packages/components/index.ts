@@ -14,7 +14,7 @@ export { default as PublicRoute } from './guard/PublicRoute';
 export { default as Button } from './button/button/Button';
 export { default as CloseButton } from './button/closeButton/CloseButton';
 export { default as DialButton } from './button/DialButton';
-export { default as ActionIcon } from './button/ActionIcon';
+export { default as ActionIcon } from './button/actionIcon/ActionIcon';
 
 /** Overlay Components */
 export { default as Drawer } from './Drawer';
