@@ -4,6 +4,7 @@
   "scripts": {
     "prepare": "husky",
     "test": "jest",
+    "commit": "cz",
     "docs:copy": "pnpm -C ./docs run docs",
     "docs:build": "pnpm -C ./docs run build",
     "docs:dev": "pnpm -C ./docs run start",
@@ -11,8 +12,10 @@
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
+    "@tenenger/git-cz": "^0.0.1",
     "@types/node": "^22.1.0",
     "@typescript-eslint/parser": "^8.0.1",
+    "commitizen": "^4.3.0",
     "dotori-components": "workspace:*",
     "dotori-context": "workspace:*",
     "dotori-hooks": "workspace:*",
@@ -37,5 +40,10 @@
   "lint-staged": {
     "**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}": "eslint --fix",
     "**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,css,md}": "prettier --write"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@tenenger/git-cz"
+    }
   }
 }
