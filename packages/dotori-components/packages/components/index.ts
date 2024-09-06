@@ -7,7 +7,7 @@ export { default as Layout } from './layout/Layout';
 export { default as ScreenReaderOnly } from './ScreenReaderOnly';
 
 /** Guard Components */
-export { default as PrivateRoute } from './guard/PrivateRoute';
+export { default as PrivateRoute } from './guard/privateRoute/PrivateRoute';
 export { default as PublicRoute } from './guard/PublicRoute';
 
 /** Button Components */
