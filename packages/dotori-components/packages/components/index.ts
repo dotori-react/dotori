@@ -8,7 +8,7 @@ export { default as ScreenReaderOnly } from './ScreenReaderOnly';
 
 /** Guard Components */
 export { default as PrivateRoute } from './guard/privateRoute/PrivateRoute';
-export { default as PublicRoute } from './guard/PublicRoute';
+export { default as PublicRoute } from './guard/publicRoute/PublicRoute';
 
 /** Button Components */
 export { default as Button } from './button/button/Button';
