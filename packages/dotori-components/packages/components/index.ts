@@ -92,5 +92,5 @@ export { default as Calendar } from './picker/Calendar';
 export { default as Dropdown } from './comboBox/Dropdown';
 export { default as Card } from './Card';
 export { default as Pill } from './Pill';
-export { default as Polymorphic } from './Polymorphic';
+export { default as Polymorphic } from './polymorphic/Polymorphic';
 export { default as ClonedChildren } from './ClonedChildren';
