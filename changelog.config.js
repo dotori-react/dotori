@@ -5,7 +5,7 @@ module.exports = {
   maxMessageLength: 64,
   minMessageLength: 3,
   questions: ['type', 'scope', 'subject', 'lerna'],
-  scopes: ['dotori-components', 'dotori-hooks', 'dotori-utils', 'dotori-context', 'dotori-icons', 'dotori-repo'],
+  scopes: ['dotori-components', 'dotori-hooks', 'dotori-utils', 'dotori-context', 'dotori-icons', 'dotori-repo', 'dev'],
   types: {
     feat: {
       description: 'Add a new feature',
