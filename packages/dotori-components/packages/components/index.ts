@@ -60,7 +60,7 @@ export { default as Ellipsis } from './loading/Ellipsis';
 export { default as Slider } from './slider/Slider';
 
 /** text Components */
-export { default as Title } from './Title';
+export { default as Title } from './title/Title';
 export { default as Highlight } from './highlight/Highlight';
 export { default as Mark } from './highlight/Mark';
 
