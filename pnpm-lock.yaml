@@ -12,8 +12,8 @@ importers:
         specifier: ^29.7.0
         version: 29.7.0
       '@tenenger/git-cz':
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: ^0.0.2
+        version: 0.0.2
       '@types/node':
         specifier: ^22.1.0
         version: 22.1.0
@@ -2216,8 +2216,8 @@ packages:
     peerDependencies:
       react: ^18.0.0
 
-  '@tenenger/git-cz@0.0.1':
-    resolution: {integrity: sha512-XQru3cn3SMeizNVezIG/3WmtFL1I1W/H31wHCfh2Spyq70qdS3kDbnm5J+fskIXLJYmtKQSwTok+LKs0NNuAVA==}
+  '@tenenger/git-cz@0.0.2':
+    resolution: {integrity: sha512-q3WQTzhBfcw5C1Zi9OhcnxxEBIhXSOfG8J2rxZt3iiZdsZdnYTy+z4YxwH13cgdkYl6/Kuz7TjmdxVT2EL9upA==}
     hasBin: true
 
   '@tootallnate/once@2.0.0':
@@ -11672,7 +11672,7 @@ snapshots:
       '@tanstack/query-core': 5.51.21
       react: 18.3.1
 
-  '@tenenger/git-cz@0.0.1': {}
+  '@tenenger/git-cz@0.0.2': {}
 
   '@tootallnate/once@2.0.0': {}
 
