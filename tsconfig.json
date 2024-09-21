@@ -1,5 +1,5 @@
 {
   "extends": "./tsconfig.base.json",
-  "include": [".eslintrc.js", "**/types", "./__tests__", "./jest.config.ts", "./changelog.config.js"],
+  "include": [".eslintrc.js", "**/types", "./__tests__", "./jest.config.ts", "./changelog.config.js", "./stories"],
   "exclude": ["./node_modules", ".husky"]
 }
