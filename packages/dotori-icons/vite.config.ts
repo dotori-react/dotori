@@ -26,10 +26,16 @@ export default defineConfig({
   build: {
     copyPublicDir: false,
     lib: {
-      entry: path.resolve(__dirname, 'packages/components/index.ts'),
+      entry: [
+        path.resolve(__dirname, 'packages/components/index.ts'),
+        path.resolve(__dirname, 'packages/constants/Icon.ts'),
+      ],
       name: 'dotori-icons',
       formats: ['es', 'cjs'],
-      fileName: (format, entryName) => `${entryName}.${format}.js`,
+      fileName: (format, entryName) => {
+        if (entryName === 'Icon') return `iconMap.${format}.js`;
+        return `${entryName}.${format}.js`;
+      },
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'dotori-utils'],
