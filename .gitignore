@@ -37,3 +37,4 @@ lerna-debug.log*
 # cache
 .eslintcache
 .nx/
+*storybook.log

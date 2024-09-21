@@ -8,7 +8,7 @@ module.exports = {
     es2020: true,
     node: true,
   },
-  extends: ['dotori-base', 'dotori-react', 'dotori-typescript', 'dotori-import-sort'],
+  extends: ['dotori-base', 'dotori-react', 'dotori-typescript', 'dotori-import-sort', 'plugin:storybook/recommended'],
   rules: {
     'no-void': 'off',
   },
