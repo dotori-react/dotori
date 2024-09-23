@@ -1,7 +1,7 @@
 module.exports = {
   disableEmoji: false,
   format: '[{scope}@{type}]: {subject}',
-  list: ['feat', 'fix', 'docs', 'style', 'refactor', 'test', 'chore', 'config', 'rename', 'ci', 'perf'],
+  list: ['feat', 'fix', 'docs', 'style', 'refactor', 'test', 'chore', 'config', 'rename', 'ci', 'perf', 'type'],
   maxMessageLength: 64,
   minMessageLength: 3,
   questions: ['type', 'scope', 'subject', 'lerna'],
@@ -61,6 +61,11 @@ module.exports = {
       description: 'A code change that improves performance',
       emoji: '⚡️',
       value: 'perf',
+    },
+    type: {
+      description: 'add or update type',
+      emoji: '🏷️',
+      value: 'type',
     },
     messages: {
       type: "Select the type of change that you're committing:",
