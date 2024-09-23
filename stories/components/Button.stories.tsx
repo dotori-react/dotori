@@ -37,6 +37,10 @@ const meta = {
       control: 'boolean',
       description: 'button full size presence or absence',
     },
+    className: {
+      control: 'text',
+      description: 'button className',
+    },
   },
   args: {
     children: 'button',
@@ -45,6 +49,7 @@ const meta = {
     color: 'black',
     disabled: false,
     fullWidth: false,
+    className: '',
   },
 } satisfies Meta<typeof Button>;
 
