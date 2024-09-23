@@ -2,14 +2,14 @@ import { Meta, Title, IconGallery, IconItem } from '@storybook/blocks';
 import { Icon } from 'dotori-icons';
 import { ICON_MAP } from 'dotori-icons/constants';
 
-<Meta title="icons/gallery" />
+<Meta title="icons/Icon/gallery" />
 
 # gallery
 
 <IconGallery>
   {Object.keys(ICON_MAP).map(icon => (
     <IconItem name={icon} key={icon}>
-      <Icon icon={icon} style={{}} fullSize />
+      <Icon icon={icon} />
     </IconItem>
   ))}
 </IconGallery>
