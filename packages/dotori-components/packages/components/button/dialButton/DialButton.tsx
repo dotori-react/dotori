@@ -5,7 +5,7 @@ import { Fragment } from 'react/jsx-runtime';
 
 import { Button, Portal, Tooltip } from '@dotori-components/components';
 
-const DialButton = ({ size, actions, withoutTooltip }: DialButtonProps) => {
+const DialButton = ({ actions, withoutTooltip, dialIcon, size, color }: DialButtonProps) => {
   const { hovered: buttonHovered, ref: buttonRef } = useHover<HTMLButtonElement>();
   const { hovered: actionHovered, ref: actionRef } = useHover<HTMLDivElement>();
 
@@ -20,8 +20,8 @@ const DialButton = ({ size, actions, withoutTooltip }: DialButtonProps) => {
   return (
     <Portal target={document.getElementById('dial-button') as HTMLElement}>
       <div className="fixed bottom-0 left-0 z-[2] m-5 flex flex-col-reverse">
-        <Button ref={buttonRef} className={dialButtonStyle({ size })}>
-          <Icon className={dialButtonIconStyle({ visible: hovered })} icon="close" />
+        <Button ref={buttonRef} className={dialButtonStyle({ size, color })}>
+          {dialIcon || <Icon className={dialButtonIconStyle({ rotate: hovered, color })} icon="close" />}
         </Button>
 
         <div ref={actionRef} className={actionContainerStyle({ size, visible: hovered })}>
@@ -49,30 +49,46 @@ const DialButton = ({ size, actions, withoutTooltip }: DialButtonProps) => {
   );
 };
 
-interface DialButtonProps extends VariantProps<typeof actionStyle> {
+interface DialButtonProps extends VariantProps<typeof actionStyle>, VariantProps<typeof dialButtonStyle> {
   actions?: { icon: React.ReactNode; name: string }[];
   withoutTooltip?: boolean;
+  dialIcon?: React.ReactNode;
 }
 
-const dialButtonStyle = cn('z-[2] rounded-full p-0 shadow-xl', {
+const dialButtonStyle = cn(
+  'z-[2] rounded-full p-0 shadow-xl inline-flex justify-center items-center hover:bg-opacity-100',
+  {
+    variants: {
+      size: {
+        sm: 'h-10 w-10',
+        md: 'h-14 w-14',
+        lg: 'h-20 w-20',
+      },
+      color: {
+        white: 'bg-gray-0 hover:bg-gray-100',
+        black: 'bg-gray-900 hover:bg-gray-800',
+      },
+    },
+    defaultVariants: {
+      size: 'md',
+      color: 'white',
+    },
+  },
+);
+
+const dialButtonIconStyle = cn('p-0 transition-all', {
   variants: {
-    size: {
-      sm: 'h-10 w-10',
-      md: 'h-14 w-14',
-      lg: 'h-20 w-20',
+    rotate: {
+      true: '-rotate-45',
+      false: '',
+    },
+    color: {
+      white: 'fill-gray-900',
+      black: 'fill-gray-0',
     },
   },
   defaultVariants: {
-    size: 'md',
-  },
-});
-
-const dialButtonIconStyle = cn('fill-white p-3 transition-all', {
-  variants: {
-    visible: {
-      true: '',
-      false: '-rotate-45',
-    },
+    color: 'white',
   },
 });
 
@@ -96,21 +112,24 @@ const actionContainerStyle = cn(
   },
 );
 
-const actionStyle = cn('w-full rounded-full bg-white shadow-md transition-all hover:bg-gray-200', {
-  variants: {
-    size: {
-      sm: 'h-8 w-8',
-      md: 'h-10 w-10',
-      lg: 'h-14 w-14',
+const actionStyle = cn(
+  'w-full rounded-full bg-gray-0 shadow-md transition-all hover:bg-gray-100 flex justify-center items-center',
+  {
+    variants: {
+      size: {
+        sm: 'h-8 w-8',
+        md: 'h-10 w-10',
+        lg: 'h-14 w-14',
+      },
+      visible: {
+        true: 'scale-100 cursor-pointer opacity-100',
+        false: 'scale-0 opacity-0',
+      },
     },
-    visible: {
-      true: 'scale-100 cursor-pointer opacity-100',
-      false: 'scale-0 opacity-0',
+    defaultVariants: {
+      size: 'md',
     },
   },
-  defaultVariants: {
-    size: 'md',
-  },
-});
+);
 
 export default DialButton;
