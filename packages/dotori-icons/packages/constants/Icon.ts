@@ -12,6 +12,7 @@ import HamburgerIcon from '@dotori-icons/assets/hamburger.svg?react';
 import HomeIcon from '@dotori-icons/assets/home.svg?react';
 import HwpIcon from '@dotori-icons/assets/hwp.svg?react';
 import PdfIcon from '@dotori-icons/assets/pdf.svg?react';
+import ProfileCircleIcon from '@dotori-icons/assets/profile_circle.svg?react';
 import SettingIcon from '@dotori-icons/assets/setting.svg?react';
 import SpinnerIcon from '@dotori-icons/assets/spinner.svg?react';
 import StarIcon from '@dotori-icons/assets/star.svg?react';
@@ -40,4 +41,5 @@ export const ICON_MAP = {
   hwp: HwpIcon,
   pdf: PdfIcon,
   word: WordIcon,
+  profileCircle: ProfileCircleIcon,
 } as const;
