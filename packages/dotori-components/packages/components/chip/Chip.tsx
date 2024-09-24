@@ -51,7 +51,7 @@ const defaultProps = {
 };
 
 const chipContainerStyle = cn(
-  'inline-flex cursor-pointer items-center gap-1 rounded-md px-2 box-content align-middle overflow-hidden',
+  'inline-flex cursor-pointer items-center gap-1 rounded-md px-2 align-middle overflow-hidden box-border',
   {
     variants: {
       size: {
