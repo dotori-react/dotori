@@ -6,7 +6,7 @@ import { cn, VariantProps } from 'dotori-utils';
 import ChipGroup from './ChipGroup';
 import { useChipGroupContext } from './ChipGroup.context';
 
-const Chip = ({ size, color, defaultChecked = false, variant, value = '', children }: ChipProps) => {
+const Chip = ({ size, color, defaultChecked = false, variant, value = '', children, name }: ChipProps) => {
   const [checked, setChecked] = useState(defaultChecked);
   const ctx = useChipGroupContext();
 
@@ -30,11 +30,9 @@ const Chip = ({ size, color, defaultChecked = false, variant, value = '', childr
         {...defaultProps}
         {...contextProps}
         checked={ctx ? contextProps.checked : checked}
-        name="test"
+        name={name}
       />
-      {(ctx ? contextProps.checked : checked) && (
-        <Icon className={iconStyle({ color, variant })} icon="check" fullSize />
-      )}
+      {(ctx ? contextProps.checked : checked) && <Icon className={iconStyle({ color, variant })} icon="check" />}
       <span className="text-inherit whitespace-nowrap">{children}</span>
     </label>
   );
@@ -44,6 +42,7 @@ interface ChipProps extends VariantProps<typeof chipContainerStyle> {
   children: React.ReactNode;
   defaultChecked?: boolean;
   value?: string;
+  name?: string;
 }
 
 const defaultProps = {
@@ -97,7 +96,7 @@ const chipContainerStyle = cn(
   },
 );
 
-const iconStyle = cn('', {
+const iconStyle = cn('h-full w-auto', {
   variants: {
     color: {
       black: 'fill-gray-900',
