@@ -1,14 +1,15 @@
+import { Icon } from 'dotori-icons';
 import { cn, VariantProps } from 'dotori-utils';
 
 import { useAvatarGroupContext } from './Avatar.context';
 import AvatarGroup from './AvatarGroup';
 
-const Avatar = ({ alt, src, size, className }: AvatarProps) => {
+const Avatar = ({ alt, src, size, name, className }: AvatarProps) => {
   const ctx = useAvatarGroupContext();
 
   return (
     <section className={avatarStyle({ size, className: ctx ? `${ctx.className} ${className}` : className })}>
-      {src ? <img alt={alt} src={src} /> : alt}
+      {src ? <img alt={alt} src={src} title={alt} /> : name || <Icon icon="profileCircle" />}
     </section>
   );
 };
@@ -18,10 +19,11 @@ interface AvatarProps
     VariantProps<typeof avatarStyle> {
   src?: string;
   alt: string;
+  name?: string;
 }
 
 const avatarStyle = cn(
-  'flex items-center justify-center overflow-hidden text-nowrap rounded-full border-2 border-gray-700 bg-gray-100 bg-cover',
+  'flex items-center justify-center overflow-hidden text-nowrap rounded-full bg-gray-100 bg-cover',
   {
     variants: {
       size: {
