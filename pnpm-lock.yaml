@@ -29,6 +29,9 @@ importers:
       '@storybook/blocks':
         specifier: ^8.3.2
         version: 8.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.3.2)
+      '@storybook/preview-api':
+        specifier: ^8.3.2
+        version: 8.3.2(storybook@8.3.2)
       '@storybook/react':
         specifier: ^8.3.2
         version: 8.3.2(@storybook/test@8.3.2(storybook@8.3.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.3.2)(typescript@5.5.4)
@@ -11004,7 +11007,7 @@ snapshots:
 
   '@docusaurus/react-loadable@6.0.0(react@18.3.1)':
     dependencies:
-      '@types/react': 18.3.3
+      '@types/react': 18.3.8
       react: 18.3.1
 
   '@docusaurus/theme-classic@3.5.1(@types/react@18.3.8)(esbuild@0.21.5)(eslint@8.57.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)(vue-template-compiler@2.7.16)':
