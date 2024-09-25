@@ -54,7 +54,8 @@ const Autocomplete = <T extends { value: string; label: string; [index: string]:
       },
     };
 
-    inputKeyDownHashTable[e.key as keyof typeof inputKeyDownHashTable]();
+    if (Object.keys(inputKeyDownHashTable).includes(e.key))
+      inputKeyDownHashTable[e.key as keyof typeof inputKeyDownHashTable]();
   };
 
   return (
