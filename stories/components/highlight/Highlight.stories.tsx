@@ -10,15 +10,33 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    highlight: { control: 'object', description: 'The text or array of texts to be highlighted.' },
+    highlight: {
+      control: 'object',
+      description: 'The text or array of texts to be highlighted.',
+      table: {
+        defaultValue: { summary: '[] or ""' },
+      },
+    },
     highlightStyle: {
       control: 'text',
       description: 'Additional CSS class to apply to the highlighted text(recommend tailwindcss)',
+      table: {
+        defaultValue: { summary: '' },
+      },
     },
-    children: { control: 'text', description: 'The string to be searched for highlights.' },
+    children: {
+      control: 'text',
+      description: 'The string to be searched for highlights.',
+      table: {
+        defaultValue: { summary: '' },
+      },
+    },
     ignoreCase: {
       control: 'boolean',
       description: 'Boolean flag to determine case sensitivity in the highlight matching.',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
     },
   },
   args: {
@@ -32,6 +50,6 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {},
 };

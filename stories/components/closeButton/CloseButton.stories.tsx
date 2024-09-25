@@ -14,19 +14,31 @@ const meta = {
       control: 'select',
       description: 'close button size',
       options: ['xs', 'sm', 'md', 'lg', 'xl'],
+      table: {
+        defaultValue: { summary: 'md' },
+      },
     },
     color: {
       control: 'select',
       description: 'close button color',
       options: ['black', 'blue', 'gray', 'green', 'red', 'yellow'],
+      table: {
+        defaultValue: { summary: 'black' },
+      },
     },
     withoutHoverColor: {
       control: 'boolean',
       description: 'hovered background color presence or absence',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
     },
     className: {
       control: 'text',
       description: 'close button className',
+      table: {
+        defaultValue: { summary: 'md' },
+      },
     },
   },
   args: {
@@ -40,7 +52,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     withoutHoverColor: false,
   },

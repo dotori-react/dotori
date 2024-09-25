@@ -10,13 +10,29 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'select', description: '', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
+    size: {
+      control: 'select',
+      description: '',
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+      table: {
+        defaultValue: { summary: 'md' },
+      },
+    },
     color: {
       control: 'select',
       description: '',
       options: ['blue', 'green', 'red', 'yellow', 'gray', 'white', 'black'],
+      table: {
+        defaultValue: { summary: 'gray' },
+      },
     },
-    className: { control: 'text', description: 'spinner className attribute' },
+    className: {
+      control: 'text',
+      description: 'spinner className attribute',
+      table: {
+        defaultValue: { summary: '' },
+      },
+    },
   },
   args: {
     size: 'md',
@@ -28,6 +44,6 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {},
 };

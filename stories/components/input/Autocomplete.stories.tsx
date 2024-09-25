@@ -1,4 +1,4 @@
-import { useEffect, useState } from '@storybook/preview-api';
+import { useArgs } from '@storybook/preview-api';
 import { fn } from '@storybook/test';
 
 import { Autocomplete } from 'dotori-components';
@@ -13,11 +13,38 @@ const meta = {
     data: {
       control: 'object',
       description: 'Array of objects to display in the dropdown. Each object must include a label and a value.',
+      table: {
+        defaultValue: { summary: '[]' },
+      },
     },
-    placeholder: { control: 'text', description: 'Placeholder text for the input.' },
-    value: { control: 'text', description: 'Current value of the input (optional, for controlled components).' },
-    length: { control: 'number', description: 'Maximum number of dropdown items to display (default is 10).' },
-    onChange: { actions: 'changed', description: 'Function to handle input changes (optional).' },
+    placeholder: {
+      control: 'text',
+      description: 'Placeholder text for the input.',
+      table: {
+        defaultValue: { summary: '' },
+      },
+    },
+    value: {
+      control: 'text',
+      description: 'Current value of the input (optional, for controlled components).',
+      table: {
+        defaultValue: { summary: 'null' },
+      },
+    },
+    length: {
+      control: 'number',
+      description: 'Maximum number of dropdown items to display (default is 10).',
+      table: {
+        defaultValue: { summary: '10' },
+      },
+    },
+    onChange: {
+      actions: 'changed',
+      description: 'Function to handle input changes (optional).',
+      table: {
+        defaultValue: { summary: 'null' },
+      },
+    },
   },
   args: {
     data: [
@@ -31,18 +58,15 @@ const meta = {
     onChange: fn(),
   },
   render: args => {
-    const [value, setValue] = useState(args.value);
+    const [{ value }, updateArgs] = useArgs<{ value: string }>();
 
-    useEffect(() => {
-      setValue(args.value);
-    }, [args.value]);
-    return <Autocomplete {...args} value={value} onChange={setValue} />;
+    return <Autocomplete {...args} value={value} onChange={newValue => updateArgs({ value: newValue })} />;
   },
 } satisfies Meta<typeof Autocomplete>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {},
 };

@@ -10,8 +10,20 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    className: { control: 'text', description: 'mark className attribute' },
-    children: { control: 'text', description: 'mark text' },
+    className: {
+      control: 'text',
+      description: 'mark className attribute',
+      table: {
+        defaultValue: { summary: '' },
+      },
+    },
+    children: {
+      control: 'text',
+      description: 'mark text',
+      table: {
+        defaultValue: { summary: '' },
+      },
+    },
   },
   args: {
     className: '',
@@ -22,6 +34,6 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {},
 };

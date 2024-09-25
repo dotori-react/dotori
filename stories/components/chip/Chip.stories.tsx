@@ -14,20 +14,32 @@ const meta = {
       control: 'select',
       description: 'chip size',
       options: ['xs', 'sm', 'md', 'lg', 'xl'],
+      table: {
+        defaultValue: { summary: 'sm' },
+      },
     },
     defaultChecked: {
       control: 'boolean',
       description: 'chip default checked',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
     },
     color: {
       control: 'select',
       description: 'chip color',
       options: ['black', 'blue', 'gray', 'green', 'red', 'yellow'],
+      table: {
+        defaultValue: { summary: 'black' },
+      },
     },
     variant: {
       control: 'select',
       description: 'button category',
       options: ['filled', 'outline', 'subtle'],
+      table: {
+        defaultValue: { summary: 'filled' },
+      },
     },
     children: {
       control: 'text',
@@ -36,10 +48,16 @@ const meta = {
     value: {
       control: 'text',
       description: 'input value attribute',
+      table: {
+        defaultValue: { summary: 'null' },
+      },
     },
     name: {
       control: 'text',
       description: 'input name attribute',
+      table: {
+        defaultValue: { summary: 'null' },
+      },
     },
   },
   args: {
@@ -56,7 +74,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     variant: 'filled',
   },

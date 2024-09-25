@@ -17,19 +17,31 @@ const meta = {
     src: {
       control: 'text',
       description: 'image src attribute',
+      table: {
+        defaultValue: { summary: '' },
+      },
     },
     name: {
       control: 'text',
       description: 'show name text, alternative default profile icon',
+      table: {
+        defaultValue: { summary: '' },
+      },
     },
     size: {
       control: 'select',
       description: 'avatar size',
       options: ['xs', 'sm', 'md', 'lg', 'xl'],
+      table: {
+        defaultValue: { summary: 'sm' },
+      },
     },
     className: {
       control: 'text',
       description: 'avatar className',
+      table: {
+        defaultValue: { summary: '' },
+      },
     },
   },
   args: {
@@ -44,7 +56,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     src: '',
   },

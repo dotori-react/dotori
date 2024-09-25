@@ -35,7 +35,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Icon: Story = {
+export const Example: Story = {
   args: {
     icon: 'close',
   },

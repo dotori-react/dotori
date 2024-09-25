@@ -1,4 +1,4 @@
-import { useEffect, useState } from '@storybook/preview-api';
+import { useArgs } from '@storybook/preview-api';
 import { fn } from '@storybook/test';
 
 import { Dropdown } from 'dotori-components';
@@ -23,34 +23,58 @@ const meta = {
       description:
         'Determines the color of the dropdown. Options are `white`, `black`, `blue`, `gray`, `green`, `red`, `yellow`. The default is `white`',
       options: ['white', 'black', 'blue', 'gray', 'green', 'red', 'yellow'],
+      table: {
+        defaultValue: { summary: 'white' },
+      },
     },
     gap: {
       control: 'number',
       description: 'Specifies the spacing between the button and the dropdown. Defaults to `10px`.',
+      table: {
+        defaultValue: { summary: '10' },
+      },
     },
     fullWidth: {
       control: 'boolean',
       description: 'If `true`, the dropdown will match the width of the button.',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
     },
     disabled: {
       control: 'boolean',
       description: 'If `true`, the button is disabled and cannot be clicked.',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
     },
     isOpen: {
       control: 'boolean',
       description: 'Controls whether the dropdown is open externally.',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
     },
     open: {
       action: 'clicked',
       description: 'Function executed when the dropdown is open',
+      table: {
+        defaultValue: { summary: 'null' },
+      },
     },
     close: {
       action: 'clicked',
       description: 'Function executed when the dropdown is closed',
+      table: {
+        defaultValue: { summary: 'null' },
+      },
     },
     onDropdownClick: {
       action: 'clicked',
       description: 'Function executed when the button is clicked.',
+      table: {
+        defaultValue: { summary: 'null' },
+      },
     },
   },
   args: {
@@ -65,20 +89,23 @@ const meta = {
     open: fn(),
     onDropdownClick: fn(),
   },
-  render: ({ isOpen, ...args }) => {
-    const [isShow, setIsShow] = useState(isOpen);
+  render: args => {
+    const [{ isOpen }, updateArgs] = useArgs<{ isOpen: boolean }>();
 
-    useEffect(() => {
-      setIsShow(isOpen);
-    }, [isOpen]);
-
-    return <Dropdown {...args} close={() => setIsShow(false)} isOpen={isShow} open={() => setIsShow(true)} />;
+    return (
+      <Dropdown
+        {...args}
+        close={() => updateArgs({ isOpen: false })}
+        isOpen={isOpen}
+        open={() => updateArgs({ isOpen: true })}
+      />
+    );
   },
 } satisfies Meta<typeof Dropdown>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {},
 };

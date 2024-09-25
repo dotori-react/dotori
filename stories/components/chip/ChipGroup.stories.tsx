@@ -1,4 +1,4 @@
-import { useState } from '@storybook/preview-api';
+import { useArgs } from '@storybook/preview-api';
 import { fn } from '@storybook/test';
 
 import { Chip } from 'dotori-components';
@@ -17,11 +17,17 @@ const meta = {
       control: 'boolean',
       description:
         'Whether multiple Chip components received as children can be checked.; If multiple is true, then value must be an array of strings.',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
     },
     value: {
       control: 'object',
       description:
         'The default checked state is set when the value passed to the Chip component received as children matches.; If multiple is true, then value must be an array of strings.',
+      table: {
+        defaultValue: { summary: '[] or ""' },
+      },
     },
     children: {
       control: 'object',
@@ -59,13 +65,14 @@ export const Checkbox: Story = {
     value: 'react',
     multiple: false,
   },
-  render: ({ multiple, children, value }) => {
-    const [values, setValues] = useState(value);
-    return (
-      <Chip.Group multiple={multiple} value={values} onChange={setValues}>
-        {children}
-      </Chip.Group>
-    );
+  argTypes: {
+    value: {
+      control: 'text',
+    },
+  },
+  render: args => {
+    const [{ value }, updateArgs] = useArgs<{ value: string }>();
+    return <Chip.Group {...args} value={value} onChange={newValue => updateArgs({ value: newValue as string })} />;
   },
 };
 
@@ -74,12 +81,13 @@ export const Radio: Story = {
     value: ['react', 'vue'],
     multiple: true,
   },
-  render: ({ multiple, children, value }) => {
-    const [values, setValues] = useState(value);
-    return (
-      <Chip.Group multiple={multiple} value={values} onChange={setValues}>
-        {children}
-      </Chip.Group>
-    );
+  argTypes: {
+    value: {
+      control: 'object',
+    },
+  },
+  render: args => {
+    const [{ value }, updateArgs] = useArgs<{ value: string[] }>();
+    return <Chip.Group {...args} value={value} onChange={newValue => updateArgs({ value: newValue as string[] })} />;
   },
 };

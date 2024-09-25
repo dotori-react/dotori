@@ -10,17 +10,50 @@ const meta = {
   component: Alert,
   tags: ['autodocs'],
   argTypes: {
-    icon: { control: 'text', description: 'An optional icon to display alongside the alert message.' },
-    title: { control: 'text', description: 'The title of the alert.' },
-    children: { control: 'text', description: 'Any additional content to be displayed within the alert.' },
+    icon: {
+      control: 'text',
+      description: 'An optional icon to display alongside the alert message.',
+      table: {
+        defaultValue: { summary: 'null' },
+      },
+    },
+    title: {
+      control: 'text',
+      description: 'The title of the alert.',
+      table: {
+        defaultValue: { summary: 'null' },
+      },
+    },
+    children: {
+      control: 'text',
+      description: 'Any additional content to be displayed within the alert.',
+      table: {
+        defaultValue: { summary: 'null' },
+      },
+    },
     color: {
       control: 'select',
       description: "Defines the alert's color theme (like blue, red, etc.).",
       options: ['blue', 'gray', 'green', 'red', 'yellow'],
+      table: {
+        defaultValue: { summary: 'gray' },
+      },
     },
-    className: { control: 'text', description: 'Additional class names to be applied.' },
-    isOpen: { control: 'boolean', description: 'A boolean to determine if the alert is visible.' },
-    close: { actions: 'clicked', description: 'A function to handle closing the alert.' },
+    className: {
+      control: 'text',
+      description: 'Additional class names to be applied.',
+      table: {
+        defaultValue: { summary: '' },
+      },
+    },
+    isOpen: {
+      control: 'boolean',
+      description: 'A boolean to determine if the alert is visible.',
+    },
+    close: {
+      actions: 'clicked',
+      description: 'A function to handle closing the alert.',
+    },
   },
   args: {
     icon: 'icon',

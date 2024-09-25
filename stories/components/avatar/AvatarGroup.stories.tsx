@@ -13,11 +13,17 @@ const meta = {
     children: {
       control: 'object',
       description: 'ReactNode',
+      table: {
+        defaultValue: { summary: 'null' },
+      },
     },
     direction: {
       control: 'select',
       description: 'avatar sort direction',
       options: ['col', 'row', 'reverseRow', 'reverseCol'],
+      table: {
+        defaultValue: { summary: 'row' },
+      },
     },
   },
   args: {
@@ -34,7 +40,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     direction: 'row',
   },
