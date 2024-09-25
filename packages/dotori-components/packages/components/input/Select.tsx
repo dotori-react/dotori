@@ -62,6 +62,7 @@ const Select = <T extends { value: string; label: string; [index: string]: strin
         close={close}
         disabled={disabled}
         isOpen={isOpen}
+        open={open}
         contents={
           <div className="flex flex-col gap-3">
             {data.map((item, index) => (
@@ -74,8 +75,7 @@ const Select = <T extends { value: string; label: string; [index: string]: strin
             ))}
           </div>
         }
-        fullWidth
-        onClick={open}>
+        fullWidth>
         <Input
           ref={inputRef}
           className={inputStyle({ disabled })}

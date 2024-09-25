@@ -62,6 +62,7 @@ const Autocomplete = <T extends { value: string; label: string; [index: string]:
       <Dropdown
         close={close}
         isOpen={isOpen}
+        open={open}
         contents={
           <div className="flex flex-col gap-3">
             {filteredData.slice(0, length).map((item, index) => (
@@ -74,8 +75,7 @@ const Autocomplete = <T extends { value: string; label: string; [index: string]:
             ))}
           </div>
         }
-        fullWidth
-        onClick={open}>
+        fullWidth>
         <Input
           placeholder={placeholder}
           value={controlledValue}

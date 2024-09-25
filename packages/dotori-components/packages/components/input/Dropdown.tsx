@@ -8,14 +8,14 @@ import { Portal } from '@dotori-components/components';
 const Dropdown = ({
   children,
   color,
-  className,
   contents,
   gap = 10,
   fullWidth,
   isOpen,
   disabled,
-  onClick,
+  open,
   close,
+  onDropdownClick,
 }: DropdownProps) => {
   const [clicked, setClicked] = useState(false);
   const targetRef = useOutSideClick(() => {
@@ -25,14 +25,21 @@ const Dropdown = ({
 
   const controlledClicked = isOpen !== undefined ? isOpen : clicked;
 
-  const { ref, width, height, left, top } = useElementRect<HTMLButtonElement>(controlledClicked);
-
-  useCreateElement([{ tagName: 'div', attributes: { id: 'dropdown' } }]);
+  const {
+    ref: dropdownRef,
+    width: dropdownWidth,
+    height: dropdownHeight,
+    left: dropdownLeft,
+    top: dropdownTop,
+  } = useElementRect<HTMLButtonElement>(controlledClicked);
 
   const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     setClicked(prev => !prev);
-    if (onClick) onClick(e);
+    if (open) open();
+    if (onDropdownClick) onDropdownClick(e);
   };
+
+  useCreateElement([{ tagName: 'div', attributes: { id: 'dropdown' } }]);
 
   return (
     <>
@@ -40,14 +47,18 @@ const Dropdown = ({
         <Portal target={document.getElementById('dropdown') as HTMLElement}>
           <span
             ref={targetRef}
-            className={dropdownStyle({ color, className })}
-            style={{ left, top: top + height + gap, width: fullWidth ? width : 'auto' }}>
+            className={dropdownStyle({ color })}
+            style={{
+              left: dropdownLeft,
+              top: dropdownTop + dropdownHeight + gap,
+              width: fullWidth ? dropdownWidth : 'auto',
+            }}>
             {contents}
           </span>
         </Portal>
       )}
       <button
-        ref={ref}
+        ref={dropdownRef}
         className={dropdownContainerStyle({ disabled })}
         disabled={disabled}
         onClick={handleButtonClick}>
@@ -57,15 +68,16 @@ const Dropdown = ({
   );
 };
 
-interface DropdownProps
-  extends Omit<React.ComponentPropsWithoutRef<'section'>, 'color'>,
-    VariantProps<typeof dropdownStyle> {
+interface DropdownProps extends VariantProps<typeof dropdownStyle> {
+  children: React.ReactNode;
   contents: React.ReactNode;
   gap?: number;
   isOpen?: boolean;
-  close?: () => void;
   fullWidth?: boolean;
   disabled?: boolean;
+  close?: () => void;
+  open?: () => void;
+  onDropdownClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const dropdownContainerStyle = cn('inline-block w-full cursor-pointer text-start', {
