@@ -11,7 +11,7 @@ const Alert = ({ icon, title, children, color, className, isOpen, close, ...prop
         </div>
         <div className="flex gap-5">
           {icon && <div className={iconStyle({ color, className })}>{icon}</div>}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 break-words">
             <h3 className={titleStyle({ color, className })}>{title}</h3>
             <div>{children}</div>
           </div>
