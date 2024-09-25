@@ -2,9 +2,7 @@ import { Icon } from 'dotori-icons';
 import { cn, VariantProps } from 'dotori-utils';
 
 const Spinner = ({ className, size, color }: SpinnerProps) => (
-  <div className={spinnerIconStyle({ color, size, className })}>
-    <Icon icon="spinner" />
-  </div>
+  <Icon className={spinnerIconStyle({ color, size, className })} icon="spinner" />
 );
 
 interface SpinnerProps extends VariantProps<typeof spinnerIconStyle> {
