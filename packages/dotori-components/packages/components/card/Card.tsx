@@ -12,6 +12,6 @@ const Card = forwardRef<HTMLDivElement, CardProps>(({ children, className, ...pr
 
 interface CardProps extends PaperProps, VariantProps<typeof cardStyle> {}
 
-const cardStyle = cn('rounded border border-gray-400 bg-gray-0 dark:bg-gray-600 dark:text-gray-200');
+const cardStyle = cn('rounded border border-gray-400 bg-gray-0 dark:bg-gray-600 dark:text-gray-200 break-words');
 
 export default Card;
