@@ -1,8 +1,6 @@
 /** Layout Components */
 import '@dotori-components/styles/index.css';
 
-export { default as Layout } from './layout/Layout';
-
 /** A11y Components */
 export { default as ScreenReaderOnly } from './ScreenReaderOnly';
 
