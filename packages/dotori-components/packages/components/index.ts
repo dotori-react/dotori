@@ -50,10 +50,6 @@ export { default as Tree } from './tree/Tree';
 export { default as CheckboxTree } from './tree/CheckboxTree';
 export { default as JsonTreeView } from './tree/JsonTreeView';
 
-/** Navigation Components */
-export { default as NavigationBar } from './GNB/NavigationBar';
-export { default as MiniSideBar } from './GNB/MiniSideBar';
-
 /** Loading Components */
 export { default as Ellipsis } from './loading/Ellipsis';
 export { default as Slider } from './slider/Slider';
