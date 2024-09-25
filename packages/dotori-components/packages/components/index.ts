@@ -27,13 +27,13 @@ export { default as Alert } from './Alert';
 export { default as Spinner } from './loading/Spinner';
 
 /** Input Components */
-export { default as Input } from './Input';
+export { default as Input } from './input/Input';
 export { default as PinInput } from './PinInput';
 export { default as Checkbox } from './Checkbox';
 export { default as FileInput } from './file/FileInput';
 export { default as FileDropzone } from './file/FileDropzone';
-export { default as Select } from './comboBox/Select';
-export { default as Autocomplete } from './comboBox/Autocomplete';
+export { default as Select } from './input/Select';
+export { default as Autocomplete } from './input/Autocomplete';
 export { default as Radio } from './radio/Radio';
 export { default as PillInput } from './PillInput';
 
@@ -89,7 +89,7 @@ export { useFunnelContext } from './funnel/Funnel.context';
 export { default as Paper, type PaperProps } from './Paper'; // modal
 export { default as Portal } from './Portal';
 export { default as Calendar } from './picker/Calendar';
-export { default as Dropdown } from './comboBox/Dropdown';
+export { default as Dropdown } from './input/Dropdown';
 export { default as Card } from './Card';
 export { default as Pill } from './Pill';
 export { default as Polymorphic } from './polymorphic/Polymorphic';

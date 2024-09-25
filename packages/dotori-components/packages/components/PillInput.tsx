@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { Input, Pill } from '@dotori-components/components';
 
-import { InputProps } from './Input';
+import type { InputProps } from '@dotori-components/components/input/Input';
 
 const PillInput = ({ value, onChange, ...omittedInputProps }: PillInputProps) => {
   const [pillValues, setPillValues] = useState<string[]>(value ?? []);
