@@ -32,7 +32,6 @@ export { default as PinInput } from './PinInput';
 export { default as Checkbox } from './Checkbox';
 export { default as FileInput } from './file/FileInput';
 export { default as FileDropzone } from './file/FileDropzone';
-export { default as Select } from './input/Select';
 export { default as Autocomplete } from './input/Autocomplete';
 export { default as Radio } from './radio/Radio';
 export { default as PillInput } from './PillInput';
