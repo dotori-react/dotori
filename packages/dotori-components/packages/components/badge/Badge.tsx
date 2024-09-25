@@ -10,10 +10,10 @@ interface BadgeProps
   extends Omit<React.ComponentPropsWithoutRef<'section'>, 'color'>,
     VariantProps<typeof badgeContainerStyle>,
     VariantProps<typeof badgeStyle> {
-  children?: string;
+  children: string;
 }
 
-const badgeContainerStyle = cn('typo-sm500 box-content inline-flex items-center justify-center rounded-md px-3', {
+const badgeContainerStyle = cn('typo-sm500 box-border inline-flex items-center justify-center rounded-md px-3', {
   variants: {
     color: {
       black: 'border-gray-900 bg-gray-900 text-gray-900',
@@ -44,6 +44,7 @@ const badgeContainerStyle = cn('typo-sm500 box-content inline-flex items-center 
     variant: 'filled',
     color: 'black',
     fullWidth: false,
+    size: 'md',
   },
 });
 
@@ -58,7 +59,7 @@ const badgeStyle = cn('inline-block', {
     },
   },
   defaultVariants: {
-    size: 'xs',
+    size: 'md',
   },
 });
 
