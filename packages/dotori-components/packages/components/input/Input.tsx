@@ -1,4 +1,4 @@
-import { forwardRef, useState } from 'react';
+import { forwardRef, useEffect, useRef, useState } from 'react';
 
 import { cn, VariantProps } from 'dotori-utils';
 
@@ -8,6 +8,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     ref,
   ) => {
     const [focused, setFocused] = useState(false);
+    const inputRef = useRef<HTMLInputElement | null>(null);
 
     const combinedFocused = defaultFocused || focused;
 
@@ -21,11 +22,19 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       if (onBlur) onBlur(e);
     };
 
+    useEffect(() => {
+      if (combinedFocused && inputRef.current) inputRef.current.focus();
+    }, [combinedFocused]);
+
     return (
       <label className={inputContainerStyle({ className, disabled, size, focused: combinedFocused })}>
         {leftIcon && <span className={iconStyle({ size })}>{leftIcon}</span>}
         <input
-          ref={ref}
+          ref={node => {
+            // eslint-disable-next-line no-param-reassign
+            if (ref && typeof ref !== 'function') ref.current = node;
+            inputRef.current = node;
+          }}
           className={inputStyle({ disabled })}
           disabled={disabled}
           placeholder={placeholder}
