@@ -14,7 +14,7 @@ const meta = {
   argTypes: {
     color: {
       control: 'select',
-      description: '',
+      description: 'Defines the color theme of the badge.',
       options: ['black', 'blue', 'gray', 'green', 'red', 'yellow'],
       table: {
         defaultValue: { summary: 'black' },
@@ -22,7 +22,7 @@ const meta = {
     },
     variant: {
       control: 'select',
-      description: '',
+      description: 'Specifies the styling variant of the badge (e.g., filled, outlined, or subtle).',
       options: ['filled', 'outline', 'subtle'],
       table: {
         defaultValue: { summary: 'filled' },
@@ -30,7 +30,7 @@ const meta = {
     },
     size: {
       control: 'select',
-      description: '',
+      description: 'The size of the badge, adjusting the height and text size.',
       options: ['xs', 'sm', 'md', 'lg', 'xl'],
       table: {
         defaultValue: { summary: 'md' },
@@ -38,12 +38,18 @@ const meta = {
     },
     fullWidth: {
       control: 'boolean',
-      description: '',
+      description: 'Whether the badge takes up the full width of its container.',
       table: {
         defaultValue: { summary: 'false' },
       },
     },
-    children: { control: 'text', description: 'Additional class names to be applied.' },
+    children: {
+      control: 'text',
+      description: 'The text content of the badge',
+      table: {
+        defaultValue: { summary: '' },
+      },
+    },
   },
   args: {
     color: 'black',
