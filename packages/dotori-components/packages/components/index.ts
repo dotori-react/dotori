@@ -2,37 +2,35 @@
 import '@dotori-components/styles/index.css';
 
 /** A11y Components */
-export { default as ScreenReaderOnly } from './ScreenReaderOnly';
+export { default as ScreenReaderOnly } from './screenReaderOnly/ScreenReaderOnly';
 
 /** Guard Components */
-export { default as PrivateRoute } from './guard/privateRoute/PrivateRoute';
-export { default as PublicRoute } from './guard/publicRoute/PublicRoute';
+export { default as PrivateRoute } from './privateRoute/PrivateRoute';
+export { default as PublicRoute } from './publicRoute/PublicRoute';
 
 /** Button Components */
-export { default as Button } from './button/button/Button';
-export { default as CloseButton } from './button/closeButton/CloseButton';
-export { default as DialButton } from './button/dialButton/DialButton';
-export { default as ActionIcon } from './button/actionIcon/ActionIcon';
+export { default as Button } from './button/Button';
+export { default as CloseButton } from './closeButton/CloseButton';
+export { default as DialButton } from './dialButton/DialButton';
+export { default as ActionIcon } from './actionIcon/ActionIcon';
 
 /** Overlay Components */
-export { default as Drawer } from './Drawer';
-export { default as Modal } from './Modal';
-export { default as Tooltip } from './Tooltip';
-export { default as Popover } from './Popover';
-export { default as Snackbar } from './Snackbar';
-export { default as ScrollToTop } from './ScrollToTop';
-export { default as Alert } from './Alert';
-export { default as Spinner } from './loading/Spinner';
+export { default as Drawer } from './drawer/Drawer';
+export { default as Modal } from './modal/Modal';
+export { default as Tooltip } from './tooltip/Tooltip';
+export { default as Popover } from './popover/Popover';
+export { default as Snackbar } from './snackbar/Snackbar';
+export { default as ScrollToTop } from './scrollToTop/ScrollToTop';
+export { default as Alert } from './alert/Alert';
 
 /** Input Components */
 export { default as Input } from './input/Input';
-export { default as PinInput } from './PinInput';
-export { default as Checkbox } from './Checkbox';
-export { default as FileInput } from './file/FileInput';
-export { default as FileDropzone } from './file/FileDropzone';
-export { default as Autocomplete } from './input/Autocomplete';
+export { default as Checkbox } from './checkbox/Checkbox';
+export { default as Autocomplete } from './autocomplete/Autocomplete';
 export { default as Radio } from './radio/Radio';
-export { default as PillInput } from './PillInput';
+export { default as PillInput } from './pillInput/PillInput';
+export { default as PinInput } from './pinInput/PinInput';
+export { default as Dropdown } from './dropdown/Dropdown';
 
 /** Picker Components */
 export { default as ScrollDatePicker } from './picker/ScrollDatePicker';
@@ -49,41 +47,41 @@ export { default as CheckboxTree } from './tree/CheckboxTree';
 export { default as JsonTreeView } from './tree/JsonTreeView';
 
 /** Loading Components */
-export { default as Ellipsis } from './loading/Ellipsis';
-export { default as Slider } from './slider/Slider';
+export { default as Spinner } from './spinner/Spinner';
+export { default as Ellipsis } from './ellipsis/Ellipsis';
 
 /** text Components */
 export { default as Title } from './title/Title';
 export { default as Highlight } from './highlight/Highlight';
 export { default as Mark } from './highlight/Mark';
+export { default as Kbd } from './kbd/Kbd';
+export { default as Pill } from './pill/Pill';
 
 /** Core Components */
-export { default as Image } from './Image';
-export { default as Kbd } from './Kbd';
-export { default as Entity } from './Entity';
-export { default as ProgressBar } from './ProgressBar';
-export { default as NumberFormatter } from './NumberFormatter';
-export { default as Badge } from './Badge';
+export { default as Image } from './image/Image';
+export { default as Entity } from './entity/Entity';
+export { default as ProgressBar } from './progressBar/ProgressBar';
+export { default as NumberFormatter } from './numberFormatter/NumberFormatter';
+export { default as Badge } from './badge/Badge';
 export { default as Tabs } from './tabs/Tabs';
-export { default as Rating } from './Rating';
+export { default as Rating } from './rating/Rating';
 export { default as Chip } from './chip/Chip';
-export { default as Skeleton } from './Skeleton';
+export { default as Skeleton } from './skeleton/Skeleton';
 export { default as OnePage } from './onePage/OnePage';
 export { default as Avatar } from './avatar/Avatar';
 export { default as Accordion } from './accordion/Accordion';
-export { default as Indicator } from './Indicator';
-export { default as Divider } from './Divider';
+export { default as Indicator } from './indicator/Indicator';
+export { default as Divider } from './divider/Divider';
 export { default as Table } from './table/Table';
-export { default as Pagination } from './Pagination';
+export { default as Pagination } from './pagination/Pagination';
 export { default as Funnel } from './funnel/Funnel';
 export { useFunnelContext } from './funnel/Funnel.context';
 
 /** Reuseable Components */
-export { default as Paper, type PaperProps } from './Paper'; // modal
-export { default as Portal } from './Portal';
+export { default as Paper, type PaperProps } from './paper/Paper'; // modal
+export { default as Portal } from './portal/Portal';
 export { default as Calendar } from './picker/Calendar';
-export { default as Dropdown } from './input/Dropdown';
-export { default as Card } from './Card';
-export { default as Pill } from './Pill';
+export { default as Card } from './card/Card';
 export { default as Polymorphic } from './polymorphic/Polymorphic';
-export { default as ClonedChildren } from './ClonedChildren';
+export { default as ClonedChildren } from './clonedChildren/ClonedChildren';
+export { default as Slider } from './slider/Slider';
