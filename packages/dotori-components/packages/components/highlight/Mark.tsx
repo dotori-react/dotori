@@ -6,7 +6,9 @@ const Mark = ({ className, ...props }: MarkProps) => (
   <Polymorphic as="mark" className={markStyle({ className })} {...props} />
 );
 
-interface MarkProps extends React.ComponentPropsWithoutRef<'mark'> {}
+interface MarkProps extends React.ComponentPropsWithoutRef<'mark'> {
+  children: string;
+}
 
 const markStyle = cn('bg-yellow-500 text-gray-900');
 
