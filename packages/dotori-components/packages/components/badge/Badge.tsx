@@ -2,7 +2,7 @@ import { cn, VariantProps } from 'dotori-utils';
 
 const Badge = ({ color, children, size, variant, fullWidth, ...rest }: BadgeProps) => (
   <section className={badgeContainerStyle({ color, variant, size, fullWidth })} {...rest}>
-    <span className={badgeStyle({ size })}>{children?.toUpperCase()}</span>
+    <span className={badgeStyle({ size })}>{children}</span>
   </section>
 );
 
