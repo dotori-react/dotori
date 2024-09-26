@@ -1,0 +1,15 @@
+import { Meta, Title, IconGallery, IconItem } from '@storybook/blocks';
+import { Entity } from 'dotori-components';
+import { ENTITY_MAP } from 'dotori-components/constants';
+
+<Meta title="texts/Entity/gallery" />
+
+# gallery
+
+<IconGallery>
+  {Object.entries(ENTITY_MAP).map(([key, value]) => (
+    <IconItem name={value} key={key}>
+      <Entity symbol={key} />
+    </IconItem>
+  ))}
+</IconGallery>
