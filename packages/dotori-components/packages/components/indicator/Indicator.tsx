@@ -1,12 +1,12 @@
 import { cn, VariantProps } from 'dotori-utils';
 
-const Indicator = ({ children, size, radius, position, animation = 'none' }: IndicatorProps) => {
+const Indicator = ({ children, color, size, radius, position, animation = 'none' }: IndicatorProps) => {
   const indicatorDynamicStyle = { width: size, height: size };
 
   return (
     <span className="relative inline-flex">
       {children}
-      <span className={indicatorStyle({ radius, position, animation })} style={indicatorDynamicStyle} />
+      <span className={indicatorStyle({ color, radius, position, animation })} style={indicatorDynamicStyle} />
     </span>
   );
 };
