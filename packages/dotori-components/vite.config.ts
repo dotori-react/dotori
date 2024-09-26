@@ -12,7 +12,11 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
   plugins: [
     react(),
-    cssInjectedByJsPlugin(),
+    cssInjectedByJsPlugin({
+      jsAssetsFilterFunction(outputChunk) {
+        return outputChunk.fileName === 'components.cjs.js' || outputChunk.fileName === 'components.es.js';
+      },
+    }),
     tsconfigPaths({ projects: ['./tsconfig.json'] }),
     dts({ tsconfigPath: './tsconfig.build.json', include: './packages', outDir: 'lib', rollupTypes: true }),
   ],
@@ -24,7 +28,10 @@ export default defineConfig({
   build: {
     copyPublicDir: false,
     lib: {
-      entry: path.resolve(__dirname, 'packages/components/index.ts'),
+      entry: {
+        components: path.resolve(__dirname, 'packages/components/index.ts'),
+        constants: path.resolve(__dirname, 'packages/constants/index.ts'),
+      },
       name: 'dotori-components',
       formats: ['es', 'cjs'],
       fileName: (format, entryName) => `${entryName}.${format}.js`,

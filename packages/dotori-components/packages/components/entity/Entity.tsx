@@ -1,39 +1,19 @@
 import dompurify from 'dompurify';
 import { cn } from 'dotori-utils';
 
+import { ENTITY_MAP } from '@dotori-components/constants';
+
 const Entity = ({ symbol, className, ...rest }: EntityProps) => (
   <pre
     className={entityStyle({ className })}
-    dangerouslySetInnerHTML={{ __html: dompurify.sanitize(entityMap[symbol]) }}
+    dangerouslySetInnerHTML={{ __html: dompurify.sanitize(ENTITY_MAP[symbol]) }}
     {...rest}
   />
 );
 
 interface EntityProps extends React.ComponentPropsWithoutRef<'pre'> {
-  symbol: keyof typeof entityMap;
+  symbol: keyof typeof ENTITY_MAP;
 }
-
-const entityMap = {
-  ' ': '&nbsp;',
-  '    ': '&#9;',
-  '©': '&copy;',
-  '™': '&trade;',
-  '®': '&reg;',
-  '·': '&middot;',
-  ',': '&#44;',
-  '‘': '&lsquo;',
-  '’': '&rsquo;',
-  '"': '&quot;',
-  '“': '&ldquo;',
-  '”': '&rdquo;',
-  '(': '&#40;',
-  ')': '&#41;',
-  ':': '&#58;',
-  '[': '&#91;',
-  ']': '&#93;',
-  '{': '&#123;',
-  '}': '&#125;',
-} as const;
 
 const entityStyle = cn('inline p-0 bg-inherit');
 

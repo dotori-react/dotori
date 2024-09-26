@@ -27,9 +27,21 @@
     "dotori-icons",
     "dotori-components"
   ],
-  "main": "./lib/index.cjs.js",
-  "module": "./lib/index.es.js",
-  "types": "./lib/index.d.ts",
+  "main": "./lib/components.cjs.js",
+  "module": "./lib/components.es.js",
+  "types": "./lib/components.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/components.es.js",
+      "require": "./lib/components.cjs.js",
+      "types": "./lib/components.d.ts"
+    },
+    "./constants": {
+      "import": "./lib/constants.es.js",
+      "require": "./lib/constants.cjs.js",
+      "types": "./lib/constants.d.ts"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "rm -rf lib && vite build"
