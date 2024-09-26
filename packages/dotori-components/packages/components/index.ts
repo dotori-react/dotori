@@ -80,7 +80,7 @@ export { useFunnelContext } from './funnel/Funnel.context';
 /** Reuseable Components */
 export { default as Paper, type PaperProps } from './paper/Paper'; // modal
 export { default as Portal } from './portal/Portal';
-export { default as Calendar } from './picker/Calendar';
+export { default as Calendar } from './calendar/Calendar';
 export { default as Card } from './card/Card';
 export { default as Polymorphic } from './polymorphic/Polymorphic';
 export { default as ClonedChildren } from './clonedChildren/ClonedChildren';

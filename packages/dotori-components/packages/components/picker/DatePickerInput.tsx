@@ -2,8 +2,6 @@ import { useState } from 'react';
 
 import { Calendar, Dropdown, Input } from '@dotori-components/components';
 
-import { DatePickerProvider } from './DatePicker.context';
-
 const DatePickerInput = () => {
   const [inputValue, setInputValue] = useState('');
   const [selectedCalendarDate, setSelectedCalendarDate] = useState<{
@@ -18,11 +16,9 @@ const DatePickerInput = () => {
   };
 
   return (
-    <DatePickerProvider value={{ selectedCalendarDate, calendarDateClick }}>
-      <Dropdown contents={<Calendar />}>
-        <Input className="cursor-pointer" value={formatDateString(inputValue)} readOnly />
-      </Dropdown>
-    </DatePickerProvider>
+    <Dropdown contents={<Calendar calendarDateClick={calendarDateClick} selectedCalendarDate={selectedCalendarDate} />}>
+      <Input className="cursor-pointer" value={formatDateString(inputValue)} readOnly />
+    </Dropdown>
   );
 };
 

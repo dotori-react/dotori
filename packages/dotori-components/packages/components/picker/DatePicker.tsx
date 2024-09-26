@@ -2,8 +2,6 @@ import { useState } from 'react';
 
 import { Calendar } from '@dotori-components/components';
 
-import { DatePickerProvider } from './DatePicker.context';
-
 const DatePicker = () => {
   const [selectedCalendarDate, setSelectedCalendarDate] = useState<{
     year: number;
@@ -15,11 +13,7 @@ const DatePicker = () => {
     setSelectedCalendarDate({ year, month, date });
   };
 
-  return (
-    <DatePickerProvider value={{ selectedCalendarDate, calendarDateClick }}>
-      <Calendar />
-    </DatePickerProvider>
-  );
+  return <Calendar calendarDateClick={calendarDateClick} selectedCalendarDate={selectedCalendarDate} />;
 };
 
 export default DatePicker;

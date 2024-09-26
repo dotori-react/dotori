@@ -2,18 +2,19 @@ import { cn, getCalendarDate, getNowMonthDate, VariantProps } from 'dotori-utils
 
 import { Button } from '@dotori-components/components';
 
-import { useDatePickerContext } from './DatePicker.context';
-
-const CalendarDates = ({ calendarDate, isTodayMark, size, today }: CalendarDatesProps) => {
+const CalendarDates = ({
+  selectedCalendarDate,
+  calendarDate,
+  isTodayMark,
+  size,
+  today,
+  calendarDateClick,
+}: CalendarDatesProps) => {
   const todayDate = getNowMonthDate(today);
   const { saturdays, sundays, datesOfPrevMonth, datesOfNowMonth, datesOfNextMonth } = getCalendarDate(calendarDate);
 
-  const datePickerCTX = useDatePickerContext();
-
-  const handleCalendarDateClick = (selectedCalendarDate: { year: number; month: number; date: number }) => () => {
-    if (datePickerCTX) {
-      datePickerCTX.calendarDateClick(selectedCalendarDate);
-    }
+  const handleCalendarDateClick = (newSelectedCalendarDate: { year: number; month: number; date: number }) => () => {
+    calendarDateClick(newSelectedCalendarDate);
   };
 
   return (
@@ -38,10 +39,9 @@ const CalendarDates = ({ calendarDate, isTodayMark, size, today }: CalendarDates
               isTodayMark:
                 isTodayMark && todayDate.year === year && todayDate.month === month && todayDate.date === date,
               isSelected:
-                datePickerCTX &&
-                datePickerCTX.selectedCalendarDate?.year === year &&
-                datePickerCTX.selectedCalendarDate?.month === month &&
-                datePickerCTX.selectedCalendarDate?.date === date,
+                selectedCalendarDate?.year === year &&
+                selectedCalendarDate?.month === month &&
+                selectedCalendarDate?.date === date,
             })}
             onClick={handleCalendarDateClick({ year, month, date })}>
             {date}일
@@ -52,9 +52,17 @@ const CalendarDates = ({ calendarDate, isTodayMark, size, today }: CalendarDates
   );
 };
 
-interface CalendarDatesProps extends VariantProps<typeof dateOfMonthStyle> {
+interface CalendarDate {
+  year: number;
+  month: number;
+  date: number;
+}
+
+export interface CalendarDatesProps extends VariantProps<typeof dateOfMonthStyle> {
   today: Date;
   calendarDate: Date;
+  selectedCalendarDate: CalendarDate | null;
+  calendarDateClick: ({ year, month, date }: CalendarDate) => void;
 }
 
 const dateOfMonthStyle = cn('cursor-pointer place-content-center p-0 text-gray-900', {

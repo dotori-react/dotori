@@ -7,9 +7,11 @@ import { DAY_OF_WEEKEND } from '@dotori-components/constants';
 
 import CalendarDates from './CalendarDates';
 
+import type { CalendarDatesProps } from './CalendarDates';
+
 const today = new Date();
 
-const Calendar = ({ isTodayMark, size, className }: CalendarProps) => {
+const Calendar = ({ selectedCalendarDate, isTodayMark, size, className, calendarDateClick }: CalendarProps) => {
   const [calendarDate, setCalendarDate] = useState(today);
 
   const handleNextMonth = () => {
@@ -44,13 +46,22 @@ const Calendar = ({ isTodayMark, size, className }: CalendarProps) => {
             </div>
           ))}
 
-        <CalendarDates calendarDate={calendarDate} isTodayMark={isTodayMark} size={size} today={today} />
+        <CalendarDates
+          calendarDate={calendarDate}
+          calendarDateClick={calendarDateClick}
+          isTodayMark={isTodayMark}
+          selectedCalendarDate={selectedCalendarDate}
+          size={size}
+          today={today}
+        />
       </div>
     </section>
   );
 };
 
 interface CalendarProps extends React.ComponentPropsWithoutRef<'section'>, VariantProps<typeof calendarStyle> {
+  calendarDateClick: CalendarDatesProps['calendarDateClick'];
+  selectedCalendarDate: CalendarDatesProps['selectedCalendarDate'];
   isTodayMark?: boolean;
 }
 
