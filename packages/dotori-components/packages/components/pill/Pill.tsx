@@ -3,9 +3,17 @@ import { cn, VariantProps } from 'dotori-utils';
 import { CloseButton } from '@dotori-components/components';
 
 const Pill = ({ children, size, color, withCloseButton, onClose }: PillProps) => (
-  <span className={pillStyle({ size, color, withCloseButton })}>
+  <span className={pillStyle({ size, color })}>
     {children}
-    {withCloseButton && <CloseButton size={size} withoutHoverColor onClick={onClose} />}
+    {withCloseButton && (
+      <CloseButton
+        className={closeButtonStyle({ theme: 'light' })}
+        size={size}
+        withoutHoverColor
+        withoutPadding
+        onClick={onClose}
+      />
+    )}
   </span>
 );
 
@@ -15,31 +23,39 @@ interface PillProps extends VariantProps<typeof pillStyle> {
   onClose?: () => void;
 }
 
-const pillStyle = cn('inline-flex cursor-default items-center rounded-full text-gray-100', {
-  variants: {
-    color: {
-      black: 'bg-gray-900',
-      blue: 'bg-blue-600',
-      gray: 'bg-gray-600',
-      green: 'bg-green-600',
-      red: 'bg-red-600',
-      yellow: 'bg-yellow-600',
+const pillStyle = cn(
+  'inline-flex items-center gap-1 rounded-md px-2 align-middle overflow-hidden box-border text-gray-200',
+  {
+    variants: {
+      color: {
+        black: 'bg-gray-900 hover:bg-black border-gray-900',
+        blue: 'bg-blue-600 hover:bg-blue-700 border-blue-600',
+        gray: 'bg-gray-600 hover:bg-gray-700 border-gray-600',
+        green: 'bg-green-600 hover:bg-green-700 border-green-600',
+        red: 'bg-red-600 hover:bg-red-700 border-red-600',
+        yellow: 'bg-yellow-600 hover:bg-yellow-700 border-yellow-600',
+      },
+      size: {
+        xs: 'h-4 text-3xs',
+        sm: 'h-5 text-2xs',
+        md: 'h-6 text-xs',
+        lg: 'h-7 text-sm',
+        xl: 'h-8 text-md',
+      },
     },
-    size: {
-      xs: 'px-2 text-xs',
-      sm: 'px-3 text-sm',
-      md: 'px-3 text-md',
-      lg: 'px-3 text-lg',
-      xl: 'px-3 text-xl',
-    },
-    withCloseButton: {
-      true: 'pr-0',
-      false: '',
+    defaultVariants: {
+      color: 'black',
+      size: 'sm',
     },
   },
-  defaultVariants: {
-    color: 'black',
-    size: 'sm',
+);
+
+const closeButtonStyle = cn('', {
+  variants: {
+    theme: {
+      light: 'fill-gray-0',
+      dark: 'fill-gray-900',
+    },
   },
 });
 
