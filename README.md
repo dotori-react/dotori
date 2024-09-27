@@ -11,13 +11,13 @@
 If you want to use the components, use the following command:
 
 ```bash
-npm install dotori-components
+npm install dotori-components dotori-context dotori-hooks dotori-icons dotori-utils
 ```
 
 If you want to use the hooks, use the following command:
 
 ```bash
-npm install dotori-hooks
+npm install dotori-hooks dotori-utils
 ```
 
 If you want to use the utils, use the following command:
@@ -29,7 +29,7 @@ npm install dotori-utils
 If you want to use the icons, use the following command:
 
 ```bash
-npm install dotori-icons
+npm install dotori-icons dotori-utils
 ```
 
 If you want to use the context, use the following command:
