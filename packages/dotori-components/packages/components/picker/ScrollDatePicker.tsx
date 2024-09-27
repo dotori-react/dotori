@@ -69,6 +69,8 @@ const ScrollableDate = ({ data: { years, months, dates }, defaultValue, onChange
 
     const scrollBoxes = [...scrollContainerRef.current.children];
 
+    if (onChange) onChange(selectedDate);
+
     scrollBoxes.forEach((element, idx) => {
       const buttonElements = [...element.children];
       const i =
@@ -80,7 +82,7 @@ const ScrollableDate = ({ data: { years, months, dates }, defaultValue, onChange
 
       scrollBoxes[idx].scrollTop = buttonElements[0].clientHeight * i;
     });
-  }, [dates, months, selectedDate, selectedDate.date, selectedDate.month, selectedDate.year, years]);
+  }, [dates, months, onChange, selectedDate, selectedDate.date, selectedDate.month, selectedDate.year, years]);
 
   return (
     <section ref={scrollContainerRef} className="flex h-52 w-96 justify-center bg-gray-600">
