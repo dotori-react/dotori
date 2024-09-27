@@ -1,7 +1,7 @@
 {
   "name": "dotori-context",
   "private": false,
-  "version": "0.0.2-alpha.2",
+  "version": "0.0.2",
   "description": "dotori context",
   "author": "LEE DONG GYU <tenenger7125@gmail.com>",
   "engines": {
