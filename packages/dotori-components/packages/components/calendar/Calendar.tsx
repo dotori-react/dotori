@@ -59,7 +59,7 @@ const Calendar = ({ selectedCalendarDate, isTodayMark, size, className, calendar
   );
 };
 
-interface CalendarProps extends React.ComponentPropsWithoutRef<'section'>, VariantProps<typeof calendarStyle> {
+export interface CalendarProps extends React.ComponentPropsWithoutRef<'section'>, VariantProps<typeof calendarStyle> {
   calendarDateClick: CalendarDatesProps['calendarDateClick'];
   selectedCalendarDate: CalendarDatesProps['selectedCalendarDate'];
   isTodayMark?: boolean;
