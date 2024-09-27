@@ -7,7 +7,6 @@ const config: Config = {
   theme,
   plugins,
   darkMode: 'selector',
-  important: true,
 };
 
 export default config;

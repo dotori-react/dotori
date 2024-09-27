@@ -1,9 +1,9 @@
 import { Icon } from 'dotori-icons';
 import { cn, VariantProps } from 'dotori-utils';
 
-const ActionIcon = ({ withoutHoverColor, icon, color, size, className, ...rest }: ActionIconProps) => (
+const ActionIcon = ({ withoutHoverColor, icon, color, size, withoutPadding, className, ...rest }: ActionIconProps) => (
   <button className={actionIconStyle({ color, withoutHoverColor, className })} {...rest}>
-    <Icon className={iconStyle({ size })} icon={icon} />
+    <Icon className={iconStyle({ size, withoutPadding })} icon={icon} />
   </button>
 );
 
@@ -44,9 +44,14 @@ const iconStyle = cn('box-content active:translate-y-[1px]', {
       lg: 'h-5 w-5 p-2',
       xl: 'h-6 w-6 p-3',
     },
+    withoutPadding: {
+      true: 'p-0',
+      false: '',
+    },
   },
   defaultVariants: {
     size: 'sm',
+    withoutPadding: false,
   },
 });
 
