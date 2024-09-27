@@ -42,7 +42,7 @@ const meta = {
       },
     },
     children: {
-      actions: 'changed',
+      control: 'object',
       description: '*(Optional)* The content to be displayed inside the Paper component.',
     },
   },
