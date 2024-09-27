@@ -47,10 +47,6 @@
     "build": "rm -rf lib && vite build"
   },
   "peerDependencies": {
-    "dotori-context": ">=0.0.1 <2.0.0",
-    "dotori-hooks": ">=0.0.2-0 <2.0.0",
-    "dotori-icons": ">=0.0.7-0 <2.0.0",
-    "dotori-utils": ">=0.0.18 <2.0.0",
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
   },
