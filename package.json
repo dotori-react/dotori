@@ -10,7 +10,8 @@
     "docs:dev": "pnpm -C ./docs run start",
     "docs:prod": "pnpm -C ./docs run serve",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^2.0.2",
@@ -29,6 +30,7 @@
     "@types/node": "^22.1.0",
     "@types/react": "^18.3.8",
     "@typescript-eslint/parser": "^8.0.1",
+    "chromatic": "^11.10.4",
     "commitizen": "^4.3.0",
     "dotori-components": "workspace:*",
     "dotori-context": "workspace:*",
