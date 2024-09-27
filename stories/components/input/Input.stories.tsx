@@ -9,7 +9,7 @@ const meta = {
   argTypes: {
     size: {
       control: 'select',
-      description: '',
+      description: '*(Optional)* Size of the input field.',
       options: ['xs', 'sm', 'md', 'lg', 'xl'],
       table: {
         defaultValue: { summary: 'md' },
@@ -17,49 +17,49 @@ const meta = {
     },
     leftIcon: {
       control: 'object',
-      description: 'It receives an icon to be placed on the left(ReactNode)',
+      description: '*(Optional)* left icon element to display inside the input field.',
       table: {
         defaultValue: { summary: 'null' },
       },
     },
     rightIcon: {
       control: 'object',
-      description: 'It receives an icon to be placed on the right(ReactNode)',
+      description: '*(Optional)* right icon element to display inside the input field.',
       table: {
         defaultValue: { summary: 'null' },
       },
     },
     className: {
       control: 'text',
-      description: 'className attribute',
+      description: '*(Optional)* Additional class names to apply to the input container.',
       table: {
         defaultValue: { summary: '' },
       },
     },
     disabled: {
       control: 'boolean',
-      description: 'input disabled attribute',
+      description: '*(Optional)* Disables the input field and changes its styling accordingly.',
       table: {
         defaultValue: { summary: 'false' },
       },
     },
     defaultFocused: {
       control: 'boolean',
-      description: 'input focused',
+      description: '*(Optional)* Automatically focuses the input when it is rendered.',
       table: {
         defaultValue: { summary: 'false' },
       },
     },
     placeholder: {
       control: 'text',
-      description: 'input placeholder attribute',
+      description: '*(Optional)* Placeholder text for the input field.',
       table: {
         defaultValue: { summary: '' },
       },
     },
     type: {
       control: 'select',
-      description: 'input type attribute',
+      description: '*(Optional)* The type of the input field, supports various HTML input types such as text or file.',
       options: ['file', 'text'],
       table: {
         defaultValue: { summary: 'text' },
