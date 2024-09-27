@@ -4,6 +4,8 @@ import { getNowMonthDate } from 'dotori-utils';
 
 import { Button } from '@dotori-components/components';
 
+import { CalendarDatesProps } from '../calendar/CalendarDates';
+
 const ScrollableDate = ({ data: { years, months, dates }, defaultValue, onChange }: ScrollDatePickerProps) => {
   const [selectedDate, setSelectedDate] = useState(defaultValue || initialDate);
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
@@ -78,7 +80,7 @@ const ScrollableDate = ({ data: { years, months, dates }, defaultValue, onChange
 
       scrollBoxes[idx].scrollTop = buttonElements[0].clientHeight * i;
     });
-  }, [dates, months, selectedDate.date, selectedDate.month, selectedDate.year, years]);
+  }, [dates, months, selectedDate, selectedDate.date, selectedDate.month, selectedDate.year, years]);
 
   return (
     <section ref={scrollContainerRef} className="flex h-52 w-96 justify-center bg-gray-600">
@@ -109,8 +111,8 @@ const initialDate = () => {
 };
 
 interface ScrollDatePickerProps {
-  onChange?: ({ year, month, date }: { year: number; month: number; date: number }) => void;
-  defaultValue?: { year: number; month: number; date: number };
+  onChange?: (date: Exclude<CalendarDatesProps['selectedCalendarDate'], null>) => void;
+  defaultValue?: Exclude<CalendarDatesProps['selectedCalendarDate'], null>;
   data: { years: number[]; months: number[]; dates: number[] };
 }
 
