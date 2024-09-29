@@ -26,6 +26,15 @@ const PinInput = <T extends 1 | 2 | 3 | 4 | 5>({ total, size, value, onChange }:
       setPinInputValue(newPinInputValue);
       onChange(newPinInputValue);
     }
+
+    if (e.key === 'Backspace') {
+      e.preventDefault();
+
+      setPinInputValue(newPinInputValue);
+      onChange(newPinInputValue);
+
+      pinInputsRef.current[idx - 1]?.focus();
+    }
   };
 
   useEffect(() => {
