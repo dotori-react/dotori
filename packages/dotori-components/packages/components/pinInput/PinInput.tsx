@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { cn, VariantProps } from 'dotori-utils';
 
@@ -10,7 +10,7 @@ const PinInput = <T extends 1 | 2 | 3 | 4 | 5>({ total, size, value, onChange }:
 
   const handlePinInputChange = (idx: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
     const pinInputNumberValue = e.target.value.replace(REGEX.ONLY_NUMBER, '');
-    const newPinInputValue = pinInputValue.map((v, i) => (i === idx ? pinInputNumberValue : v));
+    const newPinInputValue = pinInputValue.map((v, i) => (i === idx ? pinInputNumberValue : v)) as Tuple<T>;
 
     setPinInputValue(newPinInputValue);
     onChange(newPinInputValue);
@@ -20,9 +20,21 @@ const PinInput = <T extends 1 | 2 | 3 | 4 | 5>({ total, size, value, onChange }:
   };
 
   const handlePinInputKeyDown = (idx: number) => (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (Number.isInteger(+e.key) && e.code !== 'Space')
-      setPinInputValue(pinInputValue.map((v, i) => (i === idx ? '' : v)));
+    const newPinInputValue = pinInputValue.map((v, i) => (i === idx ? '' : v)) as Tuple<T>;
+
+    if (Number.isInteger(+e.key) && e.code !== 'Space') {
+      setPinInputValue(newPinInputValue);
+      onChange(newPinInputValue);
+    }
   };
+
+  useEffect(() => {
+    const newValue = Array.from({ length: total }, () => '');
+
+    onChange(newValue as Tuple<T>);
+    setPinInputValue(newValue);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [total]);
 
   return (
     <section>
@@ -45,10 +57,13 @@ const PinInput = <T extends 1 | 2 | 3 | 4 | 5>({ total, size, value, onChange }:
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Tuple<N extends number, T = string, R extends any[] = []> = R['length'] extends N ? R : Tuple<N, T, [...R, T]>;
+
 interface PinInputProps<T extends 1 | 2 | 3 | 4 | 5> extends VariantProps<typeof pinInputStyle> {
   total: T;
-  value: string[];
-  onChange: (value: string[]) => void;
+  value: Tuple<T>;
+  onChange: (value: Tuple<T>) => void;
 }
 
 const pinInputStyle = cn('border border-gray-200 text-center', {
