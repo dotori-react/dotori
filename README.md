@@ -43,6 +43,7 @@ npm install dotori-context
 ## Usage
 
 Please refer to the [documentation](https://dotori-docs.netlify.app/) created with Docusaurus for detailed usage instructions.
+And if you need to see components with styles included, similar to a design system, please refer to the [storybook](https://66f696470ec9eb2bd29fa1fe-hbmebzdukm.chromatic.com/?path=/docs/buttons-actionicon-gallery--docs).
 
 <br>
 
