@@ -5,14 +5,9 @@ import { PillInput } from 'dotori-components';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'texts/PillInput',
+  title: 'inputs/PillInput',
   component: PillInput,
   tags: ['autodocs'],
-  // decorators: Story => (
-  //   <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-  //     <Story />
-  //   </div>
-  // ),
   argTypes: {
     value: {
       control: 'object',
