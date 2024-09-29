@@ -4,16 +4,18 @@ import { cn, VariantProps } from 'dotori-utils';
 
 import { REGEX } from '@dotori-components/constants';
 
-const PinInput = ({ total, size }: PinInputProps) => {
-  const [pinInputValue, setPinInputValue] = useState<string[]>(Array(total).fill(''));
+const PinInput = <T extends 1 | 2 | 3 | 4 | 5>({ total, size, value, onChange }: PinInputProps<T>) => {
+  const [pinInputValue, setPinInputValue] = useState<string[]>(value);
   const pinInputsRef = useRef<HTMLInputElement[] | null[]>([]);
 
   const handlePinInputChange = (idx: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(REGEX.ONLY_NUMBER, '');
+    const pinInputNumberValue = e.target.value.replace(REGEX.ONLY_NUMBER, '');
+    const newPinInputValue = pinInputValue.map((v, i) => (i === idx ? pinInputNumberValue : v));
 
-    setPinInputValue(pinInputValue.map((v, i) => (i === idx ? value : v)));
+    setPinInputValue(newPinInputValue);
+    onChange(newPinInputValue);
 
-    if (value === '') return;
+    if (pinInputNumberValue === '') return;
     pinInputsRef.current[idx + 1]?.focus();
   };
 
@@ -43,8 +45,10 @@ const PinInput = ({ total, size }: PinInputProps) => {
   );
 };
 
-interface PinInputProps extends VariantProps<typeof pinInputStyle> {
-  total: 1 | 2 | 3 | 4 | 5;
+interface PinInputProps<T extends 1 | 2 | 3 | 4 | 5> extends VariantProps<typeof pinInputStyle> {
+  total: T;
+  value: string[];
+  onChange: (value: string[]) => void;
 }
 
 const pinInputStyle = cn('border border-gray-200 text-center', {
