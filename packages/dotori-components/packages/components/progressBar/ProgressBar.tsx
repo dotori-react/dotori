@@ -2,7 +2,7 @@ import { cn, VariantProps } from 'dotori-utils';
 
 const ProgressBar = ({ current, total, color }: ProgressBarProps) => (
   <section className="bg-gray-100 h-5 w-full">
-    <div className={progressBarStyle({ color })} style={{ width: `${(current / total) * 100}%` }} />
+    <div className={progressBarStyle({ color })} style={{ width: `${Math.min((current / total) * 100, 100)}%` }} />
   </section>
 );
 interface ProgressBarProps extends VariantProps<typeof progressBarStyle> {
