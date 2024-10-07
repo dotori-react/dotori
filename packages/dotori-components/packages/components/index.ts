@@ -17,6 +17,7 @@ export { default as ActionIcon } from './actionIcon/ActionIcon';
 /** Overlay Components */
 export { default as Drawer } from './drawer/Drawer';
 export { default as Modal } from './modal/Modal';
+export { default as TinyModal } from './modal/TinyModal';
 export { default as Tooltip } from './tooltip/Tooltip';
 export { default as Popover } from './popover/Popover';
 export { default as Snackbar } from './snackbar/Snackbar';
