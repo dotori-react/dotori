@@ -1,45 +1,53 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 import { range } from 'dotori-utils';
 
-const useCount = ({ initialCount = 0, min = -Infinity, max = Infinity, callback }: UseCountParams) => {
-  const [count, setCount] = useState(initialCount);
+const useCount = ({
+  controlledCount: _controlledCount,
+  initialCount,
+  min = -Infinity,
+  max = Infinity,
+}: UseCountParams) => {
+  const defaultCount = useRef(initialCount);
+  const [count, setCount] = useState(defaultCount.current);
+
+  const controlledCount = _controlledCount === undefined ? count : _controlledCount;
 
   const increment = useCallback(() => {
-    setCount(prev => {
-      const increasedCount = prev < max ? prev + 1 : prev;
+    const increasedCount = count < max ? count + 1 : count;
 
-      if (callback) callback(increasedCount);
-      return increasedCount;
-    });
-  }, [callback, max]);
+    setCount(increasedCount);
+
+    return increasedCount;
+  }, [count, max]);
 
   const decrement = useCallback(() => {
-    setCount(prev => {
-      const decreasedCount = prev > min ? prev - 1 : prev;
+    const decreasedCount = count > min ? count - 1 : count;
 
-      if (callback) callback(decreasedCount);
-      return decreasedCount;
-    });
-  }, [callback, min]);
+    setCount(decreasedCount);
+
+    return decreasedCount;
+  }, [count, min]);
 
   const set = useCallback(
     (_count: number) => {
       const updatedCount = range(_count, min, max);
 
-      if (callback) callback(updatedCount);
       setCount(updatedCount);
+
+      return _count;
     },
-    [callback, max, min],
+    [max, min],
   );
 
   const reset = useCallback(() => {
-    if (callback) callback(initialCount);
-    setCount(initialCount);
-  }, [callback, initialCount]);
+    setCount(defaultCount.current);
+
+    return defaultCount.current;
+  }, []);
 
   return {
-    count,
+    count: controlledCount,
     increment,
     decrement,
     set,
@@ -48,10 +56,10 @@ const useCount = ({ initialCount = 0, min = -Infinity, max = Infinity, callback 
 };
 
 interface UseCountParams {
-  initialCount?: number;
+  controlledCount?: number;
+  initialCount: number;
   min?: number;
   max?: number;
-  callback?: (count: number) => void;
 }
 
 export default useCount;
