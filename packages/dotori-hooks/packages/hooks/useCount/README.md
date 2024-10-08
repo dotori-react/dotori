@@ -1,13 +1,14 @@
 # useCount
 
-- easy to use counter
+- The useCount hook provides a simple and flexible way to manage a numeric counter state. It offers features for incrementing, decrementing, setting, and resetting the count value. Additionally, it supports controlled and uncontrolled modes, making it suitable for various use cases.
 
 <br/>
 
 ## Features
 
-- you can plus or minus number, set specific number to use returned functions
-- if you add min and max options, then count number matched
+- **Controlled and Uncontrolled States**: Allows managing state internally or passing a controlled value.
+- **Min/Max Constraints**: Supports optional `min` and `max` constraints for the counter.
+- **Utility Functions**: Provides functions like `increment`, `decrement`, `set`, and `reset` for state management.
 
 <br/>
 
@@ -15,18 +16,18 @@
 
 ```typescript
 interface UseCountParams {
-  initialCount?: number;
+  controlledCount?: number;
+  initialCount: number;
   min?: number;
   max?: number;
-  callback?: (count: number) => void;
 }
 
-const useCount: ({ initialCount, min, max, callback }: UseCountParams) => {
+const useCount: ({ controlledCount: _controlledCount, initialCount, min, max }: UseCountParams) => {
   count: number;
-  increment: () => void;
-  decrement: () => void;
-  set: (_count: number) => void;
-  reset: () => void;
+  increment: () => number;
+  decrement: () => number;
+  set: (_count: number) => number;
+  reset: () => number;
 };
 ```
 
@@ -34,18 +35,49 @@ const useCount: ({ initialCount, min, max, callback }: UseCountParams) => {
 
 ## Example
 
+### Basic Example
+
 ```typescript
-const App = () => {
-  const { count, increment, decrement, set, reset } = useCount({ min: 5, max: 10 });
+import React, { useState } from 'react';
+import useCount from './path/to/useCount';
+
+const CounterComponent = () => {
+  const { count, increment, decrement, set, reset } = useCount({ initialCount: 0 });
 
   return (
-    <button onClick={increment}>count up</button>
-    <button onClick={decrement}>count down</button>
-    <button onClick={() => set(7)}>count set 7</button>
-    <button onClick={reset}>reset</button>
-    <p>{count}</p>
-  )
-}
+    <div>
+      <h1>Current Count: {count}</h1>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+      <button onClick={() => set(5)}>Set to 5</button>
+      <button onClick={reset}>Reset</button>
+    </div>
+  );
+};
 
+export default CounterComponent;
+```
+
+### Controlled Example
+
+```typescript
+import React, { useState } from 'react';
+import useCount from './path/to/useCount';
+
+const ControlledCounter = () => {
+  const [controlledCount, setControlledCount] = useState(10);
+  const { count, increment, decrement } = useCount({
+    controlledCount,
+    initialCount: 0,
+  });
+
+  return (
+    <div>
+      <h1>Controlled Count: {count}</h1>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  );
+};
 
 ```
