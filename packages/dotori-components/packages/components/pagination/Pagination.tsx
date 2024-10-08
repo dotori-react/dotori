@@ -1,47 +1,43 @@
-import { useEffect } from 'react';
-
 import { useCount } from 'dotori-hooks';
 import { Icon } from 'dotori-icons';
 import { cn } from 'dotori-utils';
 
 import { Button } from '@dotori-components/components';
 
-const Pagination = ({ pageTotal, page, onChange }: PaginationProps) => {
+const Pagination = ({ pageTotal, page, siblingCount, onChange }: PaginationProps) => {
   const { count, increment, decrement, set } = useCount({
+    controlledCount: page,
     initialCount: page,
     min: 1,
     max: pageTotal,
-    callback: onChange,
   });
   const pagingNavigationTotal = Array.from({ length: pageTotal }, (_, i) => i + 1);
 
-  // ^ currenPage가 중간에 붙는 로직
   const filteredPagingNavigation = pagingNavigationTotal.slice(
-    Math.min(Math.max(count - PAGE_MID, 0), Math.max(pageTotal - PAGE_SIZE, 0)),
-    Math.min(Math.max(count - PAGE_MID, 0) + PAGE_SIZE, pageTotal),
+    Math.max(count - siblingCount - 1, 0),
+    Math.min(count + siblingCount, pageTotal),
   );
 
-  // ^ currentPage 상태가 맨 왼쪽에 붙는 로직.
-  // const filteredPagingNavigation = pagingNavigationTotal.slice(
-  //   Math.min(count - 1, Math.max(pageTotal - PAGE_SIZE, 0)),
-  //   Math.min(count - 1 + PAGE_SIZE, pageTotal),
-  // );
+  const handlePageArrowClick: React.MouseEventHandler<HTMLButtonElement> = e => {
+    const { dataset } = e.currentTarget;
+
+    const newPage = (dataset.id === 'leftArrow' ? decrement : increment)();
+    if (onChange) onChange(newPage);
+  };
 
   const handlePageClick = (newPage: number) => () => {
     set(newPage);
+    if (onChange) onChange(newPage);
   };
-
-  useEffect(() => {
-    set(page);
-  }, [page, set]);
 
   return (
     <div className="flex items-center justify-center">
       <Button
         className="flex h-8 w-8 items-center justify-center p-0"
         color="gray"
+        data-id="leftArrow"
         variant="outline"
-        onClick={decrement}>
+        onClick={handlePageArrowClick}>
         <Icon className="h-5 w-5 rotate-180 fill-gray-600" icon="chevronArrowRight" />
       </Button>
 
@@ -59,8 +55,9 @@ const Pagination = ({ pageTotal, page, onChange }: PaginationProps) => {
       <Button
         className="flex h-8 w-8 items-center justify-center p-0"
         color="gray"
+        data-id="rightArrow"
         variant="outline"
-        onClick={increment}>
+        onClick={handlePageArrowClick}>
         <Icon className="h-5 w-5 fill-gray-600" icon="chevronArrowRight" />
       </Button>
     </div>
@@ -70,11 +67,9 @@ const Pagination = ({ pageTotal, page, onChange }: PaginationProps) => {
 interface PaginationProps {
   pageTotal: number;
   page: number;
+  siblingCount: number;
   onChange?: (page: number) => void;
 }
-
-const PAGE_SIZE = 5;
-const PAGE_MID = 3;
 
 const paginationStyle = cn('flex h-8 w-8 items-center justify-center p-0');
 
