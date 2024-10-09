@@ -8,6 +8,7 @@ import CloseIcon from '@dotori-icons/assets/close.svg?react';
 import CloudUploadIcon from '@dotori-icons/assets/cloud_upload.svg?react';
 import ExcelIcon from '@dotori-icons/assets/excel.svg?react';
 import FileIcon from '@dotori-icons/assets/file.svg?react';
+import GithubIcon from '@dotori-icons/assets/github.svg?react';
 import HamburgerIcon from '@dotori-icons/assets/hamburger.svg?react';
 import HomeIcon from '@dotori-icons/assets/home.svg?react';
 import HwpIcon from '@dotori-icons/assets/hwp.svg?react';
@@ -42,4 +43,5 @@ export const ICON_MAP = {
   pdf: PdfIcon,
   word: WordIcon,
   profileCircle: ProfileCircleIcon,
+  github: GithubIcon,
 } as const;
