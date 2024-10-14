@@ -21,7 +21,7 @@ const Radio = ({ size, color, variant, label, className, value, renderNode, ...p
       ) : (
         <>
           <div className={iconStyle({ size, color, variant, selected, hovered })}>
-            {selected && <Icon icon="circle" />}
+            {selected && <Icon icon="circle" fullSize />}
           </div>
           <span>{label}</span>
         </>
@@ -67,7 +67,7 @@ const radioContainerStyle = cn('inline-flex cursor-pointer items-center justify-
   },
 });
 
-const iconStyle = cn('rounded-full border', {
+const iconStyle = cn('rounded-full border border-gray-300', {
   variants: {
     size: {
       xs: 'h-4 w-4 p-[0.125rem]',
@@ -77,12 +77,12 @@ const iconStyle = cn('rounded-full border', {
       xl: 'h-8 w-8 p-1',
     },
     color: {
-      black: 'border-gray-900 fill-gray-900',
-      blue: 'border-blue-600 fill-blue-600',
-      gray: 'border-gray-600 fill-gray-600',
-      green: 'border-green-600 fill-green-600',
-      red: 'border-red-600 fill-red-600',
-      yellow: 'border-yellow-600 fill-yellow-600',
+      black: 'fill-gray-900',
+      blue: 'fill-blue-600',
+      gray: 'fill-gray-600',
+      green: 'fill-green-600',
+      red: 'fill-red-600',
+      yellow: 'fill-yellow-600',
     },
     selected: {
       true: 'border-2',
@@ -90,7 +90,7 @@ const iconStyle = cn('rounded-full border', {
     },
     hovered: {
       true: 'border-2',
-      false: 'border-gray-300',
+      false: '',
     },
     variant: {
       filled: 'fill-gray-200',
