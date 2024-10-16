@@ -5,7 +5,11 @@ import { ICON_MAP } from '@dotori-icons/constants';
 const Icon = ({ fullSize, size, icon, className, ...props }: IconProps) => {
   const IconComponent = ICON_MAP[icon];
 
-  return <IconComponent className={iconStyle({ size, fullSize, className })} {...props} />;
+  return (
+    <div className="tw-preflight">
+      <IconComponent className={iconStyle({ size, fullSize, className })} {...props} />
+    </div>
+  );
 };
 
 interface IconProps extends VariantProps<typeof iconStyle>, React.ComponentPropsWithoutRef<'svg'> {
