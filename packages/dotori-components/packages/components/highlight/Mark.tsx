@@ -3,7 +3,9 @@ import { cn } from 'dotori-utils';
 import { Polymorphic } from '@dotori-components/components';
 
 const Mark = ({ className, ...props }: MarkProps) => (
-  <Polymorphic as="mark" className={markStyle({ className })} {...props} />
+  <span className="tw-preflight">
+    <Polymorphic as="mark" className={markStyle({ className })} {...props} />
+  </span>
 );
 
 interface MarkProps extends React.ComponentPropsWithoutRef<'mark'> {

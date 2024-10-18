@@ -18,17 +18,26 @@ const Switch = ({ size, checked, on, off, disabled, className }: SwitchProps) =>
   };
 
   return (
-    <label className={toggleStyle({ isSwitchShow, size, checked, disabled, className, isDarkModeSwitch })}>
-      <input aria-label="toggle" checked={checked} disabled={disabled} type="checkbox" onChange={toggle} />
-      <div className="absolute left-0 top-0 flex h-full w-full px-2">
-        <div
-          ref={ref}
-          className={toggleCircleStyle({ isSwitchShow, size, checked, disabled, isDarkModeSwitch })}
-          style={toggleCirclePositionMap[checked ? 'on' : 'off']}
-          onTransitionEnd={switchShow}
+    <div className="tw-preflight">
+      <label className={toggleStyle({ isSwitchShow, size, checked, disabled, className, isDarkModeSwitch })}>
+        <input
+          aria-label="toggle"
+          checked={checked}
+          className="appearance-none"
+          disabled={disabled}
+          type="checkbox"
+          onChange={toggle}
         />
-      </div>
-    </label>
+        <div className="absolute left-0 top-0 flex h-full w-full px-2">
+          <div
+            ref={ref}
+            className={toggleCircleStyle({ isSwitchShow, size, checked, disabled, isDarkModeSwitch })}
+            style={toggleCirclePositionMap[checked ? 'on' : 'off']}
+            onTransitionEnd={switchShow}
+          />
+        </div>
+      </label>
+    </div>
   );
 };
 

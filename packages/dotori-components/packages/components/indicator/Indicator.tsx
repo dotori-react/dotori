@@ -4,10 +4,12 @@ const Indicator = ({ children, color, size, radius, position, animation = 'none'
   const indicatorDynamicStyle = { width: size, height: size };
 
   return (
-    <span className="relative inline-flex">
-      {children}
-      <span className={indicatorStyle({ color, radius, position, animation })} style={indicatorDynamicStyle} />
-    </span>
+    <div className="tw-preflight">
+      <span className="relative inline-flex">
+        {children}
+        <span className={indicatorStyle({ color, radius, position, animation })} style={indicatorDynamicStyle} />
+      </span>
+    </div>
   );
 };
 

@@ -39,13 +39,15 @@ const PillInput = ({ value, onChange, size, disabled, ...inputProps }: PillInput
   };
 
   return (
-    <div className={pillInputContainerStyle({ disabled })}>
-      {pillValues.map((v, i) => (
-        <Pill key={i} size={size} withCloseButton onClose={() => handlePillDelete(i)}>
-          {v}
-        </Pill>
-      ))}
-      <Input {...inputProps} className="h-full min-w-full flex-1 border-none" size={size} onKeyDown={onKeyDown} />
+    <div className="tw-preflight">
+      <div className={pillInputContainerStyle({ disabled })}>
+        {pillValues.map((v, i) => (
+          <Pill key={i} size={size} withCloseButton onClose={() => handlePillDelete(i)}>
+            {v}
+          </Pill>
+        ))}
+        <Input {...inputProps} className="h-full min-w-full flex-1 border-none" size={size} onKeyDown={onKeyDown} />
+      </div>
     </div>
   );
 };

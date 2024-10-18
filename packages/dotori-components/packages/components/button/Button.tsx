@@ -4,13 +4,15 @@ import { cn, VariantProps } from 'dotori-utils';
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ size, variant, color, disabled, fullWidth, children, className, ...rest }, ref) => (
-    <button
-      ref={ref}
-      className={buttonStyle({ variant, color, fullWidth, disabled, className, size })}
-      disabled={disabled}
-      {...rest}>
-      {children}
-    </button>
+    <div className="tw-preflight">
+      <button
+        ref={ref}
+        className={buttonStyle({ variant, color, fullWidth, disabled, className, size })}
+        disabled={disabled}
+        {...rest}>
+        {children}
+      </button>
+    </div>
   ),
 );
 

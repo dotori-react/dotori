@@ -1,9 +1,11 @@
 import { cn, VariantProps } from 'dotori-utils';
 
 const Kbd = ({ children, className, ...props }: KdbProps) => (
-  <kbd {...props} className={KbdStyle({ className })}>
-    {children}
-  </kbd>
+  <div className="tw-preflight">
+    <kbd {...props} className={KbdStyle({ className })}>
+      {children}
+    </kbd>
+  </div>
 );
 
 interface KdbProps extends React.ComponentPropsWithoutRef<'kbd'>, VariantProps<typeof KbdStyle> {}

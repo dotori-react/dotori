@@ -44,12 +44,14 @@ const TinyModal = ({ children, label, position = 'top', gap = 10, color, classNa
     <>
       {trigger && (
         <Portal target={document.getElementById(type) as HTMLElement}>
-          <div
-            ref={tinyModalRectRef}
-            className={tinyModalStyle({ color, className })}
-            style={tinyModalPositionMap[position]}>
-            <span>{label}</span>
-            <span className={tinyModalArrowStyle({ position })} />
+          <div className="tw-preflight">
+            <div
+              ref={tinyModalRectRef}
+              className={tinyModalStyle({ color, className })}
+              style={tinyModalPositionMap[position]}>
+              <span>{label}</span>
+              <span className={tinyModalArrowStyle({ position })} />
+            </div>
           </div>
         </Portal>
       )}

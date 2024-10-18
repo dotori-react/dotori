@@ -23,18 +23,23 @@ const Chip = ({ size, color, defaultChecked = false, variant, value = '', childr
   };
 
   return (
-    <label className={chipContainerStyle({ size, color, variant, checked: ctx ? contextProps.checked : checked })}>
-      <input
-        value={value}
-        onChange={handleCheckChange}
-        {...defaultProps}
-        {...contextProps}
-        checked={ctx ? contextProps.checked : checked}
-        name={name}
-      />
-      {(ctx ? contextProps.checked : checked) && <Icon className={iconStyle({ color, variant })} icon="check" />}
-      <span className="text-inherit whitespace-nowrap">{children}</span>
-    </label>
+    <span className="tw-preflight">
+      <label className={chipContainerStyle({ size, color, variant, checked: ctx ? contextProps.checked : checked })}>
+        <input
+          value={value}
+          onChange={handleCheckChange}
+          {...defaultProps}
+          {...contextProps}
+          checked={ctx ? contextProps.checked : checked}
+          className="appearance-none"
+          name={name}
+        />
+        {(ctx ? contextProps.checked : checked) && (
+          <Icon className={iconStyle({ color, variant })} icon="check" fullSize />
+        )}
+        <span className="text-inherit whitespace-nowrap">{children}</span>
+      </label>
+    </span>
   );
 };
 
@@ -96,7 +101,7 @@ const chipContainerStyle = cn(
   },
 );
 
-const iconStyle = cn('h-full w-auto', {
+const iconStyle = cn('w-auto h-full', {
   variants: {
     color: {
       black: 'fill-gray-900',

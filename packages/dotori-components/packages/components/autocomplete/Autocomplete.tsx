@@ -59,7 +59,7 @@ const Autocomplete = <T extends { value: string; label: string; [index: string]:
   };
 
   return (
-    <>
+    <div className="tw-preflight">
       <Dropdown
         close={close}
         isOpen={isOpen}
@@ -84,7 +84,7 @@ const Autocomplete = <T extends { value: string; label: string; [index: string]:
           onKeyDown={handleInputKeyDown}
         />
       </Dropdown>
-    </>
+    </div>
   );
 };
 

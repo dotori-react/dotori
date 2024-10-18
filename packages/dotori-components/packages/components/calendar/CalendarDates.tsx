@@ -65,7 +65,7 @@ export interface CalendarDatesProps extends VariantProps<typeof dateOfMonthStyle
   calendarDateClick: ({ year, month, date }: CalendarDate) => void;
 }
 
-const dateOfMonthStyle = cn('cursor-pointer place-content-center p-0 text-gray-900', {
+const dateOfMonthStyle = cn('cursor-pointer place-content-center p-0 text-gray-900 w-full', {
   variants: {
     isNowDate: {
       true: '',

@@ -45,25 +45,29 @@ const Dropdown = ({
     <>
       {controlledClicked && (
         <Portal target={document.getElementById('dropdown') as HTMLElement}>
-          <span
-            ref={targetRef}
-            className={dropdownStyle({ color })}
-            style={{
-              left: dropdownLeft,
-              top: dropdownTop + dropdownHeight + gap,
-              width: fullWidth ? dropdownWidth : 'auto',
-            }}>
-            {contents}
+          <span className="tw-preflight">
+            <span
+              ref={targetRef}
+              className={dropdownStyle({ color })}
+              style={{
+                left: dropdownLeft,
+                top: dropdownTop + dropdownHeight + gap,
+                width: fullWidth ? dropdownWidth : 'auto',
+              }}>
+              {contents}
+            </span>
           </span>
         </Portal>
       )}
-      <button
-        ref={dropdownRef}
-        className={dropdownContainerStyle({ disabled })}
-        disabled={disabled}
-        onClick={handleButtonClick}>
-        {children}
-      </button>
+      <div className="tw-preflight">
+        <button
+          ref={dropdownRef}
+          className={dropdownContainerStyle({ disabled })}
+          disabled={disabled}
+          onClick={handleButtonClick}>
+          {children}
+        </button>
+      </div>
     </>
   );
 };

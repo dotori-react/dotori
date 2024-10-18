@@ -4,7 +4,9 @@ import { AvatarGroupProvider } from './Avatar.context';
 
 const AvatarGroup = ({ children, direction = 'row' }: AvatarGroupProps) => (
   <AvatarGroupProvider value={{ className: contextStyle({ direction }) }}>
-    <div className={directionStyle({ direction })}>{children}</div>
+    <div className="tw-preflight">
+      <div className={directionStyle({ direction })}>{children}</div>
+    </div>
   </AvatarGroupProvider>
 );
 
@@ -27,7 +29,7 @@ const contextStyle = cn('', {
   },
 });
 
-const directionStyle = cn('inline-flex', {
+const directionStyle = cn('inline-flex -gap-2', {
   variants: {
     direction: {
       col: 'flex-col',

@@ -85,24 +85,26 @@ const ScrollableDate = ({ data: { years, months, dates }, defaultValue, onChange
   }, [dates, months, onChange, selectedDate, selectedDate.date, selectedDate.month, selectedDate.year, years]);
 
   return (
-    <section ref={scrollContainerRef} className="flex h-52 w-96 justify-center bg-gray-600">
-      {[years, months, dates].map((data, idx) => (
-        <div key={idx} className="w-20 cursor-grab overflow-y-scroll py-20">
-          {data.map(item => (
-            <Button
-              key={item}
-              className="flex h-10 items-center justify-center px-0"
-              fullWidth
-              onMouseDown={handleDragStart(idx)}
-              onMouseLeave={handleDragStop(idx)}
-              onMouseMove={handleDragMove(idx)}
-              onMouseUp={handleDragStop(idx)}>
-              {item}
-            </Button>
-          ))}
-        </div>
-      ))}
-    </section>
+    <div className="tw-preflight">
+      <section ref={scrollContainerRef} className="flex h-52 w-96 justify-center bg-gray-600">
+        {[years, months, dates].map((data, idx) => (
+          <div key={idx} className="w-20 cursor-grab overflow-y-scroll py-20">
+            {data.map(item => (
+              <Button
+                key={item}
+                className="flex h-10 items-center justify-center px-0"
+                fullWidth
+                onMouseDown={handleDragStart(idx)}
+                onMouseLeave={handleDragStop(idx)}
+                onMouseMove={handleDragMove(idx)}
+                onMouseUp={handleDragStop(idx)}>
+                {item}
+              </Button>
+            ))}
+          </div>
+        ))}
+      </section>
+    </div>
   );
 };
 

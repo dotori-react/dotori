@@ -3,7 +3,7 @@ import { escapeRegex } from 'dotori-utils';
 import Mark from './Mark';
 
 const Highlight = ({ highlight, highlightStyle, children, ignoreCase = false }: HighlightProps) => (
-  <div>
+  <span className="tw-preflight">
     {highlighter(children, highlight, ignoreCase).map(({ chunk, highlighted }, index) =>
       highlighted ? (
         <Mark key={index} className={highlightStyle}>
@@ -13,7 +13,7 @@ const Highlight = ({ highlight, highlightStyle, children, ignoreCase = false }: 
         <span key={index}>{chunk}</span>
       ),
     )}
-  </div>
+  </span>
 );
 
 interface HighlightProps {

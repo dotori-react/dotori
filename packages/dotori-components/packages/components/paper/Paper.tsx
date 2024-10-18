@@ -3,8 +3,10 @@ import { forwardRef } from 'react';
 import { cn, VariantProps } from 'dotori-utils';
 
 const Paper = forwardRef<HTMLDivElement, PaperProps>(({ size, className, children, fullWidth, ...props }, ref) => (
-  <div ref={ref} className={paperStyle({ size, fullWidth, className })} {...props}>
-    {children}
+  <div className="tw-preflight">
+    <div ref={ref} className={paperStyle({ size, fullWidth, className })} {...props}>
+      {children}
+    </div>
   </div>
 ));
 export interface PaperProps extends React.ComponentPropsWithoutRef<'div'>, VariantProps<typeof paperStyle> {}

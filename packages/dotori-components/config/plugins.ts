@@ -1,4 +1,5 @@
 import plugin from 'tailwindcss/plugin';
+import { isolateInsideOfContainer, scopedPreflightStyles } from 'tailwindcss-scoped-preflight';
 
 import type { PluginAPI, Config } from 'tailwindcss/types/config';
 
@@ -139,4 +140,7 @@ export const plugins: Config['plugins'] = [
       },
     }),
   ),
+  scopedPreflightStyles({
+    isolationStrategy: isolateInsideOfContainer('.tw-preflight'),
+  }),
 ];

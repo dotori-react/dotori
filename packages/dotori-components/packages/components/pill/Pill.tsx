@@ -3,18 +3,20 @@ import { cn, VariantProps } from 'dotori-utils';
 import { CloseButton } from '@dotori-components/components';
 
 const Pill = ({ children, size, color, withCloseButton, onClose }: PillProps) => (
-  <span className={pillStyle({ size, color })}>
-    {children}
-    {withCloseButton && (
-      <CloseButton
-        className={closeButtonStyle({ theme: 'light' })}
-        size={size}
-        withoutHoverColor
-        withoutPadding
-        onClick={onClose}
-      />
-    )}
-  </span>
+  <div className="tw-preflight">
+    <span className={pillStyle({ size, color })}>
+      {children}
+      {withCloseButton && (
+        <CloseButton
+          className={closeButtonStyle({ theme: 'light' })}
+          size={size}
+          withoutHoverColor
+          withoutPadding
+          onClick={onClose}
+        />
+      )}
+    </span>
+  </div>
 );
 
 interface PillProps extends VariantProps<typeof pillStyle> {

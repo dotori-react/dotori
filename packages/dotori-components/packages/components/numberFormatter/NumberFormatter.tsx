@@ -1,9 +1,11 @@
 const NumberFormatter = ({ prefix, suffix, value, scale, thousandSeparator, ...rest }: NumberFormatterProps) => (
-  <section {...rest}>
-    {prefix}
-    {applyThousandSeparator(applyScale(value, scale), thousandSeparator)}
-    {suffix}
-  </section>
+  <div className="tw-preflight">
+    <section {...rest}>
+      {prefix}
+      {applyThousandSeparator(applyScale(value, scale), thousandSeparator)}
+      {suffix}
+    </section>
+  </div>
 );
 
 interface NumberFormatterProps extends React.ComponentPropsWithoutRef<'section'> {

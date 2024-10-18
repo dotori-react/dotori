@@ -10,7 +10,7 @@ const Snackbar = ({ title, description, position, delay = 5000, className }: Sna
   useTimeout({ callback: close, ms: delay, immediate: true });
 
   return (
-    <>
+    <div className="tw-preflight">
       {isOpen && (
         <Portal target={document.getElementById('snackbar') as HTMLElement}>
           <section ref={ref} className={snackbarStyle({ position, className })}>
@@ -24,7 +24,7 @@ const Snackbar = ({ title, description, position, delay = 5000, className }: Sna
           </section>
         </Portal>
       )}
-    </>
+    </div>
   );
 };
 

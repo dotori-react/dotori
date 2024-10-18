@@ -15,8 +15,10 @@ const AccordionPanel = ({ className, children, ...props }: AccordionPanelProps) 
     : { isOpen };
 
   return (
-    <div className={panelStyle({ className, isOpen: combinedContext.isOpen })} {...props}>
-      {children}
+    <div className="tw-preflight">
+      <div className={panelStyle({ className, isOpen: combinedContext.isOpen })} {...props}>
+        {children}
+      </div>
     </div>
   );
 };

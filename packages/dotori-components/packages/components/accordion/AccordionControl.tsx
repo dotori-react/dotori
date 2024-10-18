@@ -31,16 +31,18 @@ const AccordionControl = ({ className, leftIcon, rightIcon, children, ...props }
   };
 
   return (
-    <button className={buttonStyle({ className })} onClick={handleAccordionControlClick} {...props}>
-      {leftIcon && <div className="pr-2">{leftIcon}</div>}
-      <div className="flex-1 text-start">{children}</div>
-      {rightIcon && <div className="pl-2">{rightIcon}</div>}
-      {!(leftIcon || rightIcon) && (
-        <div className={chevronArrowIconStyle({ isOpen: combinedContext.isOpen })}>
-          <Icon className="h-full w-full" icon="chevronArrowRight" />
-        </div>
-      )}
-    </button>
+    <div className="tw-preflight">
+      <button className={buttonStyle({ className })} onClick={handleAccordionControlClick} {...props}>
+        {leftIcon && <div className="pr-2">{leftIcon}</div>}
+        <div className="flex-1 text-start">{children}</div>
+        {rightIcon && <div className="pl-2">{rightIcon}</div>}
+        {!(leftIcon || rightIcon) && (
+          <div className={chevronArrowIconStyle({ isOpen: combinedContext.isOpen })}>
+            <Icon className="h-full w-full" icon="chevronArrowRight" />
+          </div>
+        )}
+      </button>
+    </div>
   );
 };
 

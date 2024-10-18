@@ -27,24 +27,26 @@ const Rating = ({ total, size, count, onChange }: RatingProps) => {
   };
 
   return (
-    <span className="inline-flex">
-      {Array.from({ length: total }).map((_, idx) => (
-        <Icon
-          key={idx + 1}
-          data-count={idx + 1}
-          icon="star"
-          className={starStyle({
-            size,
-            selected: idx + 1 <= controlledSelectedStarCount,
-            hovered: idx + 1 <= hoverStarCount,
-            lastHovered: idx + 1 === hoverStarCount,
-          })}
-          onClick={handleStarClick}
-          onMouseEnter={handleStarEnter}
-          onMouseLeave={handleStarLeave}
-        />
-      ))}
-    </span>
+    <div className="tw-preflight">
+      <span className="inline-flex">
+        {Array.from({ length: total }).map((_, idx) => (
+          <Icon
+            key={idx + 1}
+            data-count={idx + 1}
+            icon="star"
+            className={starStyle({
+              size,
+              selected: idx + 1 <= controlledSelectedStarCount,
+              hovered: idx + 1 <= hoverStarCount,
+              lastHovered: idx + 1 === hoverStarCount,
+            })}
+            onClick={handleStarClick}
+            onMouseEnter={handleStarEnter}
+            onMouseLeave={handleStarLeave}
+          />
+        ))}
+      </span>
+    </div>
   );
 };
 

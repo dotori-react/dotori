@@ -1,11 +1,11 @@
 import TreeNode, { type TreeNodeProps } from './TreeNode';
 
 const Tree = ({ data, renderTreeNode }: TreeProps) => (
-  <section>
+  <div className="tw-preflight">
     {data.map(node => (
       <TreeNode key={node.value} depth={0} node={node} renderTreeNode={renderTreeNode} />
     ))}
-  </section>
+  </div>
 );
 
 interface TreeProps extends Omit<TreeNodeProps, 'node' | 'depth'> {

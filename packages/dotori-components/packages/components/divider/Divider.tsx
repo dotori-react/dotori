@@ -1,7 +1,9 @@
 import { cn, VariantProps } from 'dotori-utils';
 
 const Divider = ({ height, className, ...props }: DividerProps) => (
-  <div className={dividerStyle({ height, className })} {...props} />
+  <div className="tw-preflight">
+    <div className={dividerStyle({ height, className })} {...props} />
+  </div>
 );
 
 interface DividerProps

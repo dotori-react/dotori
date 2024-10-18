@@ -10,14 +10,16 @@ const Drawer = ({ isOpen, close, fullWidth, children }: DrawerProps) => {
   return (
     <Portal target={document.getElementById('drawer') as HTMLElement}>
       {isOpen && (
-        <section className="fixed left-0 top-0 z-[2] h-full w-full bg-dimmed">
-          <div ref={ref} className={drawerStyle({ fullWidth })}>
-            <div className="mb-[10px]">
-              <CloseButton onClick={close} />
+        <div className="tw-preflight">
+          <section className="fixed left-0 top-0 z-[2] h-full w-full bg-dimmed">
+            <div ref={ref} className={drawerStyle({ fullWidth })}>
+              <div className="mb-[10px]">
+                <CloseButton onClick={close} />
+              </div>
+              {children}
             </div>
-            {children}
-          </div>
-        </section>
+          </section>
+        </div>
       )}
     </Portal>
   );

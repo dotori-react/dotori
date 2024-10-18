@@ -8,9 +8,11 @@ const Avatar = ({ alt, src, size, name, className }: AvatarProps) => {
   const ctx = useAvatarGroupContext();
 
   return (
-    <section className={avatarStyle({ size, className: ctx ? `${ctx.className} ${className}` : className })}>
-      {src ? <img alt={alt} src={src} title={alt} /> : name || <Icon icon="profileCircle" />}
-    </section>
+    <div className={avatarGroupStyle({ className: ctx ? ctx.className : '' })}>
+      <section className={avatarStyle({ size, className })}>
+        {src ? <img alt={alt} src={src} title={alt} /> : name || <Icon icon="profileCircle" />}
+      </section>
+    </div>
   );
 };
 
@@ -21,6 +23,8 @@ interface AvatarProps
   alt: string;
   name?: string;
 }
+
+const avatarGroupStyle = cn('tw-preflight');
 
 const avatarStyle = cn(
   'flex items-center justify-center overflow-hidden text-nowrap rounded-full bg-gray-100 bg-cover',

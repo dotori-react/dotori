@@ -6,9 +6,9 @@ const Icon = ({ fullSize, size, icon, className, ...props }: IconProps) => {
   const IconComponent = ICON_MAP[icon];
 
   return (
-    <div className="tw-preflight">
+    <span className="tw-preflight w-auto h-full">
       <IconComponent className={iconStyle({ size, fullSize, className })} {...props} />
-    </div>
+    </span>
   );
 };
 

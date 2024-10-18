@@ -4,7 +4,7 @@ const Thumb = ({ children, percentage, isShow, label }: ThumbProps) => {
   };
 
   return (
-    <>
+    <div className="tw-preflight">
       {isShow && (
         <div
           className="absolute -top-full -translate-x-1/2 -translate-y-6 select-none rounded-md bg-black px-2 py-1 text-xs text-white"
@@ -13,7 +13,7 @@ const Thumb = ({ children, percentage, isShow, label }: ThumbProps) => {
         </div>
       )}
       {children}
-    </>
+    </div>
   );
 };
 

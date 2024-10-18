@@ -27,24 +27,26 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     }, [combinedFocused]);
 
     return (
-      <label className={inputContainerStyle({ className, disabled, focused: combinedFocused })}>
-        {leftIcon && <span className={iconStyle({ size })}>{leftIcon}</span>}
-        <input
-          ref={node => {
-            // eslint-disable-next-line no-param-reassign
-            if (ref && typeof ref !== 'function') ref.current = node;
-            inputRef.current = node;
-          }}
-          className={inputStyle({ disabled, size })}
-          disabled={disabled}
-          placeholder={placeholder}
-          type={type}
-          onBlur={handleInputBlur}
-          onFocus={handleInputFocus}
-          {...rest}
-        />
-        {type === 'file' && <span>{placeholder}</span>}
-        {rightIcon && <span className={iconStyle({ size })}>{rightIcon}</span>}
+      <label className="tw-preflight">
+        <label className={inputContainerStyle({ className, disabled, focused: combinedFocused })}>
+          {leftIcon && <span className={iconStyle({ size })}>{leftIcon}</span>}
+          <input
+            ref={node => {
+              // eslint-disable-next-line no-param-reassign
+              if (ref && typeof ref !== 'function') ref.current = node;
+              inputRef.current = node;
+            }}
+            className={inputStyle({ disabled, size })}
+            disabled={disabled}
+            placeholder={placeholder}
+            type={type}
+            onBlur={handleInputBlur}
+            onFocus={handleInputFocus}
+            {...rest}
+          />
+          {type === 'file' && <span>{placeholder}</span>}
+          {rightIcon && <span className={iconStyle({ size })}>{rightIcon}</span>}
+        </label>
       </label>
     );
   },
@@ -76,7 +78,7 @@ const inputContainerStyle = cn('flex cursor-text items-center gap-1 rounded bord
   },
 });
 
-const inputStyle = cn('w-full px-3 placeholder:text-gray-400', {
+const inputStyle = cn('w-full px-3 placeholder:text-gray-400 outline-none', {
   variants: {
     size: {
       xs: 'h-4 text-xs',

@@ -85,34 +85,36 @@ const Slider = ({
   }, [isMouseDown, rect.left, setSliderValueByRange]);
 
   return (
-    <div className={sliderLayoutStyle({ size })}>
-      <div className={sliderStyle({ color })} style={{ width: filledWidthPercentage }} />
-      <div
-        ref={combineSliderContainerRef}
-        aria-valuemax={max}
-        aria-valuemin={min}
-        aria-valuenow={value}
-        className={sliderContainerStyle({ className, size })}
-        role="slider"
-        tabIndex={-1}
-        onMouseDown={handleSliderContainerMouseDown}
-        {...rest}>
-        <Thumb
-          isShow={showThumb && (hovered || isMouseDown)}
-          label={controlledValue.toString()}
-          percentage={filledWidthPercentage}>
-          <div className={sliderCircleStyle({ size, isMouseDown, color })} style={{ left: filledWidthPercentage }} />
-        </Thumb>
-        {marks?.map(mark => <Mark key={mark.value} {...mark} max={max} min={min} size={size} />)}
-        <input
-          className="hidden"
-          max={max}
-          min={min}
-          step={defaultStep}
-          type="range"
-          value={controlledValue}
-          onChange={handleRangeChange}
-        />
+    <div className="tw-preflight">
+      <div className={sliderLayoutStyle({ size })}>
+        <div className={sliderStyle({ color })} style={{ width: filledWidthPercentage }} />
+        <div
+          ref={combineSliderContainerRef}
+          aria-valuemax={max}
+          aria-valuemin={min}
+          aria-valuenow={value}
+          className={sliderContainerStyle({ className, size })}
+          role="slider"
+          tabIndex={-1}
+          onMouseDown={handleSliderContainerMouseDown}
+          {...rest}>
+          <Thumb
+            isShow={showThumb && (hovered || isMouseDown)}
+            label={controlledValue.toString()}
+            percentage={filledWidthPercentage}>
+            <div className={sliderCircleStyle({ size, isMouseDown, color })} style={{ left: filledWidthPercentage }} />
+          </Thumb>
+          {marks?.map(mark => <Mark key={mark.value} {...mark} max={max} min={min} size={size} />)}
+          <input
+            className="hidden"
+            max={max}
+            min={min}
+            step={defaultStep}
+            type="range"
+            value={controlledValue}
+            onChange={handleRangeChange}
+          />
+        </div>
       </div>
     </div>
   );

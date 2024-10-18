@@ -27,26 +27,28 @@ const Ellipsis = ({
   });
 
   return (
-    <div className="flex h-10 items-center justify-center">
-      <div className="relative w-full">
-        <div className="absolute z-0 h-[1px] w-full border border-dashed border-transparent border-b-red-200" />
-        <div className="absolute flex h-full w-full items-center justify-between">
-          {circleTotalArray.map((_, idx) => (
-            <Icon key={idx} className={circleDonutIconStyle({ size, isBackground: true })} icon="circle" />
-          ))}
-        </div>
-        <div className="absolute z-[1px] flex h-full w-full items-center justify-between transition-opacity">
-          {circleTotalArray.map((_, idx) => (
-            <div key={idx}>
-              <Icon
-                icon="circle"
-                className={circleDonutIconStyle({
-                  isShow: idx + 1 <= count && count < idx + 1 + showedCircleTotal,
-                  size,
-                })}
-              />
-            </div>
-          ))}
+    <div className="tw-preflight">
+      <div className="flex h-10 items-center justify-center">
+        <div className="relative w-full">
+          <div className="absolute z-0 h-[1px] w-full border border-dashed border-transparent border-b-red-200" />
+          <div className="absolute flex h-full w-full items-center justify-between">
+            {circleTotalArray.map((_, idx) => (
+              <Icon key={idx} className={circleDonutIconStyle({ size, isBackground: true })} icon="circle" />
+            ))}
+          </div>
+          <div className="absolute z-[1px] flex h-full w-full items-center justify-between transition-opacity">
+            {circleTotalArray.map((_, idx) => (
+              <div key={idx}>
+                <Icon
+                  icon="circle"
+                  className={circleDonutIconStyle({
+                    isShow: idx + 1 <= count && count < idx + 1 + showedCircleTotal,
+                    size,
+                  })}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

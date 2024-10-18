@@ -26,7 +26,7 @@ const ScrollToTop = ({ showedMinHeight = 0 }: ScrollToTopProps) => {
   }, [debounce]);
 
   return (
-    <>
+    <div className="tw-preflight">
       {isOpen && (
         <ActionIcon
           className="fixed w-10 h-10 p-1 text-gray-600 -rotate-90 border border-gray-200 rounded-full shadow-inner bottom-6 right-6 bg-gray-0 active:bg-gray-300"
@@ -34,7 +34,7 @@ const ScrollToTop = ({ showedMinHeight = 0 }: ScrollToTopProps) => {
           onClick={handleScrollToTopClick}
         />
       )}
-    </>
+    </div>
   );
 };
 

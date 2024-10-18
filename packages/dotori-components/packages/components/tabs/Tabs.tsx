@@ -12,7 +12,11 @@ const Tabs = ({ defaultValue, children }: TabsProps) => {
     setCurrentValue({ ...currentValue, defaultValue: value });
   };
 
-  return <TabsProvider value={{ ...currentValue, currentDefaultValueChange }}>{children}</TabsProvider>;
+  return (
+    <TabsProvider value={{ ...currentValue, currentDefaultValueChange }}>
+      <div className="tw-preflight">{children}</div>
+    </TabsProvider>
+  );
 };
 
 interface TabsProps {

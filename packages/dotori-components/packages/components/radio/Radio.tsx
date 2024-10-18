@@ -14,19 +14,21 @@ const Radio = ({ size, color, variant, label, className, value, renderNode, ...p
   const contextProps = ctx ? { name: ctx.name, onChange: ctx.onChange } : {};
 
   return (
-    <label ref={ref} className={radioContainerStyle({ size, variant, className, isRenderNode: !!renderNode })}>
-      <input type="radio" value={value} {...props} {...contextProps} />
-      {renderNode ? (
-        renderNode({ hovered, selected })
-      ) : (
-        <>
-          <div className={iconStyle({ size, color, variant, selected, hovered })}>
-            {selected && <Icon icon="circle" fullSize />}
-          </div>
-          <span>{label}</span>
-        </>
-      )}
-    </label>
+    <div className="tw-preflight">
+      <label ref={ref} className={radioContainerStyle({ size, variant, className, isRenderNode: !!renderNode })}>
+        <input type="radio" value={value} {...props} {...contextProps} className={radioInputStyle()} />
+        {renderNode ? (
+          renderNode({ hovered, selected })
+        ) : (
+          <>
+            <div className={iconStyle({ size, color, variant, selected, hovered })}>
+              {selected && <Icon icon="circle" fullSize />}
+            </div>
+            <span>{label}</span>
+          </>
+        )}
+      </label>
+    </div>
   );
 };
 
@@ -66,6 +68,8 @@ const radioContainerStyle = cn('inline-flex cursor-pointer items-center justify-
     variant: 'outline',
   },
 });
+
+const radioInputStyle = cn('appearance-none');
 
 const iconStyle = cn('rounded-full border border-gray-300', {
   variants: {

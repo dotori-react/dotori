@@ -105,11 +105,13 @@ const Table = <T extends { id: string | number }>({ rows, cols, onSelect, ...pro
         sortTableRows,
         updateTableDataWidth,
       }}>
-      <div className="w-full overflow-scroll">
-        <table className="min-w-full table-fixed border border-gray-300">
-          <TableCols cols={tableData.cols} rows={sortedRows} {...props} />
-          <TableRows cols={tableData.cols} rows={sortedRows} {...props} />
-        </table>
+      <div className="tw-preflight">
+        <div className="w-full overflow-scroll">
+          <table className="min-w-full table-fixed border border-gray-300">
+            <TableCols cols={tableData.cols} rows={sortedRows} {...props} />
+            <TableRows cols={tableData.cols} rows={sortedRows} {...props} />
+          </table>
+        </div>
       </div>
     </TableProvider>
   );

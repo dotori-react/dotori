@@ -29,33 +29,35 @@ const Calendar = ({ selectedCalendarDate, isTodayMark, size, className, calendar
   };
 
   return (
-    <section className={calendarStyle({ size, className })}>
-      <h3>
-        <div className="m-auto flex items-center justify-between">
-          <ActionIcon className="rotate-180" icon="chevronArrowRight" onClick={handlePrevMonth} />
-          {calendarDate.getFullYear()}년 {calendarDate.getMonth() + 1}월
-          <ActionIcon icon="chevronArrowRight" onClick={handleNextMonth} />
-        </div>
-      </h3>
-      <div className="grid grid-cols-7 grid-rows-7 text-center">
-        {Object.values(DAY_OF_WEEKEND)
-          .map(({ kr }) => kr.short)
-          .map(item => (
-            <div key={item} className="py-2">
-              {item}
-            </div>
-          ))}
+    <div className="tw-preflight">
+      <section className={calendarStyle({ size, className })}>
+        <h3>
+          <div className="m-auto flex items-center justify-between">
+            <ActionIcon className="rotate-180" icon="chevronArrowRight" onClick={handlePrevMonth} />
+            {calendarDate.getFullYear()}년 {calendarDate.getMonth() + 1}월
+            <ActionIcon icon="chevronArrowRight" onClick={handleNextMonth} />
+          </div>
+        </h3>
+        <div className="grid grid-cols-7 grid-rows-7 text-center">
+          {Object.values(DAY_OF_WEEKEND)
+            .map(({ kr }) => kr.short)
+            .map(item => (
+              <div key={item} className="py-2">
+                {item}
+              </div>
+            ))}
 
-        <CalendarDates
-          calendarDate={calendarDate}
-          calendarDateClick={calendarDateClick}
-          isTodayMark={isTodayMark}
-          selectedCalendarDate={selectedCalendarDate}
-          size={size}
-          today={today}
-        />
-      </div>
-    </section>
+          <CalendarDates
+            calendarDate={calendarDate}
+            calendarDateClick={calendarDateClick}
+            isTodayMark={isTodayMark}
+            selectedCalendarDate={selectedCalendarDate}
+            size={size}
+            today={today}
+          />
+        </div>
+      </section>
+    </div>
   );
 };
 

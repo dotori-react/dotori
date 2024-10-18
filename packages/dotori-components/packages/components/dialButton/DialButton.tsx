@@ -19,30 +19,32 @@ const DialButton = ({ actions, withoutTooltip, dialIcon, size, color }: DialButt
 
   return (
     <Portal target={document.getElementById('dial-button') as HTMLElement}>
-      <div className="fixed bottom-0 left-0 z-[2] m-5 flex flex-col-reverse">
-        <Button ref={buttonRef} className={dialButtonStyle({ size, color })}>
-          {dialIcon || <Icon className={dialButtonIconStyle({ rotate: hovered, color })} icon="close" />}
-        </Button>
+      <div className="tw-preflight">
+        <div className="fixed bottom-0 left-0 z-[2] m-5 flex flex-col-reverse">
+          <Button ref={buttonRef} className={dialButtonStyle({ size, color })}>
+            {dialIcon || <Icon className={dialButtonIconStyle({ rotate: hovered, color })} icon="close" />}
+          </Button>
 
-        <div ref={actionRef} className={actionContainerStyle({ size, visible: hovered })}>
-          {actions?.map((action, index) => (
-            <Fragment key={action.name}>
-              {withoutTooltip ? (
-                <div className={actionStyle({ size, visible: hovered })} style={actionDynamicStyle(index)}>
-                  {action.icon}
-                </div>
-              ) : (
-                <Tooltip color="gray" label={action.name} position="right">
-                  <div
-                    key={action.name}
-                    className={actionStyle({ size, visible: hovered })}
-                    style={actionDynamicStyle(index)}>
+          <div ref={actionRef} className={actionContainerStyle({ size, visible: hovered })}>
+            {actions?.map((action, index) => (
+              <Fragment key={action.name}>
+                {withoutTooltip ? (
+                  <div className={actionStyle({ size, visible: hovered })} style={actionDynamicStyle(index)}>
                     {action.icon}
                   </div>
-                </Tooltip>
-              )}
-            </Fragment>
-          ))}
+                ) : (
+                  <Tooltip color="gray" label={action.name} position="right">
+                    <div
+                      key={action.name}
+                      className={actionStyle({ size, visible: hovered })}
+                      style={actionDynamicStyle(index)}>
+                      {action.icon}
+                    </div>
+                  </Tooltip>
+                )}
+              </Fragment>
+            ))}
+          </div>
         </div>
       </div>
     </Portal>

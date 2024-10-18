@@ -5,9 +5,11 @@ import { cn, VariantProps } from 'dotori-utils';
 
 const ActionIcon = forwardRef<HTMLButtonElement, ActionIconProps>(
   ({ withoutHoverColor, icon, color, size, withoutPadding, className, ...rest }, ref) => (
-    <button className={actionIconStyle({ color, withoutHoverColor, className })} {...rest} ref={ref}>
-      <Icon className={iconStyle({ size, withoutPadding })} icon={icon} />
-    </button>
+    <div className="tw-preflight">
+      <button className={actionIconStyle({ color, withoutHoverColor, className })} {...rest} ref={ref}>
+        <Icon className={iconStyle({ size, withoutPadding })} icon={icon} />
+      </button>
+    </div>
   ),
 );
 

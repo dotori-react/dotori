@@ -56,8 +56,10 @@ const OnePage = ({ children, className, ...props }: OnePageProps) => {
   }, [isScrolling]);
 
   return (
-    <div ref={ref} className={onePageStyle({ className })} {...props}>
-      {children}
+    <div className="tw-preflight">
+      <div ref={ref} className={onePageStyle({ className })} {...props}>
+        {children}
+      </div>
     </div>
   );
 };

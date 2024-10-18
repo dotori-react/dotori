@@ -1,9 +1,11 @@
 import { cn, VariantProps } from 'dotori-utils';
 
 const Badge = ({ color, children, size, variant, fullWidth, ...rest }: BadgeProps) => (
-  <section className={badgeContainerStyle({ color, variant, size, fullWidth })} {...rest}>
-    <span className={badgeStyle({ size })}>{children}</span>
-  </section>
+  <div className="tw-preflight">
+    <section className={badgeContainerStyle({ color, variant, size, fullWidth })} {...rest}>
+      <span className={badgeStyle({ size })}>{children}</span>
+    </section>
+  </div>
 );
 
 interface BadgeProps

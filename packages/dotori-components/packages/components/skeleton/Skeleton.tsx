@@ -1,8 +1,10 @@
 import { cn, VariantProps } from 'dotori-utils';
 
 const Skeleton = ({ isSkeletonShow, isBorderRound, className, children, ...rest }: SkeletonProps) => (
-  <div className={skeletonStyle({ isSkeletonShow, className, isBorderRound })} {...rest}>
-    <div className={skeletonInnerStyle({ isInnerShow: !isSkeletonShow })}>{children}</div>
+  <div className="tw-preflight">
+    <div className={skeletonStyle({ isSkeletonShow, className, isBorderRound })} {...rest}>
+      <div className={skeletonInnerStyle({ isInnerShow: !isSkeletonShow })}>{children}</div>
+    </div>
   </div>
 );
 

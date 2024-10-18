@@ -6,14 +6,14 @@ const Mark = ({ value, min, max, label, size }: MarkProps) => {
   };
 
   return (
-    <>
+    <div className="tw-preflight">
       {min <= value && value <= max && (
         <div className="absolute top-1/2 select-none" style={markStyle}>
           <div className={markCircleStyle({ size })} />
           <div className="-translate-x-1/2 pt-2">{label}</div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

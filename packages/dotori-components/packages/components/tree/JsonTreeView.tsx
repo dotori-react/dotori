@@ -1,7 +1,7 @@
 import { Entity } from '@dotori-components/components';
 
 const JsonTreeView = ({ data, depth = 0 }: JsonTreeViewProps) => (
-  <div>
+  <div className="tw-preflight">
     <Entity symbol="[" />
     {data.map((item, itemIndex) => (
       <div key={itemIndex} className="flex">

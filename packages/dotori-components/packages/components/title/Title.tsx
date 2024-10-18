@@ -4,9 +4,11 @@ const Title = ({ order, className, children, ...rest }: TitleProps) => {
   const Tag: keyof JSX.IntrinsicElements = `h${order}`;
 
   return (
-    <Tag className={titleStyle({ order, className })} {...rest}>
-      {children}
-    </Tag>
+    <div className="tw-preflight">
+      <Tag className={titleStyle({ order, className })} {...rest}>
+        {children}
+      </Tag>
+    </div>
   );
 };
 

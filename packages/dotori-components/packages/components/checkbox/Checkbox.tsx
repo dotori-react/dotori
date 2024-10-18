@@ -21,25 +21,33 @@ const Checkbox = ({ label, size, indeterminate = false, checked: isChecked, onCh
   }, [indeterminate]);
 
   return (
-    <label className="inline-flex cursor-pointer items-center justify-center gap-3">
-      <input
-        ref={ref}
-        aria-checked={indeterminate ? 'mixed' : controlledChecked}
-        checked={controlledChecked}
-        type="checkbox"
-        onChange={handleCheckboxChange}
-      />
-      {indeterminate ? (
-        <Icon
-          aria-label="checkbox icon"
-          className={checkboxStyle({ indeterminate, checked: controlledChecked, size })}
-          icon="checkIndeterminate"
+    <div className="tw-preflight">
+      <label className="inline-flex cursor-pointer items-center justify-center gap-3">
+        <input
+          ref={ref}
+          aria-checked={indeterminate ? 'mixed' : controlledChecked}
+          checked={controlledChecked}
+          className="appearance-none"
+          type="checkbox"
+          aria-hidden
+          onChange={handleCheckboxChange}
         />
-      ) : (
-        <Icon aria-label="checkbox icon" className={checkboxStyle({ checked: controlledChecked, size })} icon="check" />
-      )}
-      {label && <span className={iconStyle({ size })}>{label}</span>}
-    </label>
+        {indeterminate ? (
+          <Icon
+            aria-label="checkbox icon"
+            className={checkboxStyle({ indeterminate, checked: controlledChecked, size })}
+            icon="checkIndeterminate"
+          />
+        ) : (
+          <Icon
+            aria-label="checkbox icon"
+            className={checkboxStyle({ checked: controlledChecked, size })}
+            icon="check"
+          />
+        )}
+        {label && <span className={iconStyle({ size })}>{label}</span>}
+      </label>
+    </div>
   );
 };
 

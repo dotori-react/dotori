@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { cn, VariantProps } from 'dotori-utils';
 
+import { Input } from '@dotori-components/components';
 import { REGEX } from '@dotori-components/constants';
 
 const PinInput = <T extends 1 | 2 | 3 | 4 | 5>({ total, size, value, onChange }: PinInputProps<T>) => {
@@ -46,9 +47,9 @@ const PinInput = <T extends 1 | 2 | 3 | 4 | 5>({ total, size, value, onChange }:
   }, [total]);
 
   return (
-    <section>
+    <div className="tw-preflight">
       {Array.from({ length: total }).map((_, idx) => (
-        <input
+        <Input
           key={idx}
           ref={el => {
             pinInputsRef.current[idx] = el;
@@ -62,7 +63,7 @@ const PinInput = <T extends 1 | 2 | 3 | 4 | 5>({ total, size, value, onChange }:
           onKeyDown={handlePinInputKeyDown(idx)}
         />
       ))}
-    </section>
+    </div>
   );
 };
 
@@ -75,7 +76,7 @@ interface PinInputProps<T extends 1 | 2 | 3 | 4 | 5> extends VariantProps<typeof
   onChange: (value: Tuple<T>) => void;
 }
 
-const pinInputStyle = cn('border border-gray-200 text-center', {
+const pinInputStyle = cn('border border-gray-200 text-center p-0', {
   variants: {
     size: {
       xs: 'h-7 w-7',
