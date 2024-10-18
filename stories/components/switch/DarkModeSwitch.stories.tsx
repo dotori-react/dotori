@@ -71,7 +71,6 @@ export const Example: Story = {
     return (
       <>
         <DarkModeSwitch {...args} off={toggle} on={toggle} />
-        {JSON.stringify(document.documentElement)}
       </>
     );
   },

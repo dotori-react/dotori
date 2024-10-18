@@ -6,11 +6,6 @@ const meta = {
   title: 'inputs/ProgressBar',
   component: ProgressBar,
   tags: ['autodocs'],
-  decorators: Story => (
-    <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-      <Story />
-    </div>
-  ),
   argTypes: {
     current: {
       control: 'number',

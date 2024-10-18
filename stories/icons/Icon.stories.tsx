@@ -1,11 +1,11 @@
-import { Icon as DotoriIcon } from 'dotori-icons';
+import { Icon } from 'dotori-icons';
 import { ICON_MAP } from 'dotori-icons/constants';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
   title: 'icons/Icon',
-  component: DotoriIcon,
+  component: Icon,
   parameters: {
     layout: 'centered',
   },
@@ -30,7 +30,7 @@ const meta = {
     size: 'md',
     className: '',
   },
-} satisfies Meta<typeof DotoriIcon>;
+} satisfies Meta<typeof Icon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
