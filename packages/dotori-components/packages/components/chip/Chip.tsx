@@ -31,7 +31,7 @@ const Chip = ({ size, color, defaultChecked = false, variant, value = '', childr
           {...defaultProps}
           {...contextProps}
           checked={ctx ? contextProps.checked : checked}
-          className="appearance-none"
+          className="appearance-none hidden"
           name={name}
         />
         {(ctx ? contextProps.checked : checked) && (
