@@ -6,7 +6,7 @@ const Icon = ({ fullSize, size, icon, className, ...props }: IconProps) => {
   const IconComponent = ICON_MAP[icon];
 
   return (
-    <span className="tw-preflight w-auto h-full">
+    <span className={iconContainer({ fullSize })}>
       <IconComponent className={iconStyle({ size, fullSize, className })} {...props} />
     </span>
   );
@@ -15,6 +15,18 @@ const Icon = ({ fullSize, size, icon, className, ...props }: IconProps) => {
 interface IconProps extends VariantProps<typeof iconStyle>, React.ComponentPropsWithoutRef<'svg'> {
   icon: keyof typeof ICON_MAP;
 }
+
+const iconContainer = cn('tw-preflight w-auto h-auto', {
+  variants: {
+    fullSize: {
+      true: 'w-full h-full',
+      false: '',
+    },
+  },
+  defaultVariants: {
+    fullSize: false,
+  },
+});
 
 const iconStyle = cn('', {
   variants: {
