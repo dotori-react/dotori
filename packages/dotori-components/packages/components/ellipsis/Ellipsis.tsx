@@ -36,7 +36,7 @@ const Ellipsis = ({
               <Icon key={idx} className={circleDonutIconStyle({ size, isBackground: true })} icon="circle" />
             ))}
           </div>
-          <div className="absolute z-[1px] flex h-full w-full items-center justify-between transition-opacity">
+          <div className="absolute z-float flex h-full w-full items-center justify-between transition-opacity">
             {circleTotalArray.map((_, idx) => (
               <div key={idx}>
                 <Icon

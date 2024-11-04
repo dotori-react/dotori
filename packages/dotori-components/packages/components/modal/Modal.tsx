@@ -10,7 +10,7 @@ const Modal = ({ isOpen, close, children, ...paperProps }: ModalProps) => {
     <Portal target={document.getElementById('modal') as HTMLElement}>
       {isOpen && (
         <div className="tw-preflight">
-          <section className="fixed left-0 top-0 z-[2] flex h-full w-full items-center justify-center bg-dimmed">
+          <section className="fixed left-0 top-0 z-background flex h-full w-full items-center justify-center bg-dimmed">
             <Paper ref={ref} {...paperProps}>
               <div className="mb-[10px] flex flex-row-reverse">
                 <CloseButton onClick={close} />

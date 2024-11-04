@@ -20,7 +20,7 @@ const DialButton = ({ actions, withoutTooltip, dialIcon, size, color }: DialButt
   return (
     <Portal target={document.getElementById('dial-button') as HTMLElement}>
       <div className="tw-preflight">
-        <div className="fixed bottom-0 left-0 z-[2] m-5 flex flex-col-reverse">
+        <div className="fixed bottom-0 left-0 z-float m-5 flex flex-col-reverse">
           <Button ref={buttonRef} className={dialButtonStyle({ size, color })}>
             {dialIcon || <Icon className={dialButtonIconStyle({ rotate: hovered, color })} icon="close" />}
           </Button>
@@ -58,7 +58,7 @@ interface DialButtonProps extends VariantProps<typeof actionStyle>, VariantProps
 }
 
 const dialButtonStyle = cn(
-  'z-[2] rounded-full p-0 shadow-xl inline-flex justify-center items-center hover:bg-opacity-100',
+  'z-background rounded-full p-0 shadow-xl inline-flex justify-center items-center hover:bg-opacity-100',
   {
     variants: {
       size: {

@@ -73,7 +73,7 @@ export interface TinyModalProps
   type: 'tooltip' | 'popover';
 }
 
-const tinyModalStyle = cn('absolute z-[2] text-pretty rounded-md px-4 py-2', {
+const tinyModalStyle = cn('absolute z-background-up text-pretty rounded-md px-4 py-2', {
   variants: {
     color: {
       black: 'border-gray-900 bg-gray-900 text-gray-100',
@@ -90,7 +90,7 @@ const tinyModalStyle = cn('absolute z-[2] text-pretty rounded-md px-4 py-2', {
   },
 });
 
-const tinyModalArrowStyle = cn('absolute z-[2] h-2 w-2 rotate-45 rounded-none bg-inherit', {
+const tinyModalArrowStyle = cn('absolute z-background-up h-2 w-2 rotate-45 rounded-none bg-inherit', {
   variants: {
     visible: {
       true: 'visible',
