@@ -57,4 +57,10 @@ export const extend: Partial<ThemeConfig> = {
   borderWidth: {
     6: '6px',
   },
+  zIndex: {
+    float: '2',
+    'background-down': '90',
+    background: '100',
+    'background-up': '110',
+  },
 };
