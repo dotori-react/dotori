@@ -5,6 +5,7 @@
     "prepare": "husky",
     "test": "jest",
     "commit": "cz",
+    "docs": "pnpm run docs:copy && pnpm run docs:build",
     "docs:copy": "pnpm -C ./docs run docs",
     "docs:build": "pnpm -C ./docs run build",
     "docs:dev": "pnpm -C ./docs run start",
