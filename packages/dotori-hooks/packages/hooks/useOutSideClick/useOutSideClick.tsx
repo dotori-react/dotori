@@ -10,10 +10,10 @@ const useOutSideClick = <T extends HTMLElement>(callback: () => void) => {
       callback();
     };
 
-    document.addEventListener('click', listener, { capture: true });
+    document.addEventListener('mousedown', listener);
 
     return () => {
-      document.removeEventListener('click', listener);
+      document.removeEventListener('mousedown', listener);
     };
   }, [callback]);
 
