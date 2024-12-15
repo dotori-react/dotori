@@ -2,9 +2,9 @@ import { cn, VariantProps } from 'dotori-utils';
 
 import { CloseButton } from '@dotori-components/components';
 
-const Alert = ({ icon, title, children, color, className, isOpen, close, ...props }: AlertProps) => (
-  <div className="tw-preflight">
-    {isOpen && (
+const Alert = ({ icon, title, children, color, className, isOpen, close, ...props }: AlertProps) =>
+  isOpen && (
+    <div className="tw-preflight">
       <section className={alertStyle({ color, className })} {...props}>
         <div className="mb-[10px] flex flex-row-reverse">
           <CloseButton className={iconStyle({ color })} withoutHoverColor onClick={close} />
@@ -17,9 +17,8 @@ const Alert = ({ icon, title, children, color, className, isOpen, close, ...prop
           </div>
         </div>
       </section>
-    )}
-  </div>
-);
+    </div>
+  );
 
 interface AlertProps extends Omit<React.ComponentPropsWithoutRef<'section'>, 'color'>, VariantProps<typeof alertStyle> {
   isOpen: boolean;
