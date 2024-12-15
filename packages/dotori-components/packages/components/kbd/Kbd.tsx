@@ -8,8 +8,10 @@ const Kbd = ({ children, className, ...props }: KdbProps) => (
   </div>
 );
 
-interface KdbProps extends React.ComponentPropsWithoutRef<'kbd'>, VariantProps<typeof KbdStyle> {}
+interface KdbProps extends React.ComponentPropsWithoutRef<'kbd'>, VariantProps<typeof KbdStyle> {
+  children: React.ReactNode;
+}
 
-const KbdStyle = cn('inline h-6 rounded border border-b-4 border-gray-300 bg-gray-100 px-2 py-1 font-bold');
+const KbdStyle = cn('inline rounded border border-b-4 border-gray-300 bg-gray-100 px-2 py-1 font-bold');
 
 export default Kbd;
