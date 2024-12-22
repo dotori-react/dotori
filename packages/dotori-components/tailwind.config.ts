@@ -7,7 +7,6 @@ const config: Config = {
   theme,
   plugins,
   darkMode: 'selector',
-  important: '.tw-preflight',
 };
 
 export default config;
