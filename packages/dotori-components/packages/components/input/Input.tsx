@@ -27,7 +27,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     }, [combinedFocused]);
 
     return (
-      <label className="tw-preflight">
+      <label className="tw-preflight w-full">
         <label className={inputContainerStyle({ className, disabled, focused: combinedFocused })}>
           {leftIcon && <span className={iconStyle({ size })}>{leftIcon}</span>}
           <input
