@@ -12,6 +12,8 @@ const PillInput = ({ value, onChange, size, disabled, ...inputProps }: PillInput
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const keyDownHashTable = {
       Enter() {
+        if (e.nativeEvent.isComposing) return;
+
         e.preventDefault();
         e.stopPropagation();
 
