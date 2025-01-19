@@ -20,7 +20,11 @@ const useClipboard = () => {
 
       return true;
     } catch (err) {
-      setError(JSON.stringify(err));
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError('clipboard can\t copy');
+      }
     }
 
     return false;
@@ -41,7 +45,11 @@ const useClipboard = () => {
 
       return text;
     } catch (err) {
-      setError(JSON.stringify(err));
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("clipboard can't read");
+      }
     }
 
     return null;
