@@ -1,23 +1,17 @@
-import { MutationFunction, MutationKey, useMutation, useQueryClient } from '@tanstack/react-query';
+import { DefaultError, useMutation, UseMutationOptions, useQueryClient } from '@tanstack/react-query';
 
-const usePessimisticMutation = <TData, TVariables>({
-  mutationKey,
-  mutationFn,
-}: PessimisticMutationOptions<TData, TVariables>) => {
+const usePessimisticMutation = <TData = unknown, TError = DefaultError, TVariables = void, TContext = unknown>(
+  options: UseMutationOptions<TData, TError, TVariables, TContext>,
+) => {
   const queryClient = useQueryClient();
 
-  return useMutation({
-    mutationKey,
-    mutationFn,
-    async onSettled() {
-      return queryClient.invalidateQueries({ queryKey: mutationKey });
+  return useMutation<TData, TError, TVariables, TContext>({
+    ...options,
+    async onSettled(...params) {
+      if (options.onSettled) options.onSettled(...params);
+      await queryClient.invalidateQueries({ queryKey: options.mutationKey });
     },
   });
 };
-
-interface PessimisticMutationOptions<TData = unknown, TVariables = void> {
-  mutationKey: MutationKey;
-  mutationFn: MutationFunction<TData, TVariables>;
-}
 
 export default usePessimisticMutation;
