@@ -44,7 +44,7 @@ npm install dotori-context
 
 Please refer to the [documentation](https://dotori-docs.netlify.app/) created with Docusaurus for detailed usage instructions.
 
-if you need to see components with styles included, similar to a design system, please refer to the [storybook](https://66f696470ec9eb2bd29fa1fe-usspcmaxmn.chromatic.com).
+if you need to see components with styles included, similar to a design system, please refer to the [storybook](https://main--66f696470ec9eb2bd29fa1fe.chromatic.com).
 
 <br>
 
