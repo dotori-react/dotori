@@ -6,6 +6,7 @@ import ChevronTwinArrowTopBottomIcon from '@dotori-icons/assets/chevron_twin_arr
 import CircleIcon from '@dotori-icons/assets/circle.svg?react';
 import CloseIcon from '@dotori-icons/assets/close.svg?react';
 import CloudUploadIcon from '@dotori-icons/assets/cloud_upload.svg?react';
+import ContentCopyIcon from '@dotori-icons/assets/content_copy.svg?react';
 import ExcelIcon from '@dotori-icons/assets/excel.svg?react';
 import FileIcon from '@dotori-icons/assets/file.svg?react';
 import GithubIcon from '@dotori-icons/assets/github.svg?react';
@@ -44,4 +45,5 @@ export const ICON_MAP = {
   word: WordIcon,
   profileCircle: ProfileCircleIcon,
   github: GithubIcon,
+  contentCopy: ContentCopyIcon,
 } as const;
