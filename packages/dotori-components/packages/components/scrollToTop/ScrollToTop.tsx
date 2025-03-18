@@ -11,6 +11,7 @@ const ScrollToTop = ({ showedMinHeight = 0, className }: ScrollToTopProps) => {
     callback: () => {
       (showedMinHeight >= window.scrollY ? close : open)();
     },
+    immediate: true,
   });
 
   const handleScrollToTopClick = () => {
