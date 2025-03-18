@@ -29,7 +29,12 @@ const ScrollToTop = ({ showedMinHeight = 0, className }: ScrollToTopProps) => {
   return (
     <div className="tw-preflight">
       {isOpen && (
-        <ActionIcon className={scrollToTopStyle({ className })} icon="arrowRightAlt" onClick={handleScrollToTopClick} />
+        <ActionIcon
+          className={scrollToTopStyle({ className })}
+          icon="arrowRightAlt"
+          size="full"
+          onClick={handleScrollToTopClick}
+        />
       )}
     </div>
   );

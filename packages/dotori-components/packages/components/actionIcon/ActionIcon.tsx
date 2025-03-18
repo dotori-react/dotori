@@ -49,6 +49,7 @@ const iconStyle = cn('box-content active:translate-y-[1px]', {
       md: 'h-4 w-4 p-2',
       lg: 'h-5 w-5 p-2',
       xl: 'h-6 w-6 p-3',
+      full: 'w-full h-full',
     },
     withoutPadding: {
       true: 'p-0',
