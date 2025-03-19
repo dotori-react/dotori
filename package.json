@@ -12,7 +12,8 @@
     "docs:prod": "pnpm -C ./docs run serve",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "chromatic --exit-zero-on-changes",
+    "prepublishOnly": "lerna run build"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^2.0.2",
