@@ -12,8 +12,8 @@ module.exports = {
   rules: {
     'no-void': 'off',
   },
-  ignorePatterns: ['**/*.html', '**/lib', '**/node_modules', '**/build'],
   parser: '@typescript-eslint/parser',
+  ignorePatterns: ['**/*.html', '**/lib', '**/node_modules', '**/build', './.eslintrc.js', './changelog.config.js'],
   parserOptions: {
     project: [
       path.resolve(__dirname, './tsconfig.json'),
