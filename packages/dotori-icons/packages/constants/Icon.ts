@@ -1,4 +1,5 @@
 import ArrowRightAltIcon from '@dotori-icons/assets/arrow_right_alt.svg?react';
+import CalendarIcon from '@dotori-icons/assets/calendar.svg?react';
 import CheckIcon from '@dotori-icons/assets/check.svg?react';
 import CheckIndeterminateIcon from '@dotori-icons/assets/check_indeterminate.svg?react';
 import ChevronArrowRightIcon from '@dotori-icons/assets/chevron_arrow_right.svg?react';
@@ -46,4 +47,5 @@ export const ICON_MAP = {
   profileCircle: ProfileCircleIcon,
   github: GithubIcon,
   contentCopy: ContentCopyIcon,
+  calendar: CalendarIcon,
 } as const;
