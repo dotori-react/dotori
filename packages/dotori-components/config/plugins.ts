@@ -133,11 +133,6 @@ export const plugins: Config['plugins'] = [
       '.clip-path-none': {
         'clip-path': 'polygon(0 0, 0 0, 0 0)',
       },
-      '.scroll-hidden': {
-        '&::-webkit-scrollbar': {
-          width: '0px',
-        },
-      },
     }),
   ),
   scopedPreflightStyles({
