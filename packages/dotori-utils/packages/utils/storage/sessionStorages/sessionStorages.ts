@@ -12,7 +12,8 @@ export const sessionStorages = <T = unknown>(key: string) => ({
     }
   },
   set(newValue: T) {
-    sessionStorage.setItem(key, JSON.stringify(newValue));
+    const convertedValue = typeof newValue === 'string' ? newValue : JSON.stringify(newValue);
+    sessionStorage.setItem(key, convertedValue);
 
     return true;
   },

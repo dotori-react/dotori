@@ -12,7 +12,8 @@ export const localStorages = <T = unknown>(key: string) => ({
     }
   },
   set(newValue: T) {
-    localStorage.setItem(key, JSON.stringify(newValue));
+    const convertedValue = typeof newValue === 'string' ? newValue : JSON.stringify(newValue);
+    localStorage.setItem(key, convertedValue);
 
     return true;
   },
