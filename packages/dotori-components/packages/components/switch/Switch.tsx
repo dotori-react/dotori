@@ -28,7 +28,7 @@ const Switch = ({ size, checked, on, off, disabled, className }: SwitchProps) =>
           type="checkbox"
           onChange={toggle}
         />
-        <div className="absolute left-0 top-0 flex h-full w-full px-2">
+        <div className="absolute left-0 top-0 flex h-full w-full px-2 rounded-inherit">
           <div
             ref={ref}
             className={toggleCircleStyle({ isSwitchShow, size, checked, disabled, isDarkModeSwitch })}
