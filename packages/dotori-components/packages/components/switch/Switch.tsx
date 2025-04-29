@@ -23,7 +23,7 @@ const Switch = ({ size, checked, on, off, disabled, className }: SwitchProps) =>
         <input
           aria-label="toggle"
           checked={checked}
-          className="appearance-none"
+          className="appearance-none invisible"
           disabled={disabled}
           type="checkbox"
           onChange={toggle}
