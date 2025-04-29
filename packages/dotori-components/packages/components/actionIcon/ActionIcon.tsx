@@ -5,7 +5,7 @@ import { cn, VariantProps } from 'dotori-utils';
 
 const ActionIcon = forwardRef<HTMLButtonElement, ActionIconProps>(
   ({ withoutHoverColor, icon, color, size, withoutPadding, className, ...rest }, ref) => (
-    <div className="tw-preflight">
+    <div className="tw-preflight" style={{ display: 'flex' }}>
       <button className={actionIconStyle({ color, withoutHoverColor, className })} {...rest} ref={ref}>
         <Icon className={iconStyle({ size, withoutPadding })} icon={icon} />
       </button>
