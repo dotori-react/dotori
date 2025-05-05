@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { useDisClosure } from 'dotori-hooks';
 import { cn, VariantProps } from 'dotori-utils';
 
@@ -10,6 +12,10 @@ const Switch = ({ size, checked, on, off, disabled, className }: SwitchProps) =>
   const ctx = useDarkModeSwitchContext();
 
   const { isDarkModeSwitch } = ctx ? { isDarkModeSwitch: ctx.isDarkModeSwitch } : { isDarkModeSwitch: false };
+
+  useEffect(() => {
+    switchShow();
+  }, [switchShow]);
 
   return (
     <div className="tw-preflight">
