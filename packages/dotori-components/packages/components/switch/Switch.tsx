@@ -11,8 +11,6 @@ const Switch = ({ size, checked, on, off, disabled, className }: SwitchProps) =>
 
   const { isDarkModeSwitch } = ctx ? { isDarkModeSwitch: ctx.isDarkModeSwitch } : { isDarkModeSwitch: false };
 
-  console.log('changed!');
-
   return (
     <div className="tw-preflight">
       <label className={toggleStyle({ isSwitchShow, size, checked, disabled, className, isDarkModeSwitch })}>
