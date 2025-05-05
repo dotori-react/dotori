@@ -1,4 +1,4 @@
-import { useDisClosure, useElementRect } from 'dotori-hooks';
+import { useDisClosure } from 'dotori-hooks';
 import { cn, VariantProps } from 'dotori-utils';
 
 import { useDarkModeSwitchContext } from './DarkModeSwitch.context';
@@ -6,16 +6,12 @@ import { useDarkModeSwitchContext } from './DarkModeSwitch.context';
 const Switch = ({ size, checked, on, off, disabled, className }: SwitchProps) => {
   const toggle = () => (checked ? off : on)();
   const { isOpen: isSwitchShow, open: switchShow } = useDisClosure();
-  const { ref, width } = useElementRect<HTMLDivElement>();
 
   const ctx = useDarkModeSwitchContext();
 
   const { isDarkModeSwitch } = ctx ? { isDarkModeSwitch: ctx.isDarkModeSwitch } : { isDarkModeSwitch: false };
 
-  const toggleCirclePositionMap = {
-    on: { left: `calc(100% - ${width}px - ${width / 4}px)` },
-    off: { left: width / 4 },
-  };
+  console.log('changed!');
 
   return (
     <div className="tw-preflight">
@@ -30,9 +26,7 @@ const Switch = ({ size, checked, on, off, disabled, className }: SwitchProps) =>
         />
         <div className="absolute left-0 top-0 flex h-full w-full px-2 rounded-inherit">
           <div
-            ref={ref}
             className={toggleCircleStyle({ isSwitchShow, size, checked, disabled, isDarkModeSwitch })}
-            style={toggleCirclePositionMap[checked ? 'on' : 'off']}
             onTransitionEnd={switchShow}
           />
         </div>
@@ -116,6 +110,16 @@ const toggleCircleStyle = cn('absolute top-1/2 -translate-y-1/2 rounded-full bg-
   compoundVariants: [
     { checked: true, isDarkModeSwitch: true, className: 'bg-darkMode-moon' },
     { checked: false, isDarkModeSwitch: true, className: 'bg-darkMode-sun' },
+    { checked: true, size: 'xs', className: `left-[calc(100%-1rem-0.25rem)]` },
+    { checked: true, size: 'sm', className: `left-[calc(100%-1.5rem-0.25rem)]` },
+    { checked: true, size: 'md', className: `left-[calc(100%-2rem-0.25rem)]` },
+    { checked: true, size: 'lg', className: `left-[calc(100%-2.25rem-0.25rem)]` },
+    { checked: true, size: 'xl', className: `left-[calc(100%-3rem-0.5rem)]` },
+    { checked: false, size: 'xs', className: 'left-1' },
+    { checked: false, size: 'sm', className: 'left-1' },
+    { checked: false, size: 'md', className: 'left-1' },
+    { checked: false, size: 'lg', className: 'left-1' },
+    { checked: false, size: 'xl', className: 'left-2' },
   ],
   defaultVariants: {
     disabled: false,
